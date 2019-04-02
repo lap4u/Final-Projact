@@ -3,36 +3,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.lang.annotation.Documented;
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main {
-    static void Lenovo_comp() {
-        final String main_url = "https://www.lenovo.com/us/en/think?IPromoID=LEN635973";
-        try{
-            final Document document3= Jsoup.connect(main_url).get();
-
-            Elements comp_urls=document3.select(".va-item");
-            //System.out.println(document3.outerHtml());
-            System.out.println("size of List: "+comp_urls.size());
-            for(Element comp : comp_urls)
-            {
-                //Element atar= comp.select()
-                comp=comp.select("a").first();
-                String atar=comp.attr("href");
-                oneComp("https://www.lenovo.com/us/en/"+atar);
-                //System.out.println(atar);
-            }
-        }
-        catch(Exception ex){
-            ex.printStackTrace();
-        }
-
-
-
-    }
 
 
     static void HP_comp()
@@ -47,7 +23,7 @@ public class Main {
                 //System.out.println(price);
                 System.out.println("\n\n*********************************");
 
-                System.out.println("Laptop: "+ticker);
+                System.out.println("Laptop: " + ticker);
 
                 System.out.println("*********************************");
                 for(Element att : row.select(
@@ -65,45 +41,46 @@ public class Main {
         }
     }
 
-    public static void oneComp(String url)
-    {
-        try {
-            final Document document2 = Jsoup.connect(url).get();
-            final String LaptopName=document2.select("h1.desktopHeader").text();
-            System.out.println("************************\n"+LaptopName+"\n***********************\n");
-            final Elements table = document2.select(".techSpecs-table");
-            for(Element line : table.select("tr"))
-            {
-                String lable=(line.select("td:nth-child(1)").text());
-                lable=lable.split("\\?")[0];
-                if(lable != null && !lable.isEmpty())
-                    System.out.println(lable+":");
-                Elements newElem= line.select("td:nth-child(2)");
-                Elements newLi=newElem.select("li");
-                if(newLi.size()!=0) {
-                    for (Element li : line.select("td:nth-child(2)").select("li")) {
-                        System.out.println("    " + li.text());
-                    }
-                }
-                else
-                {
-                    System.out.println("    " + newElem.text());
-                }
 
-            }
-
-            System.out.println("\n\n*********************************");
-
-
-        }
-        catch(Exception ex){
-            ex.printStackTrace();
-        }
-    }
 
     public static void main(String[] args) {
+        List<Laptop> LaptopArray = new ArrayList<Laptop>();
+        List<String> graphics= new ArrayList<String>();
         //HP_comp();
-        Lenovo_comp();
+        //Lenovo.Find_Laptops(LaptopArray);
+        //Lenovo.ParseData(LaptopArray);
+        Acer.Find_Laptops(LaptopArray);
+        Acer.ParseData(LaptopArray);
+        //Dell.FindDellLaptops(LaptopArray);
+        //LG.FindLGLaptops(LaptopArray);
+        //CreateJSONFile.writeList(LaptopArray);
+        printAllLeptops(LaptopArray);
+        //printModels(LaptopArray);
+        for(Laptop laptop:LaptopArray)
+        {
+            if(!graphics.contains(laptop.getProcessor()))
+            {
+                graphics.add(laptop.getProcessor());
+            }
+        }
+        for(String gpu:graphics)
+        {
+            System.out.println(gpu);
+        }
+
+    }
+
+    private static void printAllLeptops(List<Laptop> leptopArray) {
+        for (Laptop leptop : leptopArray)
+        {
+            leptop.printLaptop();
+        }
+    }
+    private static void printModels(List<Laptop> leptopArray) {
+        for (Laptop leptop : leptopArray)
+        {
+            leptop.printModels();
+        }
     }
 
 }
