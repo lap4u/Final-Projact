@@ -8,6 +8,7 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
 public class Acer {
     public static void Find_Laptops(List<Laptop> LaptopArray) {
         String url = "https://www.acer.com/ac/en/US/content/models/laptops";
@@ -237,3 +238,4 @@ public class Acer {
 
     }
 }
+*/

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+
 public class Main {
 
 
@@ -47,39 +49,31 @@ public class Main {
         List<Laptop> LaptopArray = new ArrayList<Laptop>();
         List<String> graphics= new ArrayList<String>();
         //HP_comp();
-        //Lenovo.Find_Laptops(LaptopArray);
-        //Lenovo.ParseData(LaptopArray);
-        Acer.Find_Laptops(LaptopArray);
-        Acer.ParseData(LaptopArray);
+        Lenovo.Find_Laptops(LaptopArray);
+        //Acer.Find_Laptops(LaptopArray);
+        //Acer.ParseData(LaptopArray);
         //Dell.FindDellLaptops(LaptopArray);
         //LG.FindLGLaptops(LaptopArray);
         //CreateJSONFile.writeList(LaptopArray);
         printAllLeptops(LaptopArray);
-        //printModels(LaptopArray);
-        for(Laptop laptop:LaptopArray)
+        /*for(Laptop laptop:LaptopArray)
         {
-            if(!graphics.contains(laptop.getProcessor()))
+            if(!graphics.contains(laptop.getGpu()))
             {
-                graphics.add(laptop.getProcessor());
+                graphics.add(laptop.getGpu());
             }
         }
         for(String gpu:graphics)
         {
             System.out.println(gpu);
-        }
+        }*/
 
     }
 
-    private static void printAllLeptops(List<Laptop> leptopArray) {
-        for (Laptop leptop : leptopArray)
+    private static void printAllLeptops(List<Laptop> laptopArray) {
+        for (Laptop laptop : laptopArray)
         {
-            leptop.printLaptop();
-        }
-    }
-    private static void printModels(List<Laptop> leptopArray) {
-        for (Laptop leptop : leptopArray)
-        {
-            leptop.printModels();
+            laptop.printLaptop();
         }
     }
 

@@ -1,5 +1,6 @@
 package com.company;
-
+import Parts.OS;
+import Parts.PartStruct;
 public class Laptop {
 
     // Members.
@@ -7,16 +8,16 @@ public class Laptop {
     private String model_name;
     private String url_model;
     private String company_name;
-    private String processor;
-    private String memory;
+    private PartStruct processor;
+    private int memory;
     private String operation_system;
-    private String gpu;
-    private String storage;
-    private String screen_size;
-    private String weight;
-    private String battery;
+    private PartStruct gpu;
+    private int storage;
+    private double screen_size;
+    private double weight;
+    private int battery;
     private Boolean touch_screen;
-    private String price;
+    private double price;
     private String img_url;
     private String description;
 
@@ -29,9 +30,9 @@ public class Laptop {
 
     // C'tor
     public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
-                  String i_processor, String i_memory, String i_operation_system, String i_gpu,
-                  String i_storage, String i_screen_size, String i_weight, String i_battery,
-                  Boolean i_touch_screen,String i_price, String i_ImgURL, String i_Description) {
+                  PartStruct i_processor, int i_memory, String i_operation_system, PartStruct i_gpu,
+                  int i_storage, double i_screen_size, double i_weight, int i_battery,
+                  Boolean i_touch_screen,double i_price, String i_ImgURL, String i_Description) {
         id_prod = i_id_prod;
         model_name = i_model_name;
         url_model = i_url_model;
@@ -60,43 +61,39 @@ public class Laptop {
         return model_name;
     }
 
-    public String getUrl_model() {
-        return url_model;
-    }
+    public String getUrl_model() { return url_model; }
 
     public String getCompany_name() {
         return company_name;
     }
 
-    public String getProcessor() {
-        return processor;
-    }
-
-    public String getMemory() {
+    public int getMemory() {
         return memory;
     }
+
+    public PartStruct getProcessor() { return processor; }
 
     public String getOperation_system() {
         return operation_system;
     }
 
-    public String getGpu() {
+    public PartStruct getGpu() {
         return gpu;
     }
 
-    public String getStorage() {
+    public int getStorage() {
         return storage;
     }
 
-    public String getScreen_size() {
+    public double getScreen_size() {
         return screen_size;
     }
 
-    public String getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public String getBattery() {
+    public int getBattery() {
         return battery;
     }
 
@@ -104,7 +101,7 @@ public class Laptop {
         return touch_screen;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -135,11 +132,9 @@ public class Laptop {
         this.company_name = company_name;
     }
 
-    public void setProcessor(String processor) {
-        this.processor = processor;
-    }
+    public void setProcessor(PartStruct i_processor) { this.processor = i_processor;  }
 
-    public void setMemory(String memory) {
+    public void setMemory(int memory) {
         this.memory = memory;
     }
 
@@ -147,23 +142,23 @@ public class Laptop {
         this.operation_system = operation_system;
     }
 
-    public void setGpu(String gpu) {
+    public void setGpu(PartStruct gpu) {
         this.gpu = gpu;
     }
 
-    public void setStorage(String storage) {
+    public void setStorage(int storage) {
         this.storage = storage;
     }
 
-    public void setScreen_size(String screen_size) {
+    public void setScreen_size(double screen_size) {
         this.screen_size = screen_size;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    public void setBattery(String battery) {
+    public void setBattery(int battery) {
         this.battery = battery;
     }
 
@@ -171,7 +166,7 @@ public class Laptop {
         this.touch_screen = touch_screen;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -191,10 +186,10 @@ public class Laptop {
                 + "\nUrl Model: " + url_model
                 + "\nModel Name: " + model_name
                 + "\nCompany Name: " + company_name
-                + "\nProcessor: " + processor
+                + "\nProcessor: " + processor.getManufacture() + " ~ " + processor.getModel()
                 + "\nMemory: " + memory
                 + "\nOperation System: " + operation_system
-                + "\nGraphics: " + gpu
+                + "\nGraphics: " + processor.getManufacture() + " ~ " + processor.getModel()
                 + "\nStorage: " + storage
                 + "\nScreen Size: " + screen_size
                 + "\nWeight: " + weight
@@ -211,16 +206,18 @@ public class Laptop {
 
     }
 
-    public void printModels() {
-        System.out.println(model_name);
-    }
 
     public Boolean NotAllAttributeisFilled()
     {
-        if(this.getProcessor()==null | this.getMemory()==null | this.getGpu()==null | this.getStorage()==null
-                | this.getScreen_size()==null | this.getWeight()==null | this.getBattery()==null | this.getTouch_screen()==null | this.getOperation_system()==null)
+        if(this.getProcessor()==null | this.getMemory()==0 | this.getGpu()==null | this.getStorage()==0
+                | this.getScreen_size()==0 | this.getWeight()==0 | this.getBattery()==0 | this.getTouch_screen()==null | this.getOperation_system()==null)
             return true;
         else
             return false;
     }
-}
+
+
+    }
+
+
+
