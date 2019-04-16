@@ -23,8 +23,7 @@ public class Laptop {
 
 
     // Empty CTOR
-    public Laptop()
-    {
+    public Laptop() {
 
     }
 
@@ -32,7 +31,7 @@ public class Laptop {
     public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
                   PartStruct i_processor, int i_memory, OS i_operation_system, PartStruct i_gpu,
                   int i_storage, double i_screen_size, double i_weight, int i_battery,
-                  Boolean i_touch_screen,double i_price, String i_ImgURL, String i_Description) {
+                  Boolean i_touch_screen, double i_price, String i_ImgURL, String i_Description) {
         id_prod = i_id_prod;
         model_name = i_model_name;
         url_model = i_url_model;
@@ -61,7 +60,9 @@ public class Laptop {
         return model_name;
     }
 
-    public String getUrl_model() { return url_model; }
+    public String getUrl_model() {
+        return url_model;
+    }
 
     public String getCompany_name() {
         return company_name;
@@ -71,7 +72,9 @@ public class Laptop {
         return memory;
     }
 
-    public PartStruct getProcessor() { return processor; }
+    public PartStruct getProcessor() {
+        return processor;
+    }
 
     public OS getOperation_system() {
         return operation_system;
@@ -132,7 +135,9 @@ public class Laptop {
         this.company_name = company_name;
     }
 
-    public void setProcessor(PartStruct i_processor) { this.processor = i_processor;  }
+    public void setProcessor(PartStruct i_processor) {
+        this.processor = i_processor;
+    }
 
     public void setMemory(int memory) {
         this.memory = memory;
@@ -190,7 +195,7 @@ public class Laptop {
                 + "\nMemory: " + memory
                 + "\nOperation System: " + operation_system.getManufacture() + " " + operation_system.getSeries() + " "
                 + operation_system.getVersion() + " " + operation_system.getBitSize()
-                + "\nGraphics: " + processor.getManufacture() + " ~ " + processor.getModel()
+                + "\nGraphics: " + gpu.getManufacture() + " ~ " + gpu.getModel()
                 + "\nStorage: " + storage
                 + "\nScreen Size: " + screen_size
                 + "\nWeight: " + weight
@@ -208,17 +213,16 @@ public class Laptop {
     }
 
 
-    public Boolean NotAllAttributeisFilled()
-    {
-        if(this.getProcessor()==null | this.getMemory()==0 | this.getGpu()==null | this.getStorage()==0
-                | this.getScreen_size()==0 | this.getWeight()==0 | this.getBattery()==0 | this.getTouch_screen()==null | this.getOperation_system()==null)
+    public Boolean NotAllAttributeisFilled() {
+        if (this.getProcessor() == null | this.getMemory() == 0 | this.getGpu() == null | this.getStorage() == 0
+                | this.getScreen_size() == 0 | this.getWeight() == 0 | this.getBattery() == 0 | this.getTouch_screen() == null | this.getOperation_system() == null)
             return true;
         else
             return false;
     }
 
 
-    }
+}
 
 
 
