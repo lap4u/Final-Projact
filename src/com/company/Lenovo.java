@@ -98,7 +98,8 @@ public class Lenovo {
                     for (i = 0; i < attributes_lables.length; i++) {
                         if (attributes_lables[i].equals("Operating System"))
                             //laptop.setOperation_system(getFormat_OS(attributes_values[i]));
-                            laptop.setOperation_system(attributes_values[i]);
+                            System.out.println(attributes_values[i]);
+                            //laptop.setOperation_system(attributes_values[i]);
                         else if (attributes_lables[i].equals("Processor")) {
                             laptop.setProcessor(getFormat_CPU(attributes_values[i]));
                         } else if (attributes_lables[i].equals("Memory"))
@@ -165,7 +166,7 @@ public class Lenovo {
         if (attribute_lable.equals("Memory") && laptop.getMemory() == 0)
             laptop.setMemory(getFormat_Memory(elememt.text()));
         if (attribute_lable.equals("Operating System") && laptop.getOperation_system() == null)
-            laptop.setOperation_system(elememt.text());
+            laptop.setOperation_system(getFormat_OS(elememt.text()));
         if (attribute_lable.equals("Graphics") && laptop.getGpu() == null)
             laptop.setGpu(getFormat_GPU(elememt.text()));
         if (attribute_lable.equals("Storage") && laptop.getStorage() == 0)
@@ -190,7 +191,7 @@ public class Lenovo {
         if (attribute_lable.equals("Memory") && laptop.getMemory() == 0)
             laptop.setMemory(getFormat_Memory(elememt.text()));
         if (attribute_lable.equals("Operating System") && laptop.getOperation_system() == null)
-            laptop.setOperation_system(elememt.text());
+            laptop.setOperation_system(getFormat_OS(elememt.text()));
         if (attribute_lable.equals("Graphics") && laptop.getGpu() == null)
             laptop.setGpu(getFormat_GPU(elememt.text()));
         if (attribute_lable.equals("Storage") && laptop.getStorage() == 0)
@@ -209,12 +210,27 @@ public class Lenovo {
         }
     }
 
-//    public static OS getFormat_OS(String OS_String_format)
-//    {
-//        OS OS_Struct = null;
-//
-//        return OS_Struct;
-//    }
+    public static OS getFormat_OS(String OS_String_format)
+    {
+        String[] OS_String;
+        String Manufacture="";
+        String Version="";
+        int Serios = 0;
+        int Bit_Siz = 0;
+
+        if(OS_String_format.toLowerCase().contains("windows"))
+        {
+            OS_String = OS_String_format.split(" ");
+            //System.out.println(OS_String[0]+"\n"+OS_String[1]+"\n"+OS_String[2]+"\n"+OS_String[3]+"\n");
+            Manufacture = OS_String[0];
+            Serios = Integer.parseInt(OS_String[1]);
+            Version = OS_String[2];
+            Bit_Siz = 64;
+        }
+
+        OS OS_Struct = new OS(Manufacture,Version,Serios,Bit_Siz);
+        return OS_Struct;
+    }
 
 
     public static PartStruct getFormat_CPU(String CPU_String_format) {
@@ -281,7 +297,6 @@ public class Lenovo {
         double Weight = 0;
         String[] WeightSplit;
         String WeightString;
-
         WeightSplit = Weight_String_format.split("lbs");
         WeightString = WeightSplit[0].trim();
 
@@ -291,7 +306,6 @@ public class Lenovo {
             WeightString = WeightString.replaceAll("[^.?0-9]+", "");
 
         Weight = 0.45 * Double.parseDouble(WeightString.trim());
-
         return Weight;
 
     }
@@ -299,16 +313,19 @@ public class Lenovo {
     public static int getFormat_Battery(String Battery_String_format) {
         int Battery = 0;
         String[] BatterySplit;
-
+        System.out.println(Battery_String_format);
         if (Battery_String_format.toLowerCase().contains("whr")) {
-            BatterySplit = Battery_String_format.split("Whr")[0].split("");
+            BatterySplit = Battery_String_format.split("Whr")[0].split(" ");
+            System.out.println(BatterySplit[BatterySplit.length - 1]);
             Battery = Integer.parseInt(BatterySplit[BatterySplit.length - 1].trim());
         } else if (Battery_String_format.toLowerCase().contains("wh")) {
             BatterySplit = Battery_String_format.split("Wh")[0].split(" ");
+            System.out.println(BatterySplit[BatterySplit.length - 1]);
             Battery = Integer.parseInt(BatterySplit[BatterySplit.length - 1].trim());
         } else
             Battery = Integer.parseInt(Battery_String_format.trim());
 
+        System.out.println(Battery);
         return Battery;
     }
 

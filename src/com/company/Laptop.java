@@ -10,7 +10,7 @@ public class Laptop {
     private String company_name;
     private PartStruct processor;
     private int memory;
-    private String operation_system;
+    private OS operation_system;
     private PartStruct gpu;
     private int storage;
     private double screen_size;
@@ -30,7 +30,7 @@ public class Laptop {
 
     // C'tor
     public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
-                  PartStruct i_processor, int i_memory, String i_operation_system, PartStruct i_gpu,
+                  PartStruct i_processor, int i_memory, OS i_operation_system, PartStruct i_gpu,
                   int i_storage, double i_screen_size, double i_weight, int i_battery,
                   Boolean i_touch_screen,double i_price, String i_ImgURL, String i_Description) {
         id_prod = i_id_prod;
@@ -73,7 +73,7 @@ public class Laptop {
 
     public PartStruct getProcessor() { return processor; }
 
-    public String getOperation_system() {
+    public OS getOperation_system() {
         return operation_system;
     }
 
@@ -138,7 +138,7 @@ public class Laptop {
         this.memory = memory;
     }
 
-    public void setOperation_system(String operation_system) {
+    public void setOperation_system(OS operation_system) {
         this.operation_system = operation_system;
     }
 
@@ -188,7 +188,8 @@ public class Laptop {
                 + "\nCompany Name: " + company_name
                 + "\nProcessor: " + processor.getManufacture() + " ~ " + processor.getModel()
                 + "\nMemory: " + memory
-                + "\nOperation System: " + operation_system
+                + "\nOperation System: " + operation_system.getManufacture() + " " + operation_system.getSeries() + " "
+                + operation_system.getVersion() + " " + operation_system.getBitSize()
                 + "\nGraphics: " + processor.getManufacture() + " ~ " + processor.getModel()
                 + "\nStorage: " + storage
                 + "\nScreen Size: " + screen_size
