@@ -1,4 +1,6 @@
 package com.company;
+import Data.Struct;
+import Parts.PartStruct;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -6,8 +8,7 @@ import org.jsoup.select.Elements;
 import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.List;
-
-
+import Data.PartsData;
 
 
 public class Main {
@@ -48,26 +49,20 @@ public class Main {
     public static void main(String[] args) {
         List<Laptop> LaptopArray = new ArrayList<Laptop>();
         List<String> graphics= new ArrayList<String>();
+        List<Struct> CPU_List = new ArrayList<Struct>();
+        List<Struct> GPU_List = new ArrayList<Struct>();
+
         //HP_comp();
-        Lenovo.Find_Laptops(LaptopArray);
+        //Lenovo.Find_Laptops(LaptopArray);
         //Acer.Find_Laptops(LaptopArray);
         //Acer.ParseData(LaptopArray);
         //Dell.FindDellLaptops(LaptopArray);
         //LG.FindLGLaptops(LaptopArray);
         //CreateJSONFile.writeList(LaptopArray);
-        printAllLeptops(LaptopArray);
-        /*for(Laptop laptop:LaptopArray)
-        {
-            if(!graphics.contains(laptop.getGpu()))
-            {
-                graphics.add(laptop.getGpu());
-            }
-        }
-        for(String gpu:graphics)
-        {
-            System.out.println(gpu);
-        }*/
-
+        //printAllLeptops(LaptopArray);
+        CPU_List = Data.PartsData.Parse_Data("https://www.videocardbenchmark.net/gpu_list.php");
+        GPU_List = Data.PartsData.Parse_Data("https://www.cpubenchmark.net/cpu_list.php");
+      System.out.println("sdfd");
     }
 
     private static void printAllLeptops(List<Laptop> laptopArray) {
