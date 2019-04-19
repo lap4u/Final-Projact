@@ -187,27 +187,33 @@ public class Laptop {
     // Methods.
 
     public void printLaptop() {
-        System.out.println("\n\n\nId Prod: " + id_prod
-                + "\nUrl Model: " + url_model
-                + "\nModel Name: " + model_name
-                + "\nCompany Name: " + company_name
-                + "\nProcessor: " + processor.getManufacture() + " ~ " + processor.getModel()
-                + "\nMemory: " + memory
-                + "\nOperation System: " + operation_system.getManufacture() + " " + operation_system.getSeries() + " "
-                + operation_system.getVersion() + " " + operation_system.getBitSize()
-                + "\nGraphics: " + gpu.getManufacture() + " ~ " + gpu.getModel()
-                + "\nStorage: " + storage
-                + "\nScreen Size: " + screen_size
-                + "\nWeight: " + weight
-                + "\nBattery: " + battery
-                + "\nImage URL: " + img_url
-                + "\nDescription: " + description);
+        try {
+            System.out.println("\n\n\nId Prod: " + id_prod
+                    + "\nUrl Model: " + url_model
+                    + "\nModel Name: " + model_name
+                    + "\nCompany Name: " + company_name
+                    + "\nProcessor: " + processor.getManufacture() + " ~ " + processor.getModel()
+                    + "\nMemory: " + memory
+                    + "\nOperation System: " + operation_system.getManufacture() + " " + operation_system.getSeries() + " "
+                    + operation_system.getVersion() + " " + operation_system.getBitSize()
+                    + "\nGraphics: " + gpu.getManufacture() + " ~ " + gpu.getModel()
+                    + "\nStorage: " + storage
+                    + "\nScreen Size: " + screen_size
+                    + "\nWeight: " + weight
+                    + "\nBattery: " + battery
+                    + "\nImage URL: " + img_url
+                    + "\nDescription: " + description);
 
-        if (touch_screen == true)
-            System.out.println("Touch Screen: Yes");
-        else
-            System.out.println("Touch Screen: No");
-        System.out.println("Price: " + price);
+            if (touch_screen == true)
+                System.out.println("Touch Screen: Yes");
+            else
+                System.out.println("Touch Screen: No");
+            System.out.println("Price: " + price);
+        }  catch (Exception ex) {
+        System.out.println("ERROR: " + url_model);
+        ex.printStackTrace();
+    }
+
 
 
     }
@@ -215,7 +221,7 @@ public class Laptop {
 
     public Boolean NotAllAttributeisFilled() {
         if (this.getProcessor() == null | this.getMemory() == 0 | this.getGpu() == null | this.getStorage() == 0
-                | this.getScreen_size() == 0 | this.getWeight() == 0 | this.getBattery() == 0 | this.getTouch_screen() == null | this.getOperation_system() == null)
+                | this.getScreen_size() == 0 | this.getWeight() == 0 | this.getTouch_screen() == null | this.getOperation_system() == null)
             return true;
         else
             return false;

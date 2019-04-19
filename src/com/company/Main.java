@@ -9,7 +9,7 @@ import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.List;
 import Data.PartsData;
-
+import Data.CreateJSONFile_Parts;
 
 public class Main {
 
@@ -53,16 +53,19 @@ public class Main {
         List<Struct> GPU_List = new ArrayList<Struct>();
 
         //HP_comp();
-        //Lenovo.Find_Laptops(LaptopArray);
-        //Acer.Find_Laptops(LaptopArray);
-        //Acer.ParseData(LaptopArray);
+        Lenovo.Find_Laptops(LaptopArray);
+        Acer.Find_Laptops(LaptopArray);
         //Dell.FindDellLaptops(LaptopArray);
         //LG.FindLGLaptops(LaptopArray);
         //CreateJSONFile.writeList(LaptopArray);
         //printAllLeptops(LaptopArray);
-        CPU_List = Data.PartsData.Parse_Data("https://www.videocardbenchmark.net/gpu_list.php");
-        GPU_List = Data.PartsData.Parse_Data("https://www.cpubenchmark.net/cpu_list.php");
-      System.out.println("sdfd");
+        GPU_List = Data.PartsData.Parse_Data("https://www.videocardbenchmark.net/gpu_list.php");
+        CPU_List = Data.PartsData.Parse_Data("https://www.cpubenchmark.net/cpu_list.php");
+        CreateJSONFile_Parts.WriteToJsonFile(CPU_List,"cpu_list.json");
+        CreateJSONFile_Parts.WriteToJsonFile(GPU_List,"gpu_list.json");
+        //printAllExist(LaptopArray,CPU_List,"CPU");
+        printAllExist(LaptopArray,GPU_List,"GPU");
+        //printAllExist(LaptopArray,GPU_List);
     }
 
     private static void printAllLeptops(List<Laptop> laptopArray) {
@@ -72,4 +75,83 @@ public class Main {
         }
     }
 
+    private static void printAllExist(List<Laptop> laptopArray,List<Struct> PartsList,String whichPart) {
+        int count;
+        List<Laptop> notFound=new ArrayList<Laptop>();
+        List<Laptop> Found=new ArrayList<Laptop>();
+        List<String> allreadyPrinted = new ArrayList<String>();
+
+        for (Laptop laptop : laptopArray)
+        {
+            count = 0;
+            if(laptop.getGpu().getModel().equals("Radeon R5 Graphics"))
+            {
+                System.out.println(laptop.getUrl_model());
+            }
+//            System.out.println("######################################\n");
+//            if(whichPart.equals("CPU"))
+//            {
+//                System.out.println(laptop.getProcessor().getManufacture() + " "
+//                    + laptop.getProcessor().getModel());
+//            }
+//            else
+//            {
+//                System.out.println(laptop.getGpu().getManufacture() + " "
+//                        + laptop.getGpu().getModel());
+//            }
+//            System.out.println("#######\n");
+            for(Struct part : PartsList) {
+                if(whichPart.equals("CPU")) {
+                    if (part.getName().contains(laptop.getProcessor().getModel())) {
+                        count += 1;
+                        //System.out.println(part.getName() + "............" + part.getPlace());
+                    }
+                }
+                else
+                {
+                    if (part.getName().contains(laptop.getGpu().getModel())) {
+                        count += 1;
+                        //System.out.println(part.getName() + "............" + part.getPlace());
+                    }
+                }
+
+            }
+            //System.out.println("######################################\n");
+            if(count==0)
+                notFound.add(laptop);
+            else
+                Found.add(laptop);
+
+        }
+        boolean isther;
+        for(Laptop laptop : notFound)
+        {
+            isther=false;
+            for(String not : allreadyPrinted)
+            {
+                if(whichPart.equals("CPU")) {
+                    if (laptop.getProcessor().getModel().equals(not)) {
+                        isther = true;
+                    }
+                }
+                else
+                {
+                    if (laptop.getGpu().getModel().equals(not)) {
+                        isther = true;
+                    }
+                }
+            }
+            if(!isther) {
+                if(whichPart.equals("CPU")) {
+                    allreadyPrinted.add(laptop.getProcessor().getModel());
+                    System.out.println(laptop.getProcessor().getModel());
+                }
+                else
+                {
+                    allreadyPrinted.add(laptop.getGpu().getModel());
+                    System.out.println(laptop.getGpu().getModel());
+                }
+            }
+        }
+    }
 }

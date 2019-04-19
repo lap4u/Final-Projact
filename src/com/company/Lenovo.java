@@ -6,11 +6,14 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Lenovo {
 
+    private static DecimalFormat df2 = new DecimalFormat("#.##");
     public Lenovo() {
     }
 
@@ -97,9 +100,7 @@ public class Lenovo {
                     }
                     for (i = 0; i < attributes_lables.length; i++) {
                         if (attributes_lables[i].equals("Operating System"))
-                            //laptop.setOperation_system(getFormat_OS(attributes_values[i]));
-                            System.out.println(attributes_values[i]);
-                            //laptop.setOperation_system(attributes_values[i]);
+                            laptop.setOperation_system(getFormat_OS(attributes_values[i]));
                         else if (attributes_lables[i].equals("Processor")) {
                             laptop.setProcessor(getFormat_CPU(attributes_values[i]));
                         } else if (attributes_lables[i].equals("Memory"))
@@ -295,6 +296,7 @@ public class Lenovo {
 
     public static double getFormat_Weight(String Weight_String_format) {
         double Weight = 0;
+        df2.setRoundingMode(RoundingMode.UP);
         String[] WeightSplit;
         String WeightString;
         WeightSplit = Weight_String_format.split("lbs");
@@ -306,26 +308,26 @@ public class Lenovo {
             WeightString = WeightString.replaceAll("[^.?0-9]+", "");
 
         Weight = 0.45 * Double.parseDouble(WeightString.trim());
-        return Weight;
+        return Double.parseDouble(df2.format(Weight));
 
     }
 
     public static int getFormat_Battery(String Battery_String_format) {
         int Battery = 0;
         String[] BatterySplit;
-        System.out.println(Battery_String_format);
+        //System.out.println(Battery_String_format);
         if (Battery_String_format.toLowerCase().contains("whr")) {
             BatterySplit = Battery_String_format.split("Whr")[0].split(" ");
-            System.out.println(BatterySplit[BatterySplit.length - 1]);
+            //System.out.println(BatterySplit[BatterySplit.length - 1]);
             Battery = Integer.parseInt(BatterySplit[BatterySplit.length - 1].trim());
         } else if (Battery_String_format.toLowerCase().contains("wh")) {
             BatterySplit = Battery_String_format.split("Wh")[0].split(" ");
-            System.out.println(BatterySplit[BatterySplit.length - 1]);
+            //System.out.println(BatterySplit[BatterySplit.length - 1]);
             Battery = Integer.parseInt(BatterySplit[BatterySplit.length - 1].trim());
         } else
             Battery = Integer.parseInt(Battery_String_format.trim());
 
-        System.out.println(Battery);
+        //System.out.println(Battery);
         return Battery;
     }
 

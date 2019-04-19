@@ -1,6 +1,6 @@
 package Data;
 
-public class Struct implements Comparable<Struct>{
+public class Struct{
     private String name;
     private int place;
 
@@ -19,18 +19,18 @@ public class Struct implements Comparable<Struct>{
     }
 
 
-    @Override
+/*    @Override
     public int compareTo(Struct part) {
         if (getPlace() == 0 || part.getPlace() == 0) {
             return 0;
         }
-        if(getPlace()>part.getPlace())
-            return 1;
-        else if(getPlace()<part.getPlace())
+        if(getPlace()<part.getPlace())
             return -1;
+        else if(getPlace()>part.getPlace())
+            return 1;
         else
             return 0;
         //return getPlace().compareTo(part.getPlace());
-    }
+    }*/
 
 }
