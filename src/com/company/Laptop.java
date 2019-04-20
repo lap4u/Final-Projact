@@ -27,6 +27,11 @@ public class Laptop {
 
     }
 
+   /* Last:C'Tor. public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
+                  String i_processor, String i_memory, String i_operation_system, String i_gpu,
+                  String i_storage, String i_screen_size, String i_weight, String i_battery,
+                  Boolean i_touch_screen,String i_price, String i_ImgURL, String i_Description) {*/
+
     // C'tor
     public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
                   PartStruct i_processor, int i_memory, OS i_operation_system, PartStruct i_gpu,
