@@ -78,9 +78,10 @@ public class Main {
         for(int i=0;i<5;i++) {
             Laptop laptop = laptopArray.get(i);
             String html = "<html><head><title>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</title><link rel=\"stylesheet\" href=\"test.css\"></head><body>" +
-                    "<div><center><h1>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</h1><br><br>" +
-                    "<img src=\"" + laptop.getImg_url() + "\" alt=\"laptop img\" height=\"200px\" width=\"auto\"><br><br>" +
-                    "<table>" +
+                    "<div class=\"headline\"><center><h1>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</h1><br><br>" +
+                    "<img src=\"" + laptop.getImg_url() + "\" alt=\"laptop img\" height=\"400px\" width=\"auto\"><br><br>" +
+                    "<div class = \"description\">" + laptop.getDescription() + "</div>" +
+                    "<br><br><table>" +
                     "<tr><td class=\"title\">Processor</td><td class=\"value\">" + laptop.getProcessor().getManufacture() + " " + laptop.getProcessor().getModel() + "</td></tr>" +
                     "<tr><td class=\"title\">Memory</td><td class=\"value\">" + laptop.getMemory() + " GB</td></tr>" +
                     "<tr><td class=\"title\">Operation System</td><td class=\"value\">" + laptop.getOperation_system().getManufacture() + " " + laptop.getOperation_system().getSeries() + " " + laptop.getOperation_system().getVersion() + " " + laptop.getOperation_system().getBitSize() + "</td></tr>" +
