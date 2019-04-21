@@ -5,6 +5,11 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +59,8 @@ public class Main {
 
         //HP_comp();
         Lenovo.Find_Laptops(LaptopArray);
-        Acer.Find_Laptops(LaptopArray);
+        //Acer.Find_Laptops(LaptopArray);
+        createHtmlFiles(LaptopArray);
         //Dell.FindDellLaptops(LaptopArray);
         //LG.FindLGLaptops(LaptopArray);
         //CreateJSONFile.writeList(LaptopArray);
@@ -66,6 +72,33 @@ public class Main {
         //printAllExist(LaptopArray,CPU_List,"CPU");
         printAllExist(LaptopArray,GPU_List,"GPU");
         //printAllExist(LaptopArray,GPU_List);
+    }
+
+    private static void createHtmlFiles(List<Laptop> laptopArray) {
+        for(int i=0;i<5;i++) {
+            Laptop laptop = laptopArray.get(i);
+            String html = "<html><head><title>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</title><link rel=\"stylesheet\" href=\"test.css\"></head><body>" +
+                    "<div><center><h1>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</h1><br><br>" +
+                    "<img src=\"" + laptop.getImg_url() + "\" alt=\"laptop img\" height=\"200px\" width=\"auto\"><br><br>" +
+                    "<table>" +
+                    "<tr><td class=\"title\">Processor</td><td class=\"value\">" + laptop.getProcessor().getManufacture() + " " + laptop.getProcessor().getModel() + "</td></tr>" +
+                    "<tr><td class=\"title\">Memory</td><td class=\"value\">" + laptop.getMemory() + " GB</td></tr>" +
+                    "<tr><td class=\"title\">Operation System</td><td class=\"value\">" + laptop.getOperation_system().getManufacture() + " " + laptop.getOperation_system().getSeries() + " " + laptop.getOperation_system().getVersion() + " " + laptop.getOperation_system().getBitSize() + "</td></tr>" +
+                    "<tr><td class=\"title\">Graphic Card</td><td class=\"value\">" + laptop.getGpu().getManufacture() + " " + laptop.getGpu().getModel() + "</td></tr>" +
+                    "<tr><td class=\"title\">Screen Size</td><td class=\"value\">" + laptop.getScreen_size() + "\"</td></tr>" +
+                    "<tr><td class=\"title\">Storage</td><td class=\"value\">" + laptop.getStorage() + " GB</td></tr>" +
+                    "<tr><td class=\"title\">Weight</td><td class=\"value\">" + laptop.getWeight() + " kg</td></tr>" +
+                    "<tr><td class=\"title\">Price</td><td class=\"value\">" + laptop.getPrice() + "$</td></tr></table><br><br>" +
+                    "<button onclick=\"window.location.href = '" + laptop.getUrl_model() + "';\">Click Here</button></center></body></html>";
+            File newHtmlFile = new File("laptop"+i+".html");
+            try {
+                BufferedWriter bw = new BufferedWriter(new FileWriter(newHtmlFile));
+                bw.write(html);
+                bw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private static void printAllLeptops(List<Laptop> laptopArray) {
