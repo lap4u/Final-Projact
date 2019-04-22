@@ -1,20 +1,17 @@
 package com.company;
+import Data.CreateJSONFile_Parts;
 import Data.Struct;
-import Parts.PartStruct;
+import Softwares.ParseJsonToArray;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.List;
-import Data.PartsData;
-import Data.CreateJSONFile_Parts;
 
 public class Main {
 
@@ -58,19 +55,20 @@ public class Main {
         List<Struct> GPU_List = new ArrayList<Struct>();
 
         //HP_comp();
-        Lenovo.Find_Laptops(LaptopArray);
+        //Lenovo.Find_Laptops(LaptopArray);
         //Acer.Find_Laptops(LaptopArray);
-        createHtmlFiles(LaptopArray);
+        //createHtmlFiles(LaptopArray);
         //Dell.FindDellLaptops(LaptopArray);
         //LG.FindLGLaptops(LaptopArray);
         //CreateJSONFile.writeList(LaptopArray);
         //printAllLeptops(LaptopArray);
+        ParseJsonToArray.Parse();
         GPU_List = Data.PartsData.Parse_Data("https://www.videocardbenchmark.net/gpu_list.php");
         CPU_List = Data.PartsData.Parse_Data("https://www.cpubenchmark.net/cpu_list.php");
         CreateJSONFile_Parts.WriteToJsonFile(CPU_List,"cpu_list.json");
         CreateJSONFile_Parts.WriteToJsonFile(GPU_List,"gpu_list.json");
         //printAllExist(LaptopArray,CPU_List,"CPU");
-        printAllExist(LaptopArray,GPU_List,"GPU");
+        //printAllExist(LaptopArray,GPU_List,"GPU");
         //printAllExist(LaptopArray,GPU_List);
     }
 

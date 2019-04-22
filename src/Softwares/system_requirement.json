@@ -24,7 +24,7 @@
 "Memory":16 ,
 "GPU":
 {
-"manufactor" :"NVIDIA", 
+"manufactor" :"NVIDIA",
 "model": "GeForce GT 750M"
 },
 "Hard disk": 8
@@ -54,7 +54,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"NVIDIA", 
+"manufactor" :"NVIDIA",
 "model": "GeForce GT 750M"
 },
 "Hard disk": 4
@@ -84,7 +84,7 @@
 "Memory":6 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 6
@@ -114,7 +114,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 8
@@ -144,7 +144,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 2
@@ -174,7 +174,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 8
@@ -204,7 +204,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 10
@@ -230,7 +230,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"AMD", 
+"manufactor" :"AMD",
 "model": "Radeon RX 580"
 },
 "Hard disk": 4
@@ -260,7 +260,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 5
@@ -286,7 +286,7 @@
 "Memory":1 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 2
@@ -316,7 +316,7 @@
 "Memory":1,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 3
@@ -346,7 +346,7 @@
 "Memory":1 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 2
@@ -376,7 +376,7 @@
 "Memory":1 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 2
@@ -406,7 +406,7 @@
 "Memory":1 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 1
@@ -436,7 +436,7 @@
 "Memory":1 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 2
@@ -466,7 +466,7 @@
 "Memory":1 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 2
@@ -496,7 +496,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"Nvidia", 
+"manufactor" :"Nvidia",
 "model": " MX150-0"
 },
 "Hard disk": 4
@@ -526,7 +526,7 @@
 "Memory":12 ,
 "GPU":
 {
-"manufactor" :"Nvidia", 
+"manufactor" :"Nvidia",
 "model": "MX150-0"
 },
 "Hard disk": 4
@@ -556,7 +556,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"Nvidia", 
+"manufactor" :"Nvidia",
 "model": "MX150-0"
 },
 "Hard disk": 4
@@ -586,7 +586,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"Nvidia", 
+"manufactor" :"Nvidia",
 "model": "MX150-0"
 },
 "Hard disk": 4
@@ -616,7 +616,7 @@
 "Memory":4 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 4
@@ -646,7 +646,7 @@
 "Memory":6 ,
 "GPU":
 {
-"manufactor" :"Nvidia", 
+"manufactor" :"Nvidia",
 "model": "MX150-0"
 },
 "Hard disk": 6
@@ -676,7 +676,7 @@
 "Memory":16 ,
 "GPU":
 {
-"manufactor" :"Nvidia", 
+"manufactor" :"Nvidia",
 "model": "MX150-0"
 },
 "Hard disk": 100
@@ -706,7 +706,7 @@
 "Memory":6 ,
 "GPU":
 {
-"manufactor" :"Nvidia", 
+"manufactor" :"Nvidia",
 "model": "MX150-0"
 },
 "Hard disk": 2
@@ -736,7 +736,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"Nvidia", 
+"manufactor" :"Nvidia",
 "model": "MX150-0"
 },
 "Hard disk": 4
@@ -766,7 +766,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"Nvidia", 
+"manufactor" :"Nvidia",
 "model": "MX150-0"
 },
 "Hard disk": 4
@@ -796,7 +796,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 50
@@ -826,7 +826,7 @@
 "Memory":1 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 1
@@ -856,7 +856,7 @@
 "Memory":4 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 100
@@ -886,7 +886,7 @@
 "Memory":2 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 1
@@ -916,7 +916,7 @@
 "Memory":4 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 1
@@ -946,7 +946,7 @@
 "Memory":1 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 1
@@ -976,7 +976,7 @@
 "Memory":1 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 1
@@ -1006,7 +1006,7 @@
 "Memory":4 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk":4
@@ -1036,7 +1036,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 4
@@ -1066,7 +1066,7 @@
 "Memory":2 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 2
@@ -1096,7 +1096,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 3
@@ -1126,7 +1126,7 @@
 "Memory":4,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 4
@@ -1156,7 +1156,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 20
@@ -1186,7 +1186,7 @@
 "Memory":2 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 4
@@ -1216,7 +1216,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 20
@@ -1246,7 +1246,7 @@
 "Memory":1 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk":1
@@ -1276,7 +1276,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 15
@@ -1302,7 +1302,7 @@
 "Memory":4 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 20
@@ -1328,7 +1328,7 @@
 "Memory":4 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 20
@@ -1358,7 +1358,7 @@
 "Memory":8 ,
 "GPU":
 {
-"manufactor" :"intel", 
+"manufactor" :"intel",
 "model": "UHD Graphics 620"
 },
 "Hard disk": 20
