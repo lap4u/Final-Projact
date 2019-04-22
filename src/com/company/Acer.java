@@ -72,7 +72,7 @@ public class Acer {
             laptop.setModel_name(ModelName);
             laptop.setDescription(Description);
             laptop.setPrice(Double.parseDouble(Price.replaceAll("[^\\d.]", "").trim()));
-            laptop.setImg_url(imgUrl);
+            laptop.setImg_url("http:" + imgUrl);
             laptop.setUrl_model(finalUrl);
             if(!laptop.NotAllAttributeisFilled())
                 LaptopArray.add(laptop);

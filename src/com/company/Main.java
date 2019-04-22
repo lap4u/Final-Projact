@@ -1,7 +1,6 @@
 package com.company;
 import Data.CreateJSONFile_Parts;
 import Data.Struct;
-import Softwares.ParseJsonToArray;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -56,13 +55,13 @@ public class Main {
 
         //HP_comp();
         //Lenovo.Find_Laptops(LaptopArray);
-        //Acer.Find_Laptops(LaptopArray);
-        //createHtmlFiles(LaptopArray);
+        Acer.Find_Laptops(LaptopArray);
+        createHtmlFiles(LaptopArray);
         //Dell.FindDellLaptops(LaptopArray);
         //LG.FindLGLaptops(LaptopArray);
         //CreateJSONFile.writeList(LaptopArray);
         //printAllLeptops(LaptopArray);
-        ParseJsonToArray.Parse();
+        //ParseJsonToArray.Parse();
         GPU_List = Data.PartsData.Parse_Data("https://www.videocardbenchmark.net/gpu_list.php");
         CPU_List = Data.PartsData.Parse_Data("https://www.cpubenchmark.net/cpu_list.php");
         CreateJSONFile_Parts.WriteToJsonFile(CPU_List,"cpu_list.json");
@@ -85,8 +84,8 @@ public class Main {
                     "<div class=\"headline\"><center><h1>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</h1></div><br><br>" +
                     "<div>" +
                     "<img src=\"" + laptop.getImg_url() + "\" alt=\"laptop img\" height=\"400px\" width=\"auto\">" +
-                    "<div class=\"price\">" + laptop.getPrice() + "$</div>"+
                     "<div class = \"description\">" + laptop.getDescription() + "</div>" +
+                    "<div class=\"price\">" + laptop.getPrice() + "$</div>"+
                     "</div>" +
                     "<br><br><table>" +
                     "<tr><td class=\"title\">Processor</td><td class=\"value\">" + laptop.getProcessor().getManufacture() + " " + laptop.getProcessor().getModel() + "</td></tr>" +
