@@ -77,10 +77,19 @@ public class Main {
     private static void createHtmlFiles(List<Laptop> laptopArray) {
         for(int i=0;i<5;i++) {
             Laptop laptop = laptopArray.get(i);
-            String html = "<html><head><title>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</title><link rel=\"stylesheet\" href=\"test.css\"></head><body>" +
-                    "<div class=\"headline\"><center><h1>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</h1><br><br>" +
-                    "<img src=\"" + laptop.getImg_url() + "\" alt=\"laptop img\" height=\"400px\" width=\"auto\"><br><br>" +
+            String html = "<html>" +
+                    "<head>" +
+                    "<title>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</title>" +
+                    "<link rel=\"stylesheet\" href=\"test.css\">" +
+                    "<link href=\"https://fonts.googleapis.com/css?family=Ubuntu\" rel=\"stylesheet\">" +
+                    "</head>" +
+                    "<body>" +
+                    "<div class=\"headline\"><center><h1>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</h1></div><br><br>" +
+                    "<div>" +
+                    "<img src=\"" + laptop.getImg_url() + "\" alt=\"laptop img\" height=\"400px\" width=\"auto\">" +
+                    "<div class=\"price\">" + laptop.getPrice() + "$</div>"+
                     "<div class = \"description\">" + laptop.getDescription() + "</div>" +
+                    "</div>" +
                     "<br><br><table>" +
                     "<tr><td class=\"title\">Processor</td><td class=\"value\">" + laptop.getProcessor().getManufacture() + " " + laptop.getProcessor().getModel() + "</td></tr>" +
                     "<tr><td class=\"title\">Memory</td><td class=\"value\">" + laptop.getMemory() + " GB</td></tr>" +
@@ -89,9 +98,9 @@ public class Main {
                     "<tr><td class=\"title\">Screen Size</td><td class=\"value\">" + laptop.getScreen_size() + "\"</td></tr>" +
                     "<tr><td class=\"title\">Storage</td><td class=\"value\">" + laptop.getStorage() + " GB</td></tr>" +
                     "<tr><td class=\"title\">Weight</td><td class=\"value\">" + laptop.getWeight() + " kg</td></tr>" +
-                    "<tr><td class=\"title\">Price</td><td class=\"value\">" + laptop.getPrice() + "$</td></tr></table><br><br>" +
+                    "</td></tr></table><br><br>" +
                     "<button onclick=\"window.location.href = '" + laptop.getUrl_model() + "';\">Click Here</button></center></body></html>";
-            File newHtmlFile = new File("laptop"+i+".html");
+            File newHtmlFile = new File("laptop" + i + ".html");
             try {
                 BufferedWriter bw = new BufferedWriter(new FileWriter(newHtmlFile));
                 bw.write(html);
