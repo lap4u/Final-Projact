@@ -1,0 +1,1373 @@
+{
+"Adobe Premiere":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "i5-7200u"
+} ,
+"Memory":16 ,
+"GPU":
+{
+"manufactor" :"NVIDIA", 
+"model": "GeForce GT 750M"
+},
+"Hard disk": 8
+},
+"Corel VideoStudio X10":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "i5-7200u"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"NVIDIA", 
+"model": "GeForce GT 750M"
+},
+"Hard disk": 4
+},
+"CyberLink PowerDirector 12":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "i5-7200u"
+} ,
+"Memory":6 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 6
+},
+"Pinnacle Studio Ultimate ":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "i5-7200u"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 8
+},
+"Magix Movie Edit Pro Premium":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "i5-7200u"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 2
+},
+"Adobe Premiere Elements":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "i7-8550u"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 8
+},
+"Wondershare":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "i5-8200u"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 10
+},
+"Apple Final Cut Pro X":
+{
+"Operating Systems":
+[
+{
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "i5-8200u"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"AMD", 
+"model": "Radeon RX 580"
+},
+"Hard disk": 4
+},
+"Nero Video":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "i5-7200u"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 5
+},
+"Microsoft Office 365":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 2
+},
+"Adobe Document":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 3
+},
+"Dropbox":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 2
+},
+"Google Drive":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 2
+},
+"Microsoft OneDrive":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 1
+},
+"Ascensio System":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 2
+},
+"Evernote":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 2
+},
+"Adobe Photoshop CC":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"Nvidia", 
+"model": " MX150-0"
+},
+"Hard disk": 4
+},
+"Adobe Lightroom Classic CC":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":12 ,
+"GPU":
+{
+"manufactor" :"Nvidia", 
+"model": "MX150-0"
+},
+"Hard disk": 4
+},
+"Adobe Photoshop Elements":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"Nvidia", 
+"model": "MX150-0"
+},
+"Hard disk": 4
+},
+"DxO PhotoLab":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"Nvidia", 
+"model": "MX150-0"
+},
+"Hard disk": 4
+},
+"Corel PaintShop Pro":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":4 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 4
+},
+"CyberLink PhotoDirector":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":6 ,
+"GPU":
+{
+"manufactor" :"Nvidia", 
+"model": "MX150-0"
+},
+"Hard disk": 6
+},
+"Phase One Capture One Pro":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":16 ,
+"GPU":
+{
+"manufactor" :"Nvidia", 
+"model": "MX150-0"
+},
+"Hard disk": 100
+},
+"ACDSee Photo Studio Professional":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":6 ,
+"GPU":
+{
+"manufactor" :"Nvidia", 
+"model": "MX150-0"
+},
+"Hard disk": 2
+},
+"Alien Skin Exposure":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"Nvidia", 
+"model": "MX150-0"
+},
+"Hard disk": 4
+},
+"Skylum Luminar":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"Nvidia", 
+"model": "MX150-0"
+},
+"Hard disk": 4
+},
+"Visual studio ":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 50
+},
+"Visual studio code":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 1
+},
+"Atom":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":4 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 100
+},
+"GitHub":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":2 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 1
+},
+"Bitbucket":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":4 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 1
+},
+"Eclipse":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 1
+},
+"Notepad++":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 1
+},
+"IntelliJ":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":4 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk":4
+},
+"Android Studio":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 4
+},
+"Vim":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":2 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 2
+},
+"Ableton Live 10 Suite Multitrack ":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 3
+},
+"Image Line FL Studio 12 ":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":4,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 4
+},
+"Propellerhead Reason 10":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 20
+},
+"Cubase Pro 9":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":2 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 4
+},
+"PreSonus Studio One 3":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 20
+},
+"Acid Pro 7":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":1 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk":1
+},
+"Avid Pro":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 15
+},
+"Apple Logic Pro X":
+{
+"Operating Systems":
+[
+{
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":4 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 20
+},
+"Apple GarageBand":
+{
+"Operating Systems":
+[
+{
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":4 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 20
+},
+"Reaper":
+{
+"Operating Systems":
+[
+{
+"manufactor" : "windows" ,
+"series": 10,
+"version": "home",
+"bit" :64
+},
+{
+"manufactor" : "macOS" ,
+"series": 10.12 ,
+"version": "",
+"bit" :64
+}
+],
+"Processor":
+{
+"manufactor" :"intel" ,
+"model": "Core2 Quad Q6700"
+} ,
+"Memory":8 ,
+"GPU":
+{
+"manufactor" :"intel", 
+"model": "UHD Graphics 620"
+},
+"Hard disk": 20
+}
+
+
+
+
+
+
+
+}
