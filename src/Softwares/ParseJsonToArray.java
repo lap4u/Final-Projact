@@ -1,5 +1,7 @@
 package Softwares;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.*;
 
 public class ParseJsonToArray {
@@ -15,6 +17,11 @@ public class ParseJsonToArray {
             }
             String fileAsString = sb.toString();
             System.out.println(fileAsString);
+
+            ObjectMapper obj_objectMapper = new ObjectMapper();
+            Software obj_Software = new Software();
+            obj_Software = obj_objectMapper.readValue(fileAsString,Software.class);
+
         }
         catch (Exception ex){
             ex.printStackTrace();

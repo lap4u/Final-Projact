@@ -81,7 +81,7 @@ public class Main {
                     "<link href=\"https://fonts.googleapis.com/css?family=Ubuntu\" rel=\"stylesheet\">" +
                     "</head>" +
                     "<body>" +
-                    "<div class=\"headline\"><center><h1>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</h1></div><br><br>" +
+                    "<div class=\"headline\"><h1>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</h1></div><br><br>" +
                     "<div>" +
                     "<img src=\"" + laptop.getImg_url() + "\" alt=\"laptop img\" height=\"400px\" width=\"auto\">" +
                     "<div class = \"description\">" + laptop.getDescription() + "</div>" +
