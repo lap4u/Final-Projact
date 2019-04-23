@@ -54,8 +54,8 @@ public class Main {
         List<Struct> GPU_List = new ArrayList<Struct>();
 
         //HP_comp();
-        //Lenovo.Find_Laptops(LaptopArray);
-        Acer.Find_Laptops(LaptopArray);
+        Lenovo.Find_Laptops(LaptopArray);
+        //Acer.Find_Laptops(LaptopArray);
         createHtmlFiles(LaptopArray);
         //Dell.FindDellLaptops(LaptopArray);
         //LG.FindLGLaptops(LaptopArray);
