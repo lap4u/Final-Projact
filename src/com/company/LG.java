@@ -5,10 +5,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class LG {
-
+    private static DecimalFormat decmialFormat = new DecimalFormat("#.##");
     public LG(){}
 
 
@@ -22,7 +24,7 @@ public class LG {
         try {
             final Document document = Jsoup.connect(main_url).get();
             Elements comp_urls = document.select("p.model-name.redot");
-            //System.out.println("size of List: " + comp_urls.size());
+            System.out.println("size of List: " + comp_urls.size());
 
             for (Element comp : comp_urls) {
                 comp = comp.select("a").first();
@@ -51,22 +53,45 @@ public class LG {
 
             final String modelName = document2.select("h2.improve-info-model").text();
             final String processor = document2.select("li#SP07578911.full").select("p.value").text() + document2.select("li#SP06236899").select("p.value").text();
-            final String memory = document2.select("li#SP07578915.full").select("p.value").text() + document2.select("li#SP06236902").select("p.value").text();
-            final String screenSize = document2.select("li#SP06236908").select("p.value").text();
+
+            // Memory
+            String memoryString = document2.select("li#SP07578915.full").select("p.value").text() + document2.select("li#SP06236902").select("p.value").text();
+            memoryString = memoryString.replaceAll("GB", "");
+            String[] splitMemory = memoryString.split(" ", 2);
+            int memory = Integer.parseInt(splitMemory[0]);
+
+
+            // Screen Size:
+            String screenSizeString = document2.select("li#SP06236908").select("p.value").text();
+            screenSizeString = screenSizeString.replace("\"", "");
+            double screenSize = Double.parseDouble(screenSizeString);
+
+
             final String operatingSystem = document2.select("li#SP06236896.full").select("p.value").text();
             final String graphicCard = document2.select("li#SP06236911").select("p.value").text();
 
-            String excludeString = "(may vary by configuration and manufacturing process)";
-            String weight = document2.select("li#SP07591580").select("p.value").text() + document2.select("li#SP06236945").select("p.value").text();
-            if(weight.contains(excludeString))
-                weight =  weight.replace(excludeString, " ");
+
+            // Weight
+            String weightString = document2.select("li#SP07591580").select("p.value").text() + document2.select("li#SP06236945").select("p.value").text();
+            String[] splitWeight = weightString.split(" ", 2);
+            double weight = 0.45 * Double.parseDouble((splitWeight[0]));
+            weight = Double.parseDouble(decmialFormat.format(weight));
+
 
             final String battery = document2.select("li#SP06236935").select("p.value").text() + document2.select("li#SP07707838").select("p.value").text() + document2.select("li#SP07796758").select("p.value").text();
             final String imgURL = site_url + document2.select("div.pdp-improve-visual-img").select("img").first().attr("src");
 
-            String price = document2.select("div.price-default.flag").select("p.price").text();
-            if(price.equals(""))
-                price = "?";
+
+            // Price
+            double price;
+            String priceString = document2.select("div.price-default.flag").select("p.price").text();
+            if(priceString.equals(""))
+                price = 0;
+            else {
+               priceString = priceString.replaceAll("\\$", "");
+                price = Double.parseDouble(priceString);
+            }
+
             // Storage Calculate
             final String storageType = document2.select("li#SP06236906").select("p.value").text();
             final String storageInterface = document2.select("li#SP07578916").select("p.value").text();
@@ -88,22 +113,30 @@ public class LG {
             // Only Build The Object.
          // Update it:   laptop = new Laptop(id_laptop, modelName, url, companyName, processor, memory, operatingSystem, graphicCard, storageFull, screenSize, weight, battery, isTouchScreen, price, imgURL, desc);
 
+
             //Prints
-            //  System.out.println("URL: " + url);
-            // System.out.println("Company name: " + companyName);
-            // System.out.println("Laptop name: " + modelName);
-            //  System.out.println("Processor: " + processor);
-            // System.out.println("Memory: " + memory);
-            // System.out.println("Screen Size: " + screenSize);
-            // System.out.println("Operating System: " + operatingSystem);
-            //  System.out.println("Storage: " + storageFull);
-            // System.out.println("Graphic Card: " + graphicCard);
-            // System.out.println("Weight: " + weight);
-            //  System.out.println("Battery: " + battery);
-            // System.out.println("Price: " + price);
-            //System.out.println("IMG URL: " + imgURL);
-            // System.out.println("Touch Screen: " + isTouchScreen);
-            //System.out.println("Desc: " + desc);
+
+
+             System.out.println("URL: " + url);
+            System.out.println("Memory: " + memory);
+
+
+              /*
+            System.out.println("Company name: " + companyName);
+            System.out.println("Laptop name: " + modelName);
+              System.out.println("Processor: " + processor);
+
+             System.out.println("Screen Size: " + screenSize);
+             System.out.println("Operating System: " + operatingSystem);
+        System.out.println("Storage: " + storageFull);
+             System.out.println("Graphic Card: " + graphicCard);
+   System.out.println("Weight: " + weight);
+          System.out.println("Battery: " + battery);
+  System.out.println("Price: " + price);
+            System.out.println("IMG URL: " + imgURL);
+             System.out.println("Touch Screen: " + isTouchScreen);
+            System.out.println("Desc: " + desc);
+            */
 
         } catch (Exception ex) {
             ex.printStackTrace();

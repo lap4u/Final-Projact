@@ -177,7 +177,7 @@ public class Dell {
 
             //Prints
             //   System.out.println("ID:  " + id_laptop);
-            //  System.out.println("URL:  " + url);
+             System.out.println("URL:  " + url);
             //  System.out.println("Desc:  " + desc);
             //System.out.println("Img URL:  " + imgURL);
             // System.out.println("Company name:  " + companyName);
@@ -186,7 +186,7 @@ public class Dell {
             // System.out.println("Memory:  " + memory);
             //   System.out.println("Screen Size:  " + screenSize);
             // System.out.println("Operating System:  " + operatingSystem);
-            //  System.out.println("Storage:  " + storage);
+             System.out.println("Storage:  " + storage);
             //   System.out.println("Graphic Card:  " + graphicCard);
             // System.out.println("Weight: " + weight);
             // System.out.println("Battery: " + battery);

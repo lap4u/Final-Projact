@@ -176,8 +176,8 @@ public class Lenovo {
             laptop.setScreen_size(getFormat_ScreenSize(elememt.text()));
         if (attribute_lable.equals("Weight") && laptop.getWeight() == 0)
             laptop.setWeight(getFormat_Weight(elememt.text()));
-        if (attribute_lable.equals("Battery") && laptop.getBattery() == 0)
-            laptop.setBattery(getFormat_Battery(elememt.text()));
+        if (attribute_lable.equals("Battery") && laptop.getBattery().equals("0"))
+        laptop.setBattery(getFormat_Battery(elememt.text()));
         if (attribute_lable.equals("Touch Screen") && laptop.getTouch_screen() == null) {
             if (elememt.text().contains("multi-touch"))
                 laptop.setTouch_screen(true);
@@ -201,7 +201,7 @@ public class Lenovo {
             laptop.setScreen_size(getFormat_ScreenSize(elememt.text()));
         if (attribute_lable.equals("Weight") && laptop.getWeight() == 0)
             laptop.setWeight(getFormat_Weight(elememt.text()));
-        if (attribute_lable.equals("Battery") && laptop.getBattery() == 0)
+        if (attribute_lable.equals("Battery") && laptop.getBattery().equals("0"))
             laptop.setBattery(getFormat_Battery(elememt.text()));
         if (attribute_lable.equals("Touch Screen") && laptop.getTouch_screen() == null) {
             if (elememt.text().contains("multi-touch"))
@@ -312,20 +312,20 @@ public class Lenovo {
 
     }
 
-    public static int getFormat_Battery(String Battery_String_format) {
-        int Battery = 0;
+    public static String getFormat_Battery(String Battery_String_format) {
+        String Battery = "0";
         String[] BatterySplit;
         //System.out.println(Battery_String_format);
         if (Battery_String_format.toLowerCase().contains("whr")) {
             BatterySplit = Battery_String_format.split("Whr")[0].split(" ");
             //System.out.println(BatterySplit[BatterySplit.length - 1]);
-            Battery = Integer.parseInt(BatterySplit[BatterySplit.length - 1].trim());
+            Battery = BatterySplit[BatterySplit.length - 1].trim();
         } else if (Battery_String_format.toLowerCase().contains("wh")) {
             BatterySplit = Battery_String_format.split("Wh")[0].split(" ");
             //System.out.println(BatterySplit[BatterySplit.length - 1]);
-            Battery = Integer.parseInt(BatterySplit[BatterySplit.length - 1].trim());
+            Battery = BatterySplit[BatterySplit.length - 1].trim();
         } else
-            Battery = Integer.parseInt(Battery_String_format.trim());
+            Battery = Battery_String_format.trim();
 
         //System.out.println(Battery);
         return Battery;

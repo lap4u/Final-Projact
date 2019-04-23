@@ -212,7 +212,7 @@ public class Acer {
             else if(attribute_lable.equals("Battery Capacity"))
                 Battary += " " + attribute_value;
         }
-        laptop.setBattery(0);
+        laptop.setBattery("0");
     }
     public static void weight_handler(Element weight_element, Laptop laptop) {
         double Weight = 0;

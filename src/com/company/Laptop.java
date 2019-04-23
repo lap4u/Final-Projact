@@ -15,7 +15,7 @@ public class Laptop {
     private int storage;
     private double screen_size;
     private double weight;
-    private int battery;
+    private String battery;
     private Boolean touch_screen;
     private double price;
     private String img_url;
@@ -27,15 +27,24 @@ public class Laptop {
 
     }
 
+//    DELL
    /* Last:C'Tor. public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
                   String i_processor, String i_memory, String i_operation_system, String i_gpu,
                   String i_storage, String i_screen_size, String i_weight, String i_battery,
                   Boolean i_touch_screen,String i_price, String i_ImgURL, String i_Description) {*/
 
+
+
+  // LG
+/*
+                  String i_processor, String i_operation_system, String i_gpu,
+                  String i_storage
+                 */
+
     // C'tor
     public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
                   PartStruct i_processor, int i_memory, OS i_operation_system, PartStruct i_gpu,
-                  int i_storage, double i_screen_size, double i_weight, int i_battery,
+                  int i_storage, double i_screen_size, double i_weight, String i_battery,
                   Boolean i_touch_screen, double i_price, String i_ImgURL, String i_Description) {
         id_prod = i_id_prod;
         model_name = i_model_name;
@@ -101,7 +110,7 @@ public class Laptop {
         return weight;
     }
 
-    public int getBattery() {
+    public String getBattery() {
         return battery;
     }
 
@@ -168,7 +177,7 @@ public class Laptop {
         this.weight = weight;
     }
 
-    public void setBattery(int battery) {
+    public void setBattery(String battery) {
         this.battery = battery;
     }
 
