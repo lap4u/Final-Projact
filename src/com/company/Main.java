@@ -48,6 +48,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+        /*
         List<Laptop> LaptopArray = new ArrayList<Laptop>();
         List<String> graphics= new ArrayList<String>();
         List<Struct> CPU_List = new ArrayList<Struct>();
@@ -69,6 +70,7 @@ public class Main {
         //printAllExist(LaptopArray,CPU_List,"CPU");
         //printAllExist(LaptopArray,GPU_List,"GPU");
         //printAllExist(LaptopArray,GPU_List);
+        */
     }
 
     private static void createHtmlFiles(List<Laptop> laptopArray) {

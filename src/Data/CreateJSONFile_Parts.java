@@ -2,8 +2,6 @@ package Data;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -12,7 +10,6 @@ import java.util.List;
 public class CreateJSONFile_Parts {
     public static void WriteToJsonFile(List<Struct> PartArray, String file_name)
     {
-
         JSONArray jsonPartArray=new JSONArray();
         for(Struct part : PartArray)
         {
