@@ -49,14 +49,14 @@ public class Main {
 
 
     public static void main(String[] args) {
-        ArrayList<Laptop> LG_Laptops = new ArrayList<>();
+      ArrayList<Laptop> LG_Laptops = new ArrayList<>();
         LG.FindLGLaptops(LG_Laptops);
 
        //  ArrayList<Laptop> Dell_Laptops = new ArrayList<>();
         // Dell.FindDellLaptops(Dell_Laptops);
 
        //ArrayList<Laptop> Acer_Laptops = new ArrayList<>();
-       // Acer.Find_Laptops(Acer_Laptops);
+       //Acer.Find_Laptops(Acer_Laptops);
         //LG.FindLGLaptops(LG_Laptops);
         /*
         List<Laptop> LaptopArray = new ArrayList<Laptop>();

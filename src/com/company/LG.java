@@ -1,5 +1,8 @@
 package com.company;
 
+import Parts.OS;
+import Parts.PartStruct;
+import Parts.Storage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -52,7 +55,29 @@ public class LG {
             final String companyName = "LG";
 
             final String modelName = document2.select("h2.improve-info-model").text();
+
+            //Processor
             final String processor = document2.select("li#SP07578911.full").select("p.value").text() + document2.select("li#SP06236899").select("p.value").text();
+            String processorManufacture;
+            String processorModel = " ";
+            String[] splitCPU = processor.split(" ");
+
+            if(processor.contains("Intel"))
+                processorManufacture = "Intel";
+            else
+                processorManufacture = "AMD";
+
+            for(int i=0;i<splitCPU.length;i++)
+            {
+                // Because LG work only with Intel i3\i5\i7 so its fine with this if.
+                if(splitCPU[i].contains("i3") || splitCPU[i].contains("i5") || splitCPU[i].contains("i7"))
+                {
+                    processorModel = splitCPU[i];
+                }
+            }
+
+            PartStruct CPU = new PartStruct(processorManufacture, processorModel);
+
 
             // Memory
             String memoryString = document2.select("li#SP07578915.full").select("p.value").text() + document2.select("li#SP06236902").select("p.value").text();
@@ -67,8 +92,29 @@ public class LG {
             double screenSize = Double.parseDouble(screenSizeString);
 
 
-            final String operatingSystem = document2.select("li#SP06236896.full").select("p.value").text();
-            final String graphicCard = document2.select("li#SP06236911").select("p.value").text();
+            // OS
+            final String operatingSystemString = document2.select("li#SP06236896.full").select("p.value").text();
+            String[] splitOS = operatingSystemString.split(" ");
+            String OS_Manufacture = splitOS[0];
+            String OS_Version = splitOS[2];
+            int OS_Serie = Integer.parseInt(splitOS[1]);
+            int OS_Bit;
+            if(splitOS[3].contains("64"))
+                OS_Bit = 64;
+            else
+                OS_Bit = 32;
+
+            OS operatingSystem = new OS(OS_Manufacture,OS_Version, OS_Serie, OS_Bit);
+
+
+
+            // Graphic Card
+            final String graphicCardString = document2.select("li#SP06236911").select("p.value").text();
+            String[] splitGPU = graphicCardString.split(" ", 2);
+            String manufactureGPU = splitGPU[0].replaceAll("®", "");
+            String modelGPU = splitGPU[1];
+            PartStruct GPU = new PartStruct(manufactureGPU, modelGPU);
+
 
 
             // Weight
@@ -93,12 +139,35 @@ public class LG {
             }
 
             // Storage Calculate
-            final String storageType = document2.select("li#SP06236906").select("p.value").text();
-            final String storageInterface = document2.select("li#SP07578916").select("p.value").text();
-            final String storageCapacity = document2.select("li#SP06236907").select("p.value").text();
-            final String storageFull = storageType +  " " + storageInterface + " " + storageCapacity ;
 
+            boolean isSSD;
+            final String storageType = document2.select("li#SP06236906").select("p.value").text();
+            if(storageType.contains("SSD"))
+                isSSD = true;
+            else
+                isSSD = false;
+
+            int storageCapacity;
+            String storageCapacityString = document2.select("li#SP06236907").select("p.value").text();
+            String onlyGBString;
+            String[] splitStorage = storageCapacityString.split(" ", 2);
+            if(splitStorage[0].contains("TB"))
+            {
+                onlyGBString = splitStorage[0].replaceAll("TB", "");
+                storageCapacity = 1024 * Integer.parseInt(onlyGBString);
+            }
+            else
+            {
+                onlyGBString = splitStorage[0].replaceAll("GB", "");
+                storageCapacity = Integer.parseInt(onlyGBString);
+            }
+
+            Storage storageObject = new Storage(isSSD, storageCapacity);
+
+
+            // Desc
             final String desc = document2.select("div.text-block").first().select("p").text();
+
             // Check Touch Screen
             String touchScreen = document2.select("li#SP07382786").select("p.value").text();
             Boolean isTouchScreen;
@@ -111,31 +180,34 @@ public class LG {
 
 
             // Only Build The Object.
-         // Update it:   laptop = new Laptop(id_laptop, modelName, url, companyName, processor, memory, operatingSystem, graphicCard, storageFull, screenSize, weight, battery, isTouchScreen, price, imgURL, desc);
+            laptop = new Laptop(id_laptop, modelName, url, companyName, CPU, memory, operatingSystem, GPU, storageObject, screenSize, weight, battery, isTouchScreen, price, imgURL, desc);
 
 
             //Prints
-
-
-             System.out.println("URL: " + url);
-            System.out.println("Memory: " + memory);
-
-
               /*
+                           System.out.println("URL: " + url);
             System.out.println("Company name: " + companyName);
             System.out.println("Laptop name: " + modelName);
-              System.out.println("Processor: " + processor);
-
+           System.out.println("Processor Manufacture: " + processorManufacture);
+            System.out.println("Processor Model: " + processorModel);
+ System.out.println("Memory: " + memory);
              System.out.println("Screen Size: " + screenSize);
-             System.out.println("Operating System: " + operatingSystem);
+            System.out.println("Operating System: " + operatingSystemString);
+            System.out.println("Operating Model: " + OS_Manufacture);
+            System.out.println("Operating Version " + OS_Version);
+            System.out.println("Operating Serie: " + OS_Serie);
+            System.out.println("Operating Bit: " + OS_Bit);
         System.out.println("Storage: " + storageFull);
-             System.out.println("Graphic Card: " + graphicCard);
    System.out.println("Weight: " + weight);
           System.out.println("Battery: " + battery);
   System.out.println("Price: " + price);
             System.out.println("IMG URL: " + imgURL);
              System.out.println("Touch Screen: " + isTouchScreen);
             System.out.println("Desc: " + desc);
+                        System.out.println("Is SSD? " + isSSD);
+            System.out.println("Storage Capacity: " + storageCapacity);
+               System.out.println("Graphic Card Manufacture: " + manufactureGPU);
+            System.out.println("Graphic Card Model: " + modelGPU);
             */
 
         } catch (Exception ex) {
@@ -144,6 +216,4 @@ public class LG {
 
         return laptop;
     }
-
-
 }

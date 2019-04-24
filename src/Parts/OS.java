@@ -7,9 +7,9 @@ public class OS {
     private int Series;
     private int BitSize;
 
-    public OS(String i_manufacture, String i_vertion, int i_series, int i_bitSize) {
+    public OS(String i_manufacture, String i_version, int i_series, int i_bitSize) {
         Manufacture = i_manufacture;
-        Version = i_vertion;
+        Version = i_version;
         Series = i_series;
         BitSize = i_bitSize;
     }

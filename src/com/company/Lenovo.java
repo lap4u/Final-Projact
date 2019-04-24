@@ -17,6 +17,8 @@ public class Lenovo {
     public Lenovo() {
     }
 
+
+
     public static void Find_Laptops(List<Laptop> LaptopArray) {
         Boolean is_exist = false;
         List<String> links = new ArrayList<String>();

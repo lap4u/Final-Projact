@@ -1,6 +1,8 @@
 package com.company;
 import Parts.OS;
 import Parts.PartStruct;
+import Parts.Storage;
+
 public class Laptop {
 
     // Members.
@@ -12,7 +14,7 @@ public class Laptop {
     private int memory;
     private OS operation_system;
     private PartStruct gpu;
-    private int storage;
+    private Storage storage;
     private double screen_size;
     private double weight;
     private String battery;
@@ -27,24 +29,17 @@ public class Laptop {
 
     }
 
-//    DELL
+//   FOR (ELAD) 24/04/2019 19:31  DELL UPDATES
    /* Last:C'Tor. public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
                   String i_processor, String i_memory, String i_operation_system, String i_gpu,
                   String i_storage, String i_screen_size, String i_weight, String i_battery,
                   Boolean i_touch_screen,String i_price, String i_ImgURL, String i_Description) {*/
 
 
-
-  // LG
-/*
-                  String i_processor, String i_operation_system, String i_gpu,
-                  String i_storage
-                 */
-
     // C'tor
     public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
                   PartStruct i_processor, int i_memory, OS i_operation_system, PartStruct i_gpu,
-                  int i_storage, double i_screen_size, double i_weight, String i_battery,
+                  Storage i_storage, double i_screen_size, double i_weight, String i_battery,
                   Boolean i_touch_screen, double i_price, String i_ImgURL, String i_Description) {
         id_prod = i_id_prod;
         model_name = i_model_name;
@@ -98,7 +93,7 @@ public class Laptop {
         return gpu;
     }
 
-    public int getStorage() {
+    public Storage getStorage() {
         return storage;
     }
 
@@ -165,7 +160,7 @@ public class Laptop {
         this.gpu = gpu;
     }
 
-    public void setStorage(int storage) {
+    public void setStorage(Storage storage) {
         this.storage = storage;
     }
 
@@ -234,7 +229,7 @@ public class Laptop {
 
 
     public Boolean NotAllAttributeisFilled() {
-        if (this.getProcessor() == null | this.getMemory() == 0 | this.getGpu() == null | this.getStorage() == 0
+        if (this.getProcessor() == null | this.getMemory() == 0 | this.getGpu() == null | this.getStorage() == null
                 | this.getScreen_size() == 0 | this.getWeight() == 0 | this.getTouch_screen() == null | this.getOperation_system() == null)
             return true;
         else
