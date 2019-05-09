@@ -1,6 +1,7 @@
 package Parts;
 
-public class PartStruct {
+public class
+PartStruct {
 
     private String Manufacture;
     private String Model;

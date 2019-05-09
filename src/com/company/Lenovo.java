@@ -172,7 +172,7 @@ public class Lenovo {
             laptop.setOperation_system(getFormat_OS(elememt.text()));
         if (attribute_lable.equals("Graphics") && laptop.getGpu() == null)
             laptop.setGpu(getFormat_GPU(elememt.text()));
-        if (attribute_lable.equals("Storage") && laptop.getStorage() == 0)
+        if (attribute_lable.equals("Storage") && laptop.getStorage() == null)
             laptop.setStorage(getFormat_Storage(elememt.text()));
         if (attribute_lable.equals("Display") && laptop.getScreen_size() == 0)
             laptop.setScreen_size(getFormat_ScreenSize(elememt.text()));
@@ -197,7 +197,7 @@ public class Lenovo {
             laptop.setOperation_system(getFormat_OS(elememt.text()));
         if (attribute_lable.equals("Graphics") && laptop.getGpu() == null)
             laptop.setGpu(getFormat_GPU(elememt.text()));
-        if (attribute_lable.equals("Storage") && laptop.getStorage() == 0)
+        if (attribute_lable.equals("Storage") && laptop.getStorage() == null)
             laptop.setStorage(getFormat_Storage(elememt.text()));
         if (attribute_lable.equals("Display") && laptop.getScreen_size() == 0)
             laptop.setScreen_size(getFormat_ScreenSize(elememt.text()));
@@ -268,13 +268,17 @@ public class Lenovo {
         return (Memory);
     }
 
-    public static int getFormat_Storage(String Storage_String_format) {
+    public static Parts.Storage getFormat_Storage(String Storage_String_format) {
         int Storage = 0;
+        boolean ssd = false;
         if (Storage_String_format.contains("GB"))
             Storage = Integer.parseInt(Storage_String_format.split("GB")[0].trim());
         else if (Storage_String_format.contains("TB"))
             Storage = 1024 * Integer.parseInt(Storage_String_format.split("TB")[0].trim());
-        return Storage;
+        if(Storage_String_format.contains("SSD"))
+            ssd = true;
+        Parts.Storage storage_struct=new Parts.Storage(ssd,Storage);
+        return storage_struct;
     }
 
     public static double getFormat_ScreenSize(String ScreenSize_String_format) {

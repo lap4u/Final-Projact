@@ -206,12 +206,16 @@ public class Laptop {
                     + "\nOperation System: " + operation_system.getManufacture() + " " + operation_system.getSeries() + " "
                     + operation_system.getVersion() + " " + operation_system.getBitSize()
                     + "\nGraphics: " + gpu.getManufacture() + " ~ " + gpu.getModel()
-                    + "\nStorage: " + storage
                     + "\nScreen Size: " + screen_size
                     + "\nWeight: " + weight
                     + "\nBattery: " + battery
                     + "\nImage URL: " + img_url
                     + "\nDescription: " + description);
+            System.out.println("Storage: " + storage.getM_GB() + "GB");
+            if(storage.getM_SSD())
+                System.out.println("SSD: Yes");
+            else
+                System.out.println("SSD: NO");
 
             if (touch_screen == true)
                 System.out.println("Touch Screen: Yes");

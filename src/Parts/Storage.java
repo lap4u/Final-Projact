@@ -14,14 +14,17 @@ public class Storage {
     public void setM_isSSD(boolean m_isSSD) {
         this.m_isSSD = m_isSSD;
     }
+    public void setM_GB(int m_GB) {
+        this.m_GB = m_GB;
+    }
 
     public int getM_GB() {
         return m_GB;
     }
-
-    public void setM_GB(int m_GB) {
-        this.m_GB = m_GB;
+    public boolean getM_SSD() {
+        return m_isSSD;
     }
+
 
     private boolean m_isSSD;
     private int m_GB;

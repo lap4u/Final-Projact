@@ -1,7 +1,7 @@
 package com.company;
+
 import Data.CreateJSONFile_Parts;
 import Data.Struct;
-import Games.FindGames;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -49,27 +49,16 @@ public class Main {
 
 
     public static void main(String[] args) {
-      ArrayList<Laptop> LG_Laptops = new ArrayList<>();
-        LG.FindLGLaptops(LG_Laptops);
-
-       //  ArrayList<Laptop> Dell_Laptops = new ArrayList<>();
-        // Dell.FindDellLaptops(Dell_Laptops);
-
-       //ArrayList<Laptop> Acer_Laptops = new ArrayList<>();
-       //Acer.Find_Laptops(Acer_Laptops);
-        //LG.FindLGLaptops(LG_Laptops);
-        /*
         List<Laptop> LaptopArray = new ArrayList<Laptop>();
-        List<String> graphics= new ArrayList<String>();
         List<Struct> CPU_List = new ArrayList<Struct>();
         List<Struct> GPU_List = new ArrayList<Struct>();
 
-        //HP_comp();
-        Lenovo.Find_Laptops(LaptopArray);
-        Acer.Find_Laptops(LaptopArray);
-        createHtmlFiles(LaptopArray);
+        //Lenovo.Find_Laptops(LaptopArray);
+        //Acer.Find_Laptops(LaptopArray);
         //Dell.FindDellLaptops(LaptopArray);
         //LG.FindLGLaptops(LaptopArray);
+        //createHtmlFiles(LaptopArray);
+
         //CreateJSONFile.writeList(LaptopArray);
         //printAllLeptops(LaptopArray);
         //ParseJsonToArray.Parse();
@@ -80,7 +69,6 @@ public class Main {
         //printAllExist(LaptopArray,CPU_List,"CPU");
         //printAllExist(LaptopArray,GPU_List,"GPU");
         //printAllExist(LaptopArray,GPU_List);
-        */
     }
 
     private static void createHtmlFiles(List<Laptop> laptopArray) {

@@ -1,4 +1,5 @@
 package com.company;
+
 import Parts.OS;
 import Parts.PartStruct;
 import org.jsoup.Jsoup;
@@ -20,7 +21,7 @@ public class Acer {
         List<String> Laptops_urls = new ArrayList<String>();
         try {
             final Document document = Jsoup.connect(url).get();
-            Elements Laptops_linkes = document.select("div.content");
+            org.jsoup.select.Elements Laptops_linkes = document.select("div.content");
             for (Element laptop : Laptops_linkes) {
                 Element element_link = laptop.select("a").first();
                 String link = element_link.attr("href");
@@ -49,7 +50,7 @@ public class Acer {
             String Price = document.select(".bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .info.margin-bottom-l.margin-top-l.gutter.b-4.a-12.col > .heading-l:nth-of-type(5)").text();
             String Description = document.select(".newStyle:nth-of-type(6) > .bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .info.margin-bottom-l.margin-top-l.gutter.b-4.a-12.col > .text-tertiary-dark:nth-of-type(4)").text();
             String imgUrl= document.select(".newStyle:nth-of-type(6) > .bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .gutter.b-7.a-12.col > .imgModelCont > .imgModel > .centerImage").attr("src");
-            Elements attributes = document.select(".margin-bottom-l.margin-top-l.gutter.row > .a-12.col > .gutter.row");
+            org.jsoup.select.Elements attributes = document.select(".margin-bottom-l.margin-top-l.gutter.row > .a-12.col > .gutter.row");
             for(Element attribute:attributes) {
                 String header = attribute.select(".bordR.c-3.a-12.col").text();
                 if(header.equals("Operating System"))
@@ -195,7 +196,8 @@ public class Acer {
             Storage = 1024 * Integer.parseInt(Storage_String.replaceAll("TB","").trim());
         else
             Storage = Integer.parseInt(Storage_String.replaceAll("GB","").trim());
-        laptop.setStorage(Storage);
+        Parts.Storage Storage_struct = new Parts.Storage(true,Storage);
+        laptop.setStorage(Storage_struct);
     }
 
     public static void battary_handler(Element battary_element, Laptop laptop) {
