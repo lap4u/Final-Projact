@@ -5,7 +5,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Dell {
@@ -13,7 +12,7 @@ public class Dell {
     public Dell() {
     }
 
-    public static void FindDellLaptops(ArrayList<Laptop> i_ArrLaptops) {
+    public static void FindDellLaptops(List<Laptop> i_ArrLaptops) {
 
         Laptop laptop;
         final String site_url = "https://deals.dell.com";
@@ -177,7 +176,7 @@ public class Dell {
 
             //Prints
             //   System.out.println("ID:  " + id_laptop);
-             System.out.println("URL:  " + url);
+             //System.out.println("URL:  " + url);
             //  System.out.println("Desc:  " + desc);
             //System.out.println("Img URL:  " + imgURL);
             // System.out.println("Company name:  " + companyName);
@@ -186,7 +185,7 @@ public class Dell {
             // System.out.println("Memory:  " + memory);
             //   System.out.println("Screen Size:  " + screenSize);
             // System.out.println("Operating System:  " + operatingSystem);
-             System.out.println("Storage:  " + storage);
+            // System.out.println("Storage:  " + storage);
             //   System.out.println("Graphic Card:  " + graphicCard);
             // System.out.println("Weight: " + weight);
             // System.out.println("Battery: " + battery);

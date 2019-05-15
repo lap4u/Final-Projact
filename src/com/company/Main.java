@@ -52,23 +52,19 @@ public class Main {
         List<Laptop> LaptopArray = new ArrayList<Laptop>();
         List<Struct> CPU_List = new ArrayList<Struct>();
         List<Struct> GPU_List = new ArrayList<Struct>();
-
+        ArrayList<Laptop> LaptopArray2 = new ArrayList<Laptop>();
         //Lenovo.Find_Laptops(LaptopArray);
         //Acer.Find_Laptops(LaptopArray);
-        //Dell.FindDellLaptops(LaptopArray);
-        //LG.FindLGLaptops(LaptopArray);
-        //createHtmlFiles(LaptopArray);
-
-        //CreateJSONFile.writeList(LaptopArray);
-        //printAllLeptops(LaptopArray);
+        //Dell.FindDellLaptops(LaptopArray2);
+        LG.FindLGLaptops(LaptopArray2);
+        createHtmlFiles(LaptopArray2);
+        CreateJSONFile.writeList(LaptopArray2);
+        printAllLaptops(LaptopArray2);
         //ParseJsonToArray.Parse();
         GPU_List = Data.PartsData.Parse_Data("https://www.videocardbenchmark.net/gpu_list.php");
         CPU_List = Data.PartsData.Parse_Data("https://www.cpubenchmark.net/cpu_list.php");
         CreateJSONFile_Parts.WriteToJsonFile(CPU_List,"cpu_list.json");
         CreateJSONFile_Parts.WriteToJsonFile(GPU_List,"gpu_list.json");
-        //printAllExist(LaptopArray,CPU_List,"CPU");
-        //printAllExist(LaptopArray,GPU_List,"GPU");
-        //printAllExist(LaptopArray,GPU_List);
     }
 
     private static void createHtmlFiles(List<Laptop> laptopArray) {
@@ -108,7 +104,7 @@ public class Main {
         }
     }
 
-    private static void printAllLeptops(List<Laptop> laptopArray) {
+    private static void printAllLaptops(List<Laptop> laptopArray) {
         for (Laptop laptop : laptopArray)
         {
             laptop.printLaptop();
