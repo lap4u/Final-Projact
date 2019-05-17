@@ -1,10 +1,15 @@
 <component name="libraryTable">
   <library name="com.fasterxml.jackson.core">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Desktop/חדש/com.fasterxml.jackson.core.jar!/" />
-      <root url="jar://$USER_HOME$/Desktop/חדש/com.fasterxml.jackson.databind.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/Dependices/jsoup-1.11.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/Dependices/json-simple-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/Dependices/com.fasterxml.jackson.databind.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/Dependices/com.fasterxml.jackson.core.jar!/" />
+      <root url="file://$PROJECT_DIR$/src/Dependices" />
+      <root url="jar://$MAVEN_REPOSITORY$/javax/transaction/jta/1.1/jta-1.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/src/Dependices" recursive="false" />
   </library>
 </component>

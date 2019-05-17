@@ -2,8 +2,18 @@ package com.company;
 import Parts.OS;
 import Parts.PartStruct;
 import Parts.Storage;
+import java.io.Serializable;
+import javax.persistence.*;
 
-public class Laptop {
+@Entity
+public class Laptop implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id @GeneratedValue
+    private long id;
+
+
 
     // Members.
     private int id_prod;

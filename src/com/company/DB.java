@@ -1,14 +1,13 @@
 package com.company;
 
 import javax.persistence.*;
-import java.util.*;
-import java.io.Serializable;
+
 
 public class DB {
 
     private  EntityManagerFactory entityManagerFactory;
     private  EntityManager entityManager;
-    private  String Path = "$objectdb/db/lap4u/Final-Projact.odb";
+    private  String Path = "$objectdb/db/points.odb";
 
     // Open a database connection
     // (create a new database if it doesn't exist yet):

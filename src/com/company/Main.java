@@ -12,8 +12,46 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
 public class Main {
+
+    public static void main(String[] args) {
+        List<Laptop> LaptopArray = new ArrayList<Laptop>();
+        List<Struct> CPU_List = new ArrayList<Struct>();
+        List<Struct> GPU_List = new ArrayList<Struct>();
+        ArrayList<Laptop> LaptopArray2 = new ArrayList<Laptop>();
+        //Lenovo.Find_Laptops(LaptopArray);
+        //Acer.Find_Laptops(LaptopArray);
+        //Dell.FindDellLaptops(LaptopArray2);
+        LG.FindLGLaptops(LaptopArray2);
+       // createHtmlFiles(LaptopArray2);
+       // CreateJSONFile.writeList(LaptopArray2);
+        printAllLaptops(LaptopArray2);
+        //ParseJsonToArray.Parse();
+       // GPU_List = Data.PartsData.Parse_Data("https://www.videocardbenchmark.net/gpu_list.php");
+       // CPU_List = Data.PartsData.Parse_Data("https://www.cpubenchmark.net/cpu_list.php");
+      //  DB dataBase = new DB();
+
+        //EntityManager entityManager =  dataBase.getEntityManager();
+        //entityManager.getTransaction().begin();
+       // for (int i = 0; i < LaptopArray2.size(); i++) {
+           // Laptop laptop = LaptopArray2.get(i);
+            //entityManager.persist(laptop);
+       // }
+
+     //   entityManager.getTransaction().commit();
+
+        //TypedQuery<Laptop> query = entityManager.createQuery("SELECT laptop FROM Laptop laptop WHERE laptop.touch_screen = true ", Laptop.class);
+
+//        List<Laptop> results = query.getResultList();
+  //      for (Laptop p : results) {
+    //       p.printLaptop();
+      //  }
+
+        CreateJSONFile_Parts.WriteToJsonFile(CPU_List,"cpu_list.json");
+        CreateJSONFile_Parts.WriteToJsonFile(GPU_List,"gpu_list.json");
+    }
 
 
     static void HP_comp()
@@ -47,25 +85,6 @@ public class Main {
     }
 
 
-
-    public static void main(String[] args) {
-        List<Laptop> LaptopArray = new ArrayList<Laptop>();
-        List<Struct> CPU_List = new ArrayList<Struct>();
-        List<Struct> GPU_List = new ArrayList<Struct>();
-        ArrayList<Laptop> LaptopArray2 = new ArrayList<Laptop>();
-        //Lenovo.Find_Laptops(LaptopArray);
-        //Acer.Find_Laptops(LaptopArray);
-        //Dell.FindDellLaptops(LaptopArray2);
-        LG.FindLGLaptops(LaptopArray2);
-        createHtmlFiles(LaptopArray2);
-        CreateJSONFile.writeList(LaptopArray2);
-        printAllLaptops(LaptopArray2);
-        //ParseJsonToArray.Parse();
-        GPU_List = Data.PartsData.Parse_Data("https://www.videocardbenchmark.net/gpu_list.php");
-        CPU_List = Data.PartsData.Parse_Data("https://www.cpubenchmark.net/cpu_list.php");
-        CreateJSONFile_Parts.WriteToJsonFile(CPU_List,"cpu_list.json");
-        CreateJSONFile_Parts.WriteToJsonFile(GPU_List,"gpu_list.json");
-    }
 
     private static void createHtmlFiles(List<Laptop> laptopArray) {
         for(int i=0;i<5;i++) {
