@@ -26,16 +26,18 @@ public class LG {
 
         try {
             final Document document = Jsoup.connect(main_url).get();
-            Elements comp_urls = document.select("p.model-name.redot");
-            System.out.println("size of List: " + comp_urls.size());
+            Elements comp_urls = document.select("div#resultAppendTarget.product-list-box.js-model-switcher").select("ul.list-box");
+            comp_urls = comp_urls.select("div.item.js-model");
+            //System.out.println("size of List: " + comp_urls.size());
 
             for (Element comp : comp_urls) {
                 comp = comp.select("a").first();
                 String atar = comp.attr("href");
                 String product_url = site_url + atar;
-
+            //    System.out.println(product_url);
                 laptop = compSaveLG(product_url, i_ArrLaptops.size());
-                i_ArrLaptops.add(laptop);
+               i_ArrLaptops.add(laptop);
+
             }
 
         } catch (Exception ex) {
@@ -54,10 +56,74 @@ public class LG {
             final Document document2 = Jsoup.connect(url).get();
             final String companyName = "LG";
 
-            final String modelName = document2.select("h2.improve-info-model").text();
 
-            //Processor
-            final String processor = document2.select("li#SP07578911.full").select("p.value").text() + document2.select("li#SP06236899").select("p.value").text();
+
+            final String modelName = document2.select("h1.model-title").text();
+
+             String processor = "",  memoryString = "", screenSizeString = "", operatingSystemString = "", graphicCardString = "";
+             String weightString = "",  battery = "", touchScreen = "", storageType = "", storageCapacityString = "";;
+
+            Elements attributes = document2.select("div.tech-spacs");
+            for (Element attr : attributes) {
+              String h2 = attr.select("h2").text();
+                if(h2.equals("PROCESSOR"))
+                {
+                   processor =  attr.select("dd").text();
+                }
+                else
+                    if(h2.equals("MEMORY"))
+                {
+                    memoryString =  attr.select("dd").text();
+                }
+                    else
+                    if(h2.equals("DISPLAY"))
+                    {
+                        screenSizeString =  attr.select("dd").first().text();
+                        graphicCardString = attr.select("dd").eq(3).text();
+                    }
+                    else
+                    if(h2.equals("OPERATING SYSTEM"))
+                    {
+                        operatingSystemString =  attr.select("dd").text();
+                    }
+                    else
+                    if(h2.equals("DIMENSIONS/WEIGHT"))
+                    {
+                        weightString =  attr.select("dd").eq(2).text();
+                    }
+                    else
+                    if(h2.equals("BATTERY/POWER"))
+                    {
+                        battery =  attr.select("dd").first().text();
+                    }
+                    else
+                    if(h2.equals("FEATURES"))
+                    {
+                      for(int i=0;i<attr.select("dt").size();i++)
+                      {
+                          if(attr.select("dt").eq(i).text().equals("Touchscreen LCD"))
+                          {
+                              touchScreen = attr.select("dd").eq(i).text();
+                          }
+                      }
+                    }
+                    else
+                    if(h2.equals("HARD DRIVE"))
+                    {
+                        storageType = attr.select("dd").first().text();
+                        for(int i=0;i<attr.select("dt").size();i++)
+                        {
+                            if(attr.select("dt").eq(i).text().equals("Capacity"))
+                            {
+                                storageCapacityString = attr.select("dd").eq(i).text();
+                            }
+                        }
+
+                    }
+
+
+            }
+
             String processorManufacture;
             String processorModel = " ";
             String[] splitCPU = processor.split(" ");
@@ -75,25 +141,21 @@ public class LG {
                     processorModel = splitCPU[i];
                 }
             }
-
             PartStruct CPU = new PartStruct(processorManufacture, processorModel);
 
 
             // Memory
-            String memoryString = document2.select("li#SP07578915.full").select("p.value").text() + document2.select("li#SP06236902").select("p.value").text();
             memoryString = memoryString.replaceAll("GB", "");
             String[] splitMemory = memoryString.split(" ", 2);
             int memory = Integer.parseInt(splitMemory[0]);
 
 
             // Screen Size:
-            String screenSizeString = document2.select("li#SP06236908").select("p.value").text();
             screenSizeString = screenSizeString.replace("\"", "");
             double screenSize = Double.parseDouble(screenSizeString);
 
 
             // OS
-            final String operatingSystemString = document2.select("li#SP06236896.full").select("p.value").text();
             String[] splitOS = operatingSystemString.split(" ");
             String OS_Manufacture = splitOS[0];
             String OS_Version = splitOS[2];
@@ -107,9 +169,7 @@ public class LG {
             OS operatingSystem = new OS(OS_Manufacture,OS_Version, OS_Serie, OS_Bit);
 
 
-
             // Graphic Card
-            final String graphicCardString = document2.select("li#SP06236911").select("p.value").text();
             String[] splitGPU = graphicCardString.split(" ", 2);
             String manufactureGPU = splitGPU[0].replaceAll("®", "");
             String modelGPU = splitGPU[1];
@@ -118,37 +178,46 @@ public class LG {
 
 
             // Weight
-            String weightString = document2.select("li#SP07591580").select("p.value").text() + document2.select("li#SP06236945").select("p.value").text();
+
             String[] splitWeight = weightString.split(" ", 2);
             double weight = 0.45 * Double.parseDouble((splitWeight[0]));
             weight = Double.parseDouble(decmialFormat.format(weight));
 
 
-            final String battery = document2.select("li#SP06236935").select("p.value").text() + document2.select("li#SP07707838").select("p.value").text() + document2.select("li#SP07796758").select("p.value").text();
-            final String imgURL = site_url + document2.select("div.pdp-improve-visual-img").select("img").first().attr("src");
-
+            final String imgURL = site_url + document2.select("div.pdp-summary-area").select("img").first().attr("data-src");
 
             // Price
             double price;
-            String priceString = document2.select("div.price-default.flag").select("p.price").text();
-            if(priceString.equals(""))
+            String priceString = document2.select("div.price").first().text();
+
+            if(priceString.equals("$"))
                 price = 0;
             else {
                priceString = priceString.replaceAll("\\$", "");
+                priceString = priceString.replaceAll(",", "");
                 price = Double.parseDouble(priceString);
             }
 
-            // Storage Calculate
+            // Desc
+            final String desc = document2.select("div.copy.font-regular").first().text();
 
+            // Check Touch Screen
+            Boolean isTouchScreen;
+            if(touchScreen.contains("Yes") == true)
+                isTouchScreen = true;
+            else {
+                isTouchScreen = false;
+            }
+
+            // Storage Calculate
             boolean isSSD;
-            final String storageType = document2.select("li#SP06236906").select("p.value").text();
             if(storageType.contains("SSD"))
                 isSSD = true;
             else
                 isSSD = false;
 
+
             int storageCapacity;
-            String storageCapacityString = document2.select("li#SP06236907").select("p.value").text();
             String onlyGBString;
             String[] splitStorage = storageCapacityString.split(" ", 2);
             if(splitStorage[0].contains("TB"))
@@ -165,50 +234,8 @@ public class LG {
             Storage storageObject = new Storage(isSSD, storageCapacity);
 
 
-            // Desc
-            final String desc = document2.select("div.text-block").first().select("p").text();
-
-            // Check Touch Screen
-            String touchScreen = document2.select("li#SP07382786").select("p.value").text();
-            Boolean isTouchScreen;
-            if(touchScreen.contains("Yes") == true)
-                isTouchScreen = true;
-            else {
-                isTouchScreen = false;
-            }
-
-
-
             // Only Build The Object.
             laptop = new Laptop(id_laptop, modelName, url, companyName, CPU, memory, operatingSystem, GPU, storageObject, screenSize, weight, battery, isTouchScreen, price, imgURL, desc);
-
-
-            //Prints
-              /*
-                           System.out.println("URL: " + url);
-            System.out.println("Company name: " + companyName);
-            System.out.println("Laptop name: " + modelName);
-           System.out.println("Processor Manufacture: " + processorManufacture);
-            System.out.println("Processor Model: " + processorModel);
- System.out.println("Memory: " + memory);
-             System.out.println("Screen Size: " + screenSize);
-            System.out.println("Operating System: " + operatingSystemString);
-            System.out.println("Operating Model: " + OS_Manufacture);
-            System.out.println("Operating Version " + OS_Version);
-            System.out.println("Operating Serie: " + OS_Serie);
-            System.out.println("Operating Bit: " + OS_Bit);
-        System.out.println("Storage: " + storageFull);
-   System.out.println("Weight: " + weight);
-          System.out.println("Battery: " + battery);
-  System.out.println("Price: " + price);
-            System.out.println("IMG URL: " + imgURL);
-             System.out.println("Touch Screen: " + isTouchScreen);
-            System.out.println("Desc: " + desc);
-                        System.out.println("Is SSD? " + isSSD);
-            System.out.println("Storage Capacity: " + storageCapacity);
-               System.out.println("Graphic Card Manufacture: " + manufactureGPU);
-            System.out.println("Graphic Card Model: " + modelGPU);
-            */
 
         } catch (Exception ex) {
             ex.printStackTrace();

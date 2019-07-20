@@ -49,8 +49,8 @@ public class Main {
     //       p.printLaptop();
       //  }
 
-        CreateJSONFile_Parts.WriteToJsonFile(CPU_List,"cpu_list.json");
-        CreateJSONFile_Parts.WriteToJsonFile(GPU_List,"gpu_list.json");
+      //  CreateJSONFile_Parts.WriteToJsonFile(CPU_List,"cpu_list.json");
+      //  CreateJSONFile_Parts.WriteToJsonFile(GPU_List,"gpu_list.json");
     }
 
 

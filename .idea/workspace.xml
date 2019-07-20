@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff58b578-1157-409a-9592-d2a97cb66ff6" name="Default Changelist" comment="database">
-      <change afterPath="$PROJECT_DIR$/ListOfLaptops.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_fasterxml_jackson_core.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/com_fasterxml_jackson_core.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jackson_databind_2_9_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_databind_2_9_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jsoup_1_11_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_11_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpu_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/cpu_list.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpu_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_list.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop0.html" beforeDir="false" afterPath="$PROJECT_DIR$/laptop0.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop1.html" beforeDir="false" afterPath="$PROJECT_DIR$/laptop1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop2.html" beforeDir="false" afterPath="$PROJECT_DIR$/laptop2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop3.html" beforeDir="false" afterPath="$PROJECT_DIR$/laptop3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop4.html" beforeDir="false" afterPath="$PROJECT_DIR$/laptop4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parts/OS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parts/OS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parts/PartStruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parts/PartStruct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parts/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parts/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Laptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Laptop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/LG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LG.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teyscrap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/teyscrap.iml" afterDir="false" />
     </list>
@@ -39,13 +22,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="849">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="-1509">
+              <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#6560#6568#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,17 +38,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/DB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Dell.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/LG.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            <state relative-caret-position="199">
+              <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -72,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Laptop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="30" column="32" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="32" />
+            <state relative-caret-position="-157">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,6 +74,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>intel</find>
+      <find>620</find>
+      <find>size of</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -103,6 +94,7 @@
         <option value="$PROJECT_DIR$/src/com/company/Laptop.java" />
         <option value="$PROJECT_DIR$/src/com/company/DB.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/LG.java" />
       </list>
     </option>
   </component>
@@ -121,36 +113,33 @@
         <subPane>
           <expand>
             <path>
-              <item name="Final-Projact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact207" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact207" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact207" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact207" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact207" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact207" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Final-Projact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Parts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563663599656" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -199,6 +188,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558081203939</updated>
+      <workItem from="1563645931266" duration="13813000" />
     </task>
     <task id="LOCAL-00001" summary="database">
       <created>1558099045113</created>
@@ -210,6 +200,9 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13813000" />
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -220,35 +213,42 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.122068234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12405446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6673774" weight="0.32885906" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6664145" visible="true" weight="0.32569557" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.77238804" weight="0.19175455" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840087" weight="0.32981783" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4978678" weight="0.32981783" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3326226" side_tool="true" visible="true" weight="0.33173537" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.33358547" side_tool="true" weight="0.32733223" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4978678" weight="0.17641419" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.48134327" weight="0.33173537" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.48033282" weight="0.33060557" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.24962178" />
+      <window_info anchor="right" id="Maven" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -297,17 +297,9 @@
     <MESSAGE value="database" />
     <option name="LAST_COMMIT_MESSAGE" value="database" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cpu_list.json">
@@ -334,13 +326,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ListOfLaptops.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13615" selection-start-column="13615" selection-end-column="13615" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ListOfLaptops.json" />
     <entry file="file://$PROJECT_DIR$/src/Parts/PartStruct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -352,13 +338,6 @@
             <element signature="e#630#631#0" expanded="true" />
             <element signature="e#658#659#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -384,8 +363,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Laptop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="32" />
+        <state relative-caret-position="-157">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -394,25 +373,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Dell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="-3153">
           <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_list.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28722" selection-start-column="28719" selection-end-column="28722" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/DB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="849">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="-1509">
+          <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6560#6568#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
         </state>
       </provider>
     </entry>
