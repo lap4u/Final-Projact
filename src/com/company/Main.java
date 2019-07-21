@@ -24,10 +24,10 @@ public class Main {
         //Lenovo.Find_Laptops(LaptopArray);
         //Acer.Find_Laptops(LaptopArray);
         //Dell.FindDellLaptops(LaptopArray2);
-        LG.FindLGLaptops(LaptopArray2);
+       Dell.FindDellLaptops(LaptopArray2);
        // createHtmlFiles(LaptopArray2);
        // CreateJSONFile.writeList(LaptopArray2);
-        printAllLaptops(LaptopArray2);
+     //   printAllLaptops(LaptopArray2);
         //ParseJsonToArray.Parse();
        // GPU_List = Data.PartsData.Parse_Data("https://www.videocardbenchmark.net/gpu_list.php");
        // CPU_List = Data.PartsData.Parse_Data("https://www.cpubenchmark.net/cpu_list.php");

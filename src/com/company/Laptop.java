@@ -14,7 +14,6 @@ public class Laptop implements Serializable {
     private long id;
 
 
-
     // Members.
     private int id_prod;
     private String model_name;
@@ -40,10 +39,13 @@ public class Laptop implements Serializable {
     }
 
 //   FOR (ELAD) 24/04/2019 19:31  DELL UPDATES
-   /* Last:C'Tor. public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
-                  String i_processor, String i_memory, String i_operation_system, String i_gpu,
-                  String i_storage, String i_screen_size, String i_weight, String i_battery,
-                  Boolean i_touch_screen,String i_price, String i_ImgURL, String i_Description) {*/
+   /* Last:C'Tor. public Laptop(
+
+                  String i_gpu (NOT FINISH)
+                String i_battery,
+
+
+                  ) {*/
 
 
     // C'tor

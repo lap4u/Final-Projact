@@ -1,14 +1,18 @@
 package com.company;
 
+import Parts.OS;
+import Parts.PartStruct;
+import Parts.Storage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class Dell {
-
+    private static DecimalFormat decmialFormat = new DecimalFormat("#.##");
     public Dell() {
     }
 
@@ -21,7 +25,7 @@ public class Dell {
         try {
             final Document document = Jsoup.connect(main_url).get();
             Elements comp_urls = document.select("a.btn.btn-success.btn-block.margin-top-10");
-            //System.out.println("size of List: " + comp_urls.size());
+
 
             for (Element comp : comp_urls) {
                 comp = comp.select("a").first();
@@ -38,31 +42,141 @@ public class Dell {
         }
     }
 
-    private static Laptop compSaveDell(String url, int id_laptop) {
+    private static Laptop compSaveDell(String i_Url, int i_IdLaptop) {
 
         final String site_url = "https://deals.dell.com";
         Laptop laptop = null;
 
         try {
-            final Document document2 = Jsoup.connect(url).get();
+            final Document document2 = Jsoup.connect(i_Url).get();
             final String companyName = "Dell";
             final String modelName = document2.select("h1").text();
+
+            //Processor
             final String processor = document2.select("div.tech-spec-title:contains(Processor)").select("div.tech-spec-content").text();
-            final String operatingSystem = document2.select("div.tech-spec-title:contains(Operating System)").select("div.tech-spec-content").text();
+            String processorManufacture, processorModel = " ";
+
+            String[] splitCPU = processor.split(" ");
+            if(processor.contains("Intel"))
+                processorManufacture = "Intel";
+            else
+                processorManufacture = "AMD";
+
+            for(int j=0;j<splitCPU.length;j++)
+            {
+                // Because LG work only with Intel i3\i5\i7 so its fine with this if.
+                if(splitCPU[j].contains("i3") || splitCPU[j].contains("i7") || splitCPU[j].contains("i5") || splitCPU[j].contains("N4000") || splitCPU[j].contains("N5000"))
+                {
+                    processorModel = splitCPU[j];
+                }
+                else
+                    if(splitCPU[j].contains("AMD"))
+                    {
+                        if(splitCPU[j+1].contains("Ryzen"))
+                        {
+                            processorModel = "Ryzen " + splitCPU[j+2] + " " + splitCPU[j+3];
+                        }
+                        else {
+                            processorModel = splitCPU[j + 1];
+                        }
+                    }
+
+            }
+            PartStruct CPU = new PartStruct(processorManufacture, processorModel);
+
+
+            // OS
+            final String operatingSystemStr = document2.select("div.tech-spec-title:contains(Operating System)").select("div.tech-spec-content").text();
+
+            String[] splitOS = operatingSystemStr.split(" ");
+            String OS_Manufacture = splitOS[0];
+            String OS_Version = splitOS[2];
+            int OS_Serie = Integer.parseInt(splitOS[1]);
+            int OS_Bit = 32;
+
+            for(int i=0;i<splitOS.length;i++)
+            {
+                if(splitOS[i].contains("64")) {
+                    OS_Bit = 64;
+                    break;
+                }
+            }
+
+            OS operatingSystem = new OS(OS_Manufacture,OS_Version, OS_Serie, OS_Bit);
+
 
             // Memory
+            Elements memories = document2.select("div.tech-spec-title:contains(Memory)").select("div.tech-spec-content");
+            String memory;
+            if(memories.size() >1) // Because Elements Memories can be 2 (with the Graphic Card Memory, So we need the second (The regular memory)
+            {
+                memory = memories.eq(1).text();
+            }
+            else
+                memory = memories.text();
 
-            String excludeString = "(additional memory sold separately)";
-            String memory = document2.select("div.tech-spec-title:contains(Memory)").select("div.tech-spec-content").text();
-            if(memory.contains(excludeString))
-                memory =  memory.replace(excludeString, " ");
+            String arrMemory[] = memory.split(" ", 2);
+            String sizeMemory = arrMemory[0];
+            sizeMemory = sizeMemory.replaceAll("GB", "");
+            sizeMemory = sizeMemory.replaceAll(",", "");
+           int memoryNumber =  Integer.parseInt(sizeMemory);
 
-            final String storage = document2.select("div.tech-spec-title:contains(Hard Drive)").select("div.tech-spec-content").text();
+
+            //Storage
+            String storageString = document2.select("div.tech-spec-title:contains(Hard Drive)").select("div.tech-spec-content").text();
+            int storageCapacity;
+
+            boolean isSSD;
+            if(storageString.contains("SSD") ||storageString.contains("Solid State Drive") )
+                isSSD = true;
+            else
+                isSSD = false;
+
+
+            String[] arrStorage = storageString.split(" ", 2);
+            String GBString;
+
+            if(arrStorage[0].contains("TB"))
+            {
+                GBString = arrStorage[0].replaceAll("TB", "");
+                storageCapacity = 1024 * Integer.parseInt(GBString);
+            }
+            else
+            {
+                GBString = arrStorage[0].replaceAll("GB", "");
+                storageCapacity = Integer.parseInt(GBString);
+            }
+
+            Storage storageObject = new Storage(isSSD, storageCapacity);
+
+
+            // GPU - iN THE END
             final String graphicCard = document2.select("div.tech-spec-title:contains(Video Card)").select("div.tech-spec-content").text();
+            /*
 
-            final String price = (document2.select("div.col-xs-6.col-sm-5.col-md-7.text-right").select("span.price").text().split(" ")[0]) + "$";
+                        String[] splitGPU = graphicCardString.split(" ", 2);
+            String manufactureGPU = splitGPU[0].replaceAll("®", "");
+            String modelGPU = splitGPU[1];
+            PartStruct GPU = new PartStruct(manufactureGPU, modelGPU);
+
+             */
+
+            Double priceNumber = 0.0;
+            final String price = (document2.select("div.col-xs-6.col-sm-5.col-md-7.text-right").select("span.price").text().split(" ")[0]);
+            if(!price.equals(""))
+                priceNumber = Double.parseDouble(price);
+
+
             final String desc = document2.select("div#heroDescription.hidden-xs").text();
-            final String imgURL = "http:" + document2.select("img#heroStaticImage.max-width-100.margin-bottom-10").first().attr("src");
+
+            String imgURL = "";
+            Element checkImgURL = document2.select("img#heroStaticImage.max-width-100.margin-bottom-10").first();
+
+            if(checkImgURL == null)
+                imgURL = "https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/dell_client_products/notebooks/inspiron_notebooks/15_3567/pdp/dell-laptops-inspiron-15-3000-intel-turis-pdp-hero.jpg?wid=570&hei=400";
+
+            else
+                imgURL = "http:" + checkImgURL.attr("src");
 
 
             // CHeck screen size & touch screen
@@ -72,7 +186,8 @@ public class Dell {
             String[] screenWords;
 
             final String screen = document2.select("div.tech-spec-title:contains(Display)").select("div.tech-spec-content").text();
-            if(screen.contains("Touch") && !screen.contains("Non-Touch"))
+
+            if((screen.contains("Touch") || screen.contains("touch")) && screen.contains("Non-Touch") == false && screen.contains("Non-touch") == false)
                 isTouchScreen = true;
             else
                 isTouchScreen = false;
@@ -88,6 +203,12 @@ public class Dell {
                 screenSize = screenWords[1];
             }
 
+            screenSize = screenSize.replaceAll("\"", "").replaceAll("\\”", "").replaceAll("-inch","");
+            double screenSizeNum = Double.parseDouble(screenSize);
+
+        System.out.println(screen);
+            System.out.println(isTouchScreen);
+            System.out.println(screenSizeNum + "\n");
 
 
             // Calculate Weight
@@ -97,12 +218,25 @@ public class Dell {
             dimensionsWords = dimensions.split(" ");
             for(int i=0; i<dimensionsWords.length;i++)
             {
+
                 if(dimensionsWords[i].contains("lbs") || dimensionsWords[i].contains("lb"))
-                    if(dimensionsWords[i].equals("lbs"))
-                        weight = dimensionsWords[i-1] + " lbs";
-                    else
+                    if(dimensionsWords[i].startsWith("lb"))
+                        weight = dimensionsWords[i-1].replaceAll("\\(", "");
+                    else {
                         weight = dimensionsWords[i];
+                        weight = weight.replaceAll("lbs.", "").replaceAll("lbs", "").replaceAll("lb", "").replaceAll("\\(", "").replaceAll("\\)", "");
+
+                    }
             }
+
+            double weightNum;
+            if(weight == null)
+                weightNum = 0;
+            else {
+                weightNum = 0.45 * Double.parseDouble(weight); // Lbs to KG
+                weightNum = Double.parseDouble(decmialFormat.format(weightNum));
+            }
+
 
 
             // Calculate Battery
@@ -154,7 +288,7 @@ public class Dell {
 
             // Check Again
             if(battery.equals(" "))
-                battery = "?";
+                battery = "0";
 
             // Battery is complex becuase half the info of battery in "Power" and half in "Primary Battery" , So we check it:
           /*  String battery = "";
@@ -171,6 +305,8 @@ public class Dell {
 
             //Build Object of Laptop with this data.
 
+
+            //New: laptop - new Laptop(i_IdLaptop, modelName, i_Url, companyName, CPU, memoryNumber ,operatingSystem,
 
           // Update it:  laptop = new Laptop(id_laptop, modelName, url, companyName, processor, memory, operatingSystem, graphicCard, storage, screenSize, weight, battery, isTouchScreen, price, imgURL, desc);
 
@@ -211,13 +347,7 @@ public class Dell {
     private static boolean Exclude_Dell_Comps(String i_Url) {
         boolean isOkComp = true;
 
-        if (i_Url.equals("https://deals.dell.com/en-us/productdetail/27og"))
-            isOkComp = false;
-        else
-        if (i_Url.equals("https://deals.dell.com/en-us/productdetail/274s"))
-            isOkComp = false;
-        else
-        if (i_Url.equals("https://deals.dell.com/en-us/productdetail/275k"))
+        if (i_Url.equals("https://deals.dell.com/en-us/productdetail/2qam"))
             isOkComp = false;
 
         return isOkComp;
