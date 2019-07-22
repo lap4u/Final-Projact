@@ -29,6 +29,7 @@ public class Acer {
             }
 
             for (String href : Laptops_urls) {
+                if(isNotExclude(href))
                 ParseLaptop(href, LaptopArray);
             }
         } catch (Exception ex) {
@@ -47,8 +48,9 @@ public class Acer {
             final Document document = Jsoup.connect(finalUrl).get();
             String ModelName = document.select(".bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .info.margin-bottom-l.margin-top-l.gutter.b-4.a-12.col > .margin-bottom-l.heading-l").text().trim();
             ModelName = ModelName + " - "+document.select(".bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .info.margin-bottom-l.margin-top-l.gutter.b-4.a-12.col > .margin-bottom-0.text-tertiary-dark:nth-of-type(2)").text().replace("Model Name:","").trim();
-            String Price = document.select(".bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .info.margin-bottom-l.margin-top-l.gutter.b-4.a-12.col > .heading-l:nth-of-type(5)").text();
-            String Description = document.select(".newStyle:nth-of-type(6) > .bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .info.margin-bottom-l.margin-top-l.gutter.b-4.a-12.col > .text-tertiary-dark:nth-of-type(4)").text();
+            String Price = document.select("p.heading-l").text();
+            String Description = document.select("p.text-tertiary-dark").first().text();
+
             String imgUrl= document.select(".newStyle:nth-of-type(6) > .bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .gutter.b-7.a-12.col > .imgModelCont > .imgModel > .centerImage").attr("src");
             org.jsoup.select.Elements attributes = document.select(".margin-bottom-l.margin-top-l.gutter.row > .a-12.col > .gutter.row");
             for(Element attribute:attributes) {
@@ -72,7 +74,7 @@ public class Acer {
             laptop.setCompany_name("Acer");
             laptop.setModel_name(ModelName);
             laptop.setDescription(Description);
-            laptop.setPrice(Double.parseDouble(Price.replaceAll("[^\\d.]", "").trim()));
+           laptop.setPrice(Double.parseDouble(Price.replaceAll("[^\\d.]", "").trim()));
             laptop.setImg_url("http:" + imgUrl);
             laptop.setUrl_model(finalUrl);
             if(!laptop.NotAllAttributeisFilled())
@@ -214,7 +216,7 @@ public class Acer {
             else if(attribute_lable.equals("Battery Capacity"))
                 Battary += " " + attribute_value;
         }
-        laptop.setBattery("0");
+        laptop.setBattery(Battary);
     }
     public static void weight_handler(Element weight_element, Laptop laptop) {
         double Weight = 0;
@@ -225,11 +227,24 @@ public class Acer {
             String attribute_lable = row.select(".c-3.a-12.col").text().trim();
             String attribute_value = row.select(".bordL.c-8.a-12.gutter.col").text().trim();
 
-            if (attribute_lable.equals("Weight (Approximate)") | attribute_lable.equals("Weight with Dock (Approximate)"))
-                Weight = 0.45 * Double.parseDouble(attribute_value.replaceAll("lb","").trim());
+
+            if (attribute_lable.equals("Weight (Approximate)") | attribute_lable.equals("Weight with Dock (Approximate)")) {
+                String[] splitNumber = attribute_value.split(" ", 2);
+                Weight = 0.45 * Double.parseDouble(splitNumber[0].trim());
+            }
         }
 
         laptop.setWeight(Double.parseDouble(df2.format(Weight)));
+    }
+
+    private static boolean isNotExclude(String i_href)
+    {
+        boolean flag = true;
+        if(i_href.equals("en/US/content/model/NX.HGMAA.001"))
+            flag = false;
+
+
+        return flag;
     }
     /*public static void ParseData(List<Laptop> LaptopArray) {
         String Processor = "";

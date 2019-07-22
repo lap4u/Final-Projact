@@ -42,8 +42,6 @@ public class Laptop implements Serializable {
    /* Last:C'Tor. public Laptop(
 
                   String i_gpu (NOT FINISH)
-                String i_battery,
-
 
                   ) {*/
 
