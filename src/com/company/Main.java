@@ -1,7 +1,7 @@
 package com.company;
 
-import Data.CreateJSONFile_Parts;
 import Data.Struct;
+import Softwares.FindGames;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,7 +12,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.*;
 
 public class Main {
 
@@ -26,8 +25,9 @@ public class Main {
         //Dell.FindDellLaptops(LaptopArray2);
        //Dell.FindDellLaptops(LaptopArray2);
        //LG.FindLGLaptops(LaptopArray2);
-        Acer.Find_Laptops(LaptopArray2);
-        printAllLaptops(LaptopArray2);
+        //Acer.Find_Laptops(LaptopArray2);
+        //printAllLaptops(LaptopArray2);
+        FindGames.FindGames();
        // createHtmlFiles(LaptopArray2);
        // CreateJSONFile.writeList(LaptopArray2);
 

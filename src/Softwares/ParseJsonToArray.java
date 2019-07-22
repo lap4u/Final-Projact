@@ -19,8 +19,8 @@ public class ParseJsonToArray {
             System.out.println(fileAsString);
 
             ObjectMapper obj_objectMapper = new ObjectMapper();
-            Software obj_Software = new Software();
-            obj_Software = obj_objectMapper.readValue(fileAsString,Software.class);
+            SoftwareGame obj_Software = new SoftwareGame();
+            obj_Software = obj_objectMapper.readValue(fileAsString, SoftwareGame.class);
 
         }
         catch (Exception ex){

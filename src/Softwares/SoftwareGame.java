@@ -2,13 +2,14 @@ package Softwares;
 import Parts.OS;
 import Parts.PartStruct;
 
-public class Software {
+public class SoftwareGame {
     private String name;
     private OS OperatingSystems[];
     private PartStruct processor;
     private int Memory;
     private PartStruct GPU;
-    private int HardDrive;
+    private double HardDrive;
+    private String imgURL;
 
 
 
@@ -52,7 +53,7 @@ public class Software {
         this.GPU = GPU;
     }
 
-    public int getHardDrive() {
+    public double getHardDrive() {
         return HardDrive;
     }
 

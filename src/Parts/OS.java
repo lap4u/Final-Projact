@@ -29,4 +29,12 @@ public class OS {
     public String getVersion() {
         return Version;
     }
+
+    public void printOs()
+    {
+        System.out.println("Manufacture: " + Manufacture);
+        System.out.println("Version: " + Version);
+        System.out.println("Serie: " + Series);
+        System.out.println("Bit: " + BitSize + "\n");
+    }
 }
