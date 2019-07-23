@@ -20,14 +20,14 @@ public class Main {
         List<Struct> CPU_List = new ArrayList<Struct>();
         List<Struct> GPU_List = new ArrayList<Struct>();
         ArrayList<Laptop> LaptopArray2 = new ArrayList<Laptop>();
-        //Lenovo.Find_Laptops(LaptopArray);
+        Lenovo.Find_Laptops(LaptopArray2);
         //Acer.Find_Laptops(LaptopArray);
         //Dell.FindDellLaptops(LaptopArray2);
        //Dell.FindDellLaptops(LaptopArray2);
        //LG.FindLGLaptops(LaptopArray2);
         //Acer.Find_Laptops(LaptopArray2);
         //printAllLaptops(LaptopArray2);
-        FindGames.FindGames();
+       // FindGames.FindGames();
        // createHtmlFiles(LaptopArray2);
        // CreateJSONFile.writeList(LaptopArray2);
 

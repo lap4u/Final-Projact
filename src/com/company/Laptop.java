@@ -38,12 +38,6 @@ public class Laptop implements Serializable {
 
     }
 
-//   FOR (ELAD) 24/04/2019 19:31  DELL UPDATES
-   /* Last:C'Tor. public Laptop(
-
-                  String i_gpu (NOT FINISH)
-
-                  ) {*/
 
 
     // C'tor

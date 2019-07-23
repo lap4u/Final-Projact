@@ -1,6 +1,10 @@
 package com.company;
+
 import Parts.OS;
 import Parts.PartStruct;
+//import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+import Parts.Storage;
+import com.objectdb.o.SYH;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,365 +18,252 @@ import java.util.List;
 public class Lenovo {
 
     private static DecimalFormat df2 = new DecimalFormat("#.##");
+
     public Lenovo() {
     }
 
 
-
-    public static void Find_Laptops(List<Laptop> LaptopArray) {
-        Boolean is_exist = false;
-        List<String> links = new ArrayList<String>();
-        String SeriesList[] = {"https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-x/c/thinkpadx",
-                "https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-t-series/c/thinkpadt",
-                "https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-p/c/thinkpadp",
-                "https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-e-series/c/thinkpade",
-                "https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-a-series/c/thinkpada",
-                "https://www.lenovo.com/us/en/laptops/thinkpad/11e-and-chromebooks/c/thinkpad11e"};
+    public static void Find_Laptops(List<Laptop> i_LaptopArray) {
+        String url = "https://www.microsoft.com/en-us/store/b/shop-all-pcs?manufacturer=Lenovo&icid=PC_cat_Quicklink-Lenovo-06282019";
+        String mainUrl = "https://www.microsoft.com";
+        Laptop laptop;
 
         try {
+            final Document document3 = Jsoup.connect(url).get();
+            Elements computers = document3.select("div.c-group.f-wrap-items.context-list-page").select("a");
+            System.out.println("SIZE: " + computers.size());
 
-            for (String url : SeriesList) {
-                final Document document3 = Jsoup.connect(url).get();
-                Element comp_urls = document3.select(".cd-products-comparison-table").first();
-                if (comp_urls != null) {
-                    Elements com = comp_urls.select("a");
+            for (Element comp : computers) {
+                String urlComp = mainUrl + comp.attr("href");
+                laptop = buildLenovoLaptop(urlComp, i_LaptopArray.size());
+               // i_LaptopArray.add(laptop);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
-                    for (Element comp : com) {
-                        String atar = comp.attr("href");
-                        if (!links.contains("https://www.lenovo.com" + atar)) {
-                            newParseLaptop("https://www.lenovo.com" + atar, LaptopArray);
-                            links.add("https://www.lenovo.com" + atar);
+
+    }
+
+    /*
+        public Laptop(
+                  PartStruct i_processor, int i_memory, OS i_operation_system, PartStruct i_gpu,
+             double i_screen_size, String i_battery,
+                  Boolean i_touch_screen
+
+
+     */
+
+    public static Laptop buildLenovoLaptop(String i_Url, int i_Idlaptop) {
+
+        final String site_url = "https://www.microsoft.com";
+        String url = i_Url + "?activetab=pivot:techspecstab";
+        String urlDesc = i_Url + "?activetab=pivot%3aoverviewtab";
+        Laptop laptop = null;
+
+        try {
+            final Document document2 = Jsoup.connect(url).get();
+            final Document documentDesc = Jsoup.connect(urlDesc).get();
+            final String companyName = "Lenovo";
+
+
+            final String imgURL = document2.select("div.pi-product-image").select("img").first().attr("src");
+            final String modelName = document2.select("h1#DynamicHeading_productTitle").text();
+            final String desc = documentDesc.select("div.c-paragraph").first().text();
+
+            //Price
+            String priceIfDiscount = document2.select("div#purchaseColumn").select("div#ProductPrice_productPrice_PriceContainer.pi-price-text").select("span.price-disclaimer").text();
+            if(priceIfDiscount.equals(""))
+                priceIfDiscount = document2.select("div#purchaseColumn").select("div#ProductPrice_productPrice_PriceContainer.pi-price-text").text();
+
+            priceIfDiscount = priceIfDiscount.replaceAll("\\$","").replaceAll(",","");
+            double priceNum = Double.parseDouble(priceIfDiscount);
+
+            // Weight
+            final String weightString = document2.select("div.c-table.f-divided.c-structured-list.cli_sku-variation").select("tr:contains(Weight)").select("td").text();
+            String[] splitWeight = weightString.split(" ", 2);
+            double weightNum = 0.45 * Double.parseDouble(splitWeight[0]);
+
+            // Storage
+            boolean isSSD = false;
+            final String storageString = document2.select("div.c-table.f-divided.c-structured-list.cli_sku-variation").select("tr:contains(Hard drive size)").select("td").text();
+            String[] splitStorage = storageString.split(" ");
+            String cutStorage;
+            int storageNum;
+            if(splitStorage[0].contains("GB") || splitStorage[1].contains("GB")) {
+                cutStorage = splitStorage[0].replaceAll("GB", "");
+                storageNum = Integer.parseInt(cutStorage);
+            }
+            else {
+                cutStorage = splitStorage[0].replaceAll("TB", "");
+                storageNum = 1000 * Integer.parseInt(cutStorage);
+
+            }
+
+            if(storageString.contains("SSD"))
+                isSSD = true;
+
+            Storage theStorage = new Storage(isSSD, storageNum);
+
+
+
+            /*
+            String processor = "", memoryString = "", screenSizeString = "", operatingSystemString = "", graphicCardString = "";
+            String weightString = "", battery = "", touchScreen = "", storageType = "", storageCapacityString = "";
+            ;
+
+            Elements attributes = document2.select("div.tech-spacs");
+            for (Element attr : attributes) {
+                String h2 = attr.select("h2").text();
+                if (h2.equals("PROCESSOR")) {
+                    processor = attr.select("dd").text();
+                } else if (h2.equals("MEMORY")) {
+                    memoryString = attr.select("dd").text();
+                } else if (h2.equals("DISPLAY")) {
+                    screenSizeString = attr.select("dd").first().text();
+                    graphicCardString = attr.select("dd").eq(3).text();
+                } else if (h2.equals("OPERATING SYSTEM")) {
+                    operatingSystemString = attr.select("dd").text();
+                } else if (h2.equals("DIMENSIONS/WEIGHT")) {
+                    weightString = attr.select("dd").eq(2).text();
+                } else if (h2.equals("BATTERY/POWER")) {
+                    battery = attr.select("dd").first().text();
+                } else if (h2.equals("FEATURES")) {
+                    for (int i = 0; i < attr.select("dt").size(); i++) {
+                        if (attr.select("dt").eq(i).text().equals("Touchscreen LCD")) {
+                            touchScreen = attr.select("dd").eq(i).text();
                         }
                     }
-                }
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-
-    }
-
-    public static void newParseLaptop(String url, List<Laptop> LaptopArray) {
-        String LaptopSummeryHeader;
-        String LaptopSummeryBody;
-        String[] attributes_lables;
-        String[] attributes_values;
-        String[] StringFormatLaptop;
-
-        try {
-            final Document LenovoLeptopUrlDocument = Jsoup.connect(url).get();
-            String imgUrl = "https://www.lenovo.com" + LenovoLeptopUrlDocument.select(".noeSpot.subseriesHeader > .single_img.hero-column-two.hero-column > .no-margin.rollovercartItemImg.subSeries-Hero").attr("src");
-            LaptopSummeryBody = LenovoLeptopUrlDocument.select(".noeSpot.subseriesHeader > .hero-column-one.hero-column > .mediaGallery-productDescription.hero-productDescription > .mediaGallery-productDescription-body.hero-productDescription-body").text();
-
-            final Element table = LenovoLeptopUrlDocument.select("ol").first();
-            if (table != null) {
-                final Elements versionModel = table.select("div.tabbedBrowse-productListing");
-                for (Element version : versionModel) {
-                    Laptop laptop = new Laptop();
-                    laptop.setDescription(LaptopSummeryBody);
-                    laptop.setImg_url(imgUrl);
-                    String FinalModelName = version.select(".tabbedBrowse-productListing-header > .tabbedBrowse-productListing-title").text();
-                    String FinalPrice = version.select(".tabbedBrowse-productListing-body > .pricingSummary > .pricingSummary-details > .pricingSummary-details-final-price.saleprice").text();
-                    final Elements details = version.select("dl");
-
-                    int i = 0;
-                    Element values = null;
-                    for (Element det : details) {
-
-                        if (i == 1)
-                            values = det;
-                        i++;
+                } else if (h2.equals("HARD DRIVE")) {
+                    storageType = attr.select("dd").first().text();
+                    for (int i = 0; i < attr.select("dt").size(); i++) {
+                        if (attr.select("dt").eq(i).text().equals("Capacity")) {
+                            storageCapacityString = attr.select("dd").eq(i).text();
+                        }
                     }
 
-                    Elements a = values.select("dt");
-                    Elements b = values.select("dd");
-                    attributes_lables = new String[a.size()];
-                    attributes_values = new String[b.size()];
-                    i = 0;
-                    for (Element c : a) {
-
-                        attributes_lables[i] = c.text();
-                        i++;
-                    }
-                    i = 0;
-                    for (Element d : b) {
-                        attributes_values[i] = d.text();
-                        i++;
-                    }
-                    for (i = 0; i < attributes_lables.length; i++) {
-                        if (attributes_lables[i].equals("Operating System"))
-                            laptop.setOperation_system(getFormat_OS(attributes_values[i]));
-                        else if (attributes_lables[i].equals("Processor")) {
-                            laptop.setProcessor(getFormat_CPU(attributes_values[i]));
-                        } else if (attributes_lables[i].equals("Memory"))
-                            laptop.setMemory(getFormat_Memory(attributes_values[i]));
-                        else if (attributes_lables[i].equals("Graphics"))
-                            laptop.setGpu(getFormat_GPU(attributes_values[i]));
-                        else if (attributes_lables[i].equals("Hard Drive"))
-                            laptop.setStorage(getFormat_Storage(attributes_values[i]));
-                        else if (attributes_lables[i].equals("Display Type")) {
-                            laptop.setScreen_size(getFormat_ScreenSize(attributes_values[i]));
-                            if (attributes_values[i].toLowerCase().contains("multi-touch"))
-                                laptop.setTouch_screen(true);
-                            else
-                                laptop.setTouch_screen(false);
-                        } else if (attributes_lables[i].equals("Battery"))
-                            laptop.setBattery(getFormat_Battery(attributes_values[i]));
-                    }
-                    if (laptop.NotAllAttributeisFilled()) {
-                        ParseLaptop(url, laptop);
-                    }
-                    laptop.setId_prod(LaptopArray.size());
-                    laptop.setCompany_name("Lenovo");
-                    laptop.setUrl_model(url);
-                    laptop.setModel_name(FinalModelName);
-                    laptop.setPrice(getFormat_Price(FinalPrice));
-//                    if (laptop.NotAllAttributeisFilled())
-//                        System.out.println("FOUND NULL. "+url);
-                    LaptopArray.add(laptop);
                 }
             }
 
-        } catch (Exception ex) {
-            System.out.println(url);
-            ex.printStackTrace();
-        }
-    }
+            String processorManufacture;
+            String processorModel = " ";
+            String[] splitCPU = processor.split(" ");
 
-
-    public static void ParseLaptop(String url, Laptop laptop) {
-        try {
-            final Document LenovoLeptopUrlDocument = Jsoup.connect(url).get();
-            final Elements table = LenovoLeptopUrlDocument.select(".techSpecs-table");
-            for (Element line : table.select("tr")) {
-                String attribute_lable = (line.select("td:nth-child(1)").text());
-                attribute_lable = attribute_lable.split("\\?")[0].trim();
-                Elements attribute_value = line.select("td:nth-child(2)");
-                if (line.select("td:nth-child(2)").select("li").size() != 0) {
-                    for (Element li : line.select("td:nth-child(2)").select("li")) {
-                        parseLenovoElement(laptop, attribute_value, attribute_lable);
-                    }
-                } else {
-                    parseLenovoElements(laptop, attribute_value, attribute_lable);
-                }
-            }
-        } catch (Exception ex) {
-            System.out.println(url);
-            ex.printStackTrace();
-        }
-    }
-
-    public static void parseLenovoElements(Laptop laptop, Elements elememt, String attribute_lable) {
-        if (attribute_lable.equals("Processor") && laptop.getProcessor() == null)
-            laptop.setProcessor(getFormat_CPU(elememt.text()));
-        if (attribute_lable.equals("Memory") && laptop.getMemory() == 0)
-            laptop.setMemory(getFormat_Memory(elememt.text()));
-        if (attribute_lable.equals("Operating System") && laptop.getOperation_system() == null)
-            laptop.setOperation_system(getFormat_OS(elememt.text()));
-        if (attribute_lable.equals("Graphics") && laptop.getGpu() == null)
-            laptop.setGpu(getFormat_GPU(elememt.text()));
-        if (attribute_lable.equals("Storage") && laptop.getStorage() == null)
-            laptop.setStorage(getFormat_Storage(elememt.text()));
-        if (attribute_lable.equals("Display") && laptop.getScreen_size() == 0)
-            laptop.setScreen_size(getFormat_ScreenSize(elememt.text()));
-        if (attribute_lable.equals("Weight") && laptop.getWeight() == 0)
-            laptop.setWeight(getFormat_Weight(elememt.text()));
-        if (attribute_lable.equals("Battery") && laptop.getBattery().equals("0"))
-        laptop.setBattery(getFormat_Battery(elememt.text()));
-        if (attribute_lable.equals("Touch Screen") && laptop.getTouch_screen() == null) {
-            if (elememt.text().contains("multi-touch"))
-                laptop.setTouch_screen(true);
+            if (processor.contains("Intel"))
+                processorManufacture = "Intel";
             else
-                laptop.setTouch_screen(false);
-        }
-    }
+                processorManufacture = "AMD";
 
-    public static void parseLenovoElement(Laptop laptop, Elements elememt, String attribute_lable) {
-        if (attribute_lable.equals("Processor") && laptop.getProcessor() == null)
-            laptop.setProcessor(getFormat_CPU(elememt.text()));
-        if (attribute_lable.equals("Memory") && laptop.getMemory() == 0)
-            laptop.setMemory(getFormat_Memory(elememt.text()));
-        if (attribute_lable.equals("Operating System") && laptop.getOperation_system() == null)
-            laptop.setOperation_system(getFormat_OS(elememt.text()));
-        if (attribute_lable.equals("Graphics") && laptop.getGpu() == null)
-            laptop.setGpu(getFormat_GPU(elememt.text()));
-        if (attribute_lable.equals("Storage") && laptop.getStorage() == null)
-            laptop.setStorage(getFormat_Storage(elememt.text()));
-        if (attribute_lable.equals("Display") && laptop.getScreen_size() == 0)
-            laptop.setScreen_size(getFormat_ScreenSize(elememt.text()));
-        if (attribute_lable.equals("Weight") && laptop.getWeight() == 0)
-            laptop.setWeight(getFormat_Weight(elememt.text()));
-        if (attribute_lable.equals("Battery") && laptop.getBattery().equals("0"))
-            laptop.setBattery(getFormat_Battery(elememt.text()));
-        if (attribute_lable.equals("Touch Screen") && laptop.getTouch_screen() == null) {
-            if (elememt.text().contains("multi-touch"))
-                laptop.setTouch_screen(true);
-            else
-                laptop.setTouch_screen(false);
-        }
-    }
-
-    public static OS getFormat_OS(String OS_String_format)
-    {
-        String[] OS_String;
-        String Manufacture="";
-        String Version="";
-        int Serios = 0;
-        int Bit_Siz = 0;
-
-        if(OS_String_format.toLowerCase().contains("windows"))
-        {
-            OS_String = OS_String_format.split(" ");
-            //System.out.println(OS_String[0]+"\n"+OS_String[1]+"\n"+OS_String[2]+"\n"+OS_String[3]+"\n");
-            Manufacture = OS_String[0];
-            Serios = Integer.parseInt(OS_String[1]);
-            Version = OS_String[2];
-            Bit_Siz = 64;
-        }
-
-        OS OS_Struct = new OS(Manufacture,Version,Serios,Bit_Siz);
-        return OS_Struct;
-    }
-
-
-    public static PartStruct getFormat_CPU(String CPU_String_format) {
-        String CPU_Split[];
-        String CPU_Split1[];
-        String CPU_Split2[];
-        String Manufacture = "";
-        String Model = "";
-        if (CPU_String_format.contains("Intel")) {
-            Manufacture = "Intel";
-            CPU_Split = CPU_String_format.split("-");
-            CPU_Split1 = CPU_Split[0].split(" ");
-            CPU_Split2 = CPU_Split[1].split(" ");
-            Model = CPU_Split1[CPU_Split1.length - 1] + "-" + CPU_Split2[0];
-
-        } else if (CPU_String_format.contains("AMD")) {
-            Manufacture = "AMD";
-            CPU_Split = CPU_String_format.split("U");
-            CPU_Split1 = CPU_Split[0].split(" ");
-            Model = CPU_Split1[CPU_Split1.length - 1];
-        }
-        PartStruct CPUStruct = new PartStruct(Manufacture, Model);
-        return CPUStruct;
-    }
-
-    public static int getFormat_Memory(String Memory_String_format) {
-        int Memory = 0;
-        if (Memory_String_format.toLowerCase().contains("gb"))
-            Memory = Integer.parseInt(Memory_String_format.split("GB")[0].trim());
-        else
-            Memory = Integer.parseInt(Memory_String_format.trim());
-        return (Memory);
-    }
-
-    public static Parts.Storage getFormat_Storage(String Storage_String_format) {
-        int Storage = 0;
-        boolean ssd = false;
-        if (Storage_String_format.contains("GB"))
-            Storage = Integer.parseInt(Storage_String_format.split("GB")[0].trim());
-        else if (Storage_String_format.contains("TB"))
-            Storage = 1024 * Integer.parseInt(Storage_String_format.split("TB")[0].trim());
-        if(Storage_String_format.contains("SSD"))
-            ssd = true;
-        Parts.Storage storage_struct=new Parts.Storage(ssd,Storage);
-        return storage_struct;
-    }
-
-    public static double getFormat_ScreenSize(String ScreenSize_String_format) {
-        String ScreenSizeString = "";
-        double ScreenSize = 0;
-        if (ScreenSize_String_format.contains(" FHD "))
-            ScreenSizeString = ScreenSize_String_format.split("FHD")[0];
-        if (ScreenSize_String_format.contains(" UHD "))
-            ScreenSizeString = ScreenSize_String_format.split("UHD")[0];
-        if (ScreenSize_String_format.contains(" WQHD "))
-            ScreenSizeString = ScreenSize_String_format.split("WQHD")[0];
-        if (ScreenSize_String_format.contains(" HDR "))
-            ScreenSizeString = ScreenSize_String_format.split("HDR")[0];
-        if (ScreenSize_String_format.contains(" HD "))
-            ScreenSizeString = ScreenSize_String_format.split("HD")[0];
-
-        ScreenSizeString = ScreenSizeString.replaceAll("[^\\d.]", "");
-        ScreenSize = Double.parseDouble(ScreenSizeString.trim());
-        return (ScreenSize);
-    }
-
-    public static double getFormat_Weight(String Weight_String_format) {
-        double Weight = 0;
-        df2.setRoundingMode(RoundingMode.UP);
-        String[] WeightSplit;
-        String WeightString;
-        WeightSplit = Weight_String_format.split("lbs");
-        WeightString = WeightSplit[0].trim();
-
-        if (WeightString.contains("kg"))
-            WeightString = WeightString.split("kg")[1].replaceAll("[^.?0-9]+", "");
-        else
-            WeightString = WeightString.replaceAll("[^.?0-9]+", "");
-
-        Weight = 0.45 * Double.parseDouble(WeightString.trim());
-        return Double.parseDouble(df2.format(Weight));
-
-    }
-
-    public static String getFormat_Battery(String Battery_String_format) {
-        String Battery = "0";
-        String[] BatterySplit;
-        //System.out.println(Battery_String_format);
-        if (Battery_String_format.toLowerCase().contains("whr")) {
-            BatterySplit = Battery_String_format.split("Whr")[0].split(" ");
-            //System.out.println(BatterySplit[BatterySplit.length - 1]);
-            Battery = BatterySplit[BatterySplit.length - 1].trim();
-        } else if (Battery_String_format.toLowerCase().contains("wh")) {
-            BatterySplit = Battery_String_format.split("Wh")[0].split(" ");
-            //System.out.println(BatterySplit[BatterySplit.length - 1]);
-            Battery = BatterySplit[BatterySplit.length - 1].trim();
-        } else
-            Battery = Battery_String_format.trim();
-
-        //System.out.println(Battery);
-        return Battery;
-    }
-
-    public static double getFormat_Price(String Price_String_format) {
-        double Price = 0;
-        String PriceString;
-
-        PriceString = Price_String_format.replaceAll(",", "");
-        PriceString = PriceString.replaceAll("\\$", "");
-        PriceString = PriceString.split("\\.")[0];
-
-        Price = Double.parseDouble(PriceString.trim());
-        return Price;
-    }
-
-    public static PartStruct getFormat_GPU(String GPU_String_format) {
-        String GPU_Split[];
-        String Manufacture = "";
-        String Model = "";
-
-        if (GPU_String_format.contains("Intel")) {
-            Manufacture = "Intel";
-            Model = GPU_String_format.replaceAll("[^0-9]+", " ").trim();
-        } else if (GPU_String_format.toLowerCase().contains("nvidia")) {
-            Manufacture = "Nvidia";
-            if (GPU_String_format.contains(" GTX ")) {
-                GPU_Split = GPU_String_format.split(" GTX ");
-                Model = ("P" + GPU_Split[1].split(" ")[0]).trim();
-            } else if (GPU_String_format.contains(" P")) {
-                GPU_Split = GPU_String_format.split(" P");
-                Model = ("P" + GPU_Split[1].split(" ")[0]).trim();
-            } else if (GPU_String_format.contains(" M")) {
-                GPU_Split = GPU_String_format.split(" M");
-                Model = ("M" + GPU_Split[1].split(" ")[0]).trim();
-
+            for (int i = 0; i < splitCPU.length; i++) {
+                // Because LG work only with Intel i3\i5\i7 so its fine with this if.
+                if (splitCPU[i].contains("i3") || splitCPU[i].contains("i5") || splitCPU[i].contains("i7")) {
+                    processorModel = splitCPU[i];
+                }
             }
+            PartStruct CPU = new PartStruct(processorManufacture, processorModel);
+
+
+            // Memory
+            memoryString = memoryString.replaceAll("GB", "");
+            String[] splitMemory = memoryString.split(" ", 2);
+            int memory = Integer.parseInt(splitMemory[0]);
+
+
+            // Screen Size:
+            screenSizeString = screenSizeString.replace("\"", "");
+            double screenSize = Double.parseDouble(screenSizeString);
+
+
+            // OS
+            String[] splitOS = operatingSystemString.split(" ");
+            String OS_Manufacture = splitOS[0];
+            String OS_Version = splitOS[2];
+            int OS_Serie = Integer.parseInt(splitOS[1]);
+            int OS_Bit;
+            if (splitOS[3].contains("64"))
+                OS_Bit = 64;
+            else
+                OS_Bit = 32;
+
+            OS operatingSystem = new OS(OS_Manufacture, OS_Version, OS_Serie, OS_Bit);
+
+
+            // Graphic Card
+            String[] splitGPU = graphicCardString.split(" ", 2);
+            String manufactureGPU = splitGPU[0].replaceAll("®", "");
+            String modelGPU = splitGPU[1];
+            PartStruct GPU = new PartStruct(manufactureGPU, modelGPU);
+
+
+            // Weight
+
+            String[] splitWeight = weightString.split(" ", 2);
+            double weight = 0.45 * Double.parseDouble((splitWeight[0]));
+            weight = Double.parseDouble(decmialFormat.format(weight));
+
+
+
+            // Price
+            double price;
+            String priceString = document2.select("div.price").first().text();
+
+            if (priceString.equals("$"))
+                price = 0;
+            else {
+                priceString = priceString.replaceAll("\\$", "");
+                priceString = priceString.replaceAll(",", "");
+                price = Double.parseDouble(priceString);
+            }
+
+
+
+            // Check Touch Screen
+            Boolean isTouchScreen;
+            if (touchScreen.contains("Yes") == true)
+                isTouchScreen = true;
+            else {
+                isTouchScreen = false;
+            }
+
+            // Storage Calculate
+            boolean isSSD;
+            if (storageType.contains("SSD"))
+                isSSD = true;
+            else
+                isSSD = false;
+
+
+            int storageCapacity;
+            String onlyGBString;
+            String[] splitStorage = storageCapacityString.split(" ", 2);
+            if (splitStorage[0].contains("TB")) {
+                onlyGBString = splitStorage[0].replaceAll("TB", "");
+                storageCapacity = 1024 * Integer.parseInt(onlyGBString);
+            } else {
+                onlyGBString = splitStorage[0].replaceAll("GB", "");
+                storageCapacity = Integer.parseInt(onlyGBString);
+            }
+
+            Storage storageObject = new Storage(isSSD, storageCapacity);
+
+
+            // Only Build The Object.
+            laptop = new Laptop(id_laptop, modelName, url, companyName, CPU, memory, operatingSystem, GPU, storageObject, screenSize, weight, battery, isTouchScreen, price, imgURL, desc);
+*/
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-        PartStruct GPUStruct = new PartStruct(Manufacture, Model);
-        return GPUStruct;
+
+        return laptop;
     }
+
+
+    public static boolean isNumeric(String str) {
+        for (char c : str.toCharArray()) {
+            if (!Character.isDigit(c) && c != '.') return false;
+        }
+        return true;
+    }
+
 
 }
