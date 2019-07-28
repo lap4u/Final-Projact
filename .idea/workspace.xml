@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ff58b578-1157-409a-9592-d2a97cb66ff6" name="Default Changelist" comment="database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Laptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Laptop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpu_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/cpu_list.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Dell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Dell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Lenovo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Lenovo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
@@ -23,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Lenovo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="51" column="40" lean-forward="true" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+            <state relative-caret-position="230">
+              <caret line="30" column="105" lean-forward="true" selection-start-line="30" selection-start-column="105" selection-end-line="30" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,13 +34,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Laptop.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Acer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="43" selection-start-line="43" selection-end-line="46" selection-end-column="96" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="111">
+              <caret line="236" column="65" lean-forward="true" selection-start-line="236" selection-end-line="237" />
             </state>
           </provider>
         </entry>
@@ -47,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="136">
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,8 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>intel</find>
-      <find>620</find>
       <find>size of</find>
       <find>laptop</find>
       <find>System.out.println</find>
@@ -80,6 +76,25 @@
       <find>productsWraper</find>
       <find>split</find>
       <find>contain</find>
+      <find>835</find>
+      <find>QUalcomm</find>
+      <find>Qualcomm</find>
+      <find>8265</find>
+      <find>9750H</find>
+      <find>1650</find>
+      <find>gtx</find>
+      <find>gtx 1650</find>
+      <find>context-list-page</find>
+      <find>i9-8950HK</find>
+      <find>TI</find>
+      <find>GTX 105</find>
+      <find>1050 tI</find>
+      <find>3550H</find>
+      <find>5 3550H</find>
+      <find>max-q</find>
+      <find>2070</find>
+      <find>subst</find>
+      <find>df</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -93,13 +108,14 @@
         <option value="$PROJECT_DIR$/src/Parts/Storage.java" />
         <option value="$PROJECT_DIR$/src/com/company/DB.java" />
         <option value="$PROJECT_DIR$/src/com/company/LG.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Dell.java" />
         <option value="$PROJECT_DIR$/src/com/company/Acer.java" />
         <option value="$PROJECT_DIR$/src/Softwares/SoftwareGame.java" />
         <option value="$PROJECT_DIR$/src/Parts/OS.java" />
         <option value="$PROJECT_DIR$/src/Softwares/FindGames.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Laptop.java" />
+        <option value="$PROJECT_DIR$/cpu_list.json" />
+        <option value="$PROJECT_DIR$/src/com/company/Dell.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Lenovo.java" />
       </list>
     </option>
@@ -121,23 +137,23 @@
         <subPane>
           <expand>
             <path>
-              <item name="Final-Projact237" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact237" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact287" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact287" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact237" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact237" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact287" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact287" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact237" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact237" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact287" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact287" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact237" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact237" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact287" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact287" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Parts" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -151,7 +167,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563813416171" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564336241682" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -204,6 +220,7 @@
       <workItem from="1563780840549" duration="7653000" />
       <workItem from="1563795654876" duration="12375000" />
       <workItem from="1563866858373" duration="9497000" />
+      <workItem from="1564303828351" duration="15693000" />
     </task>
     <task id="LOCAL-00001" summary="database">
       <created>1558099045113</created>
@@ -216,7 +233,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43338000" />
+    <option name="totallyTimeSpent" value="59031000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -231,7 +248,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12859304" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1301059" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -241,7 +258,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6664145" visible="true" weight="0.32569557" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.77238804" weight="0.19175455" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.77238804" weight="0.19148937" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840087" weight="0.32981783" />
@@ -257,9 +274,9 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.24962178" />
-      <window_info anchor="right" id="Maven" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.24962178" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,35 +334,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cpu_list.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dependices/objectdb-2.6.9/tutorials/guestbook-jee6/src/main/java/guest/GuestServlet.java" />
     <entry file="file://$PROJECT_DIR$/src/Dependices/objectdb-2.6.9/tutorials/guestbook-jee6/src/main/java/guest/Guest.java" />
     <entry file="file://$PROJECT_DIR$/src/Dependices/objectdb-2.6.9/tutorials/guestbook-jee6/src/main/java/guest/GuestDao.java" />
     <entry file="file://$PROJECT_DIR$/src/Dependices/objectdb-2.6.9/tutorials/guestbook-spring/src/main/java/guest/GuestDao.java" />
     <entry file="file://$PROJECT_DIR$/ListOfLaptops.json" />
-    <entry file="file://$PROJECT_DIR$/src/Parts/PartStruct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_list.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28722" selection-start-column="28719" selection-end-column="28722" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/DB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -364,13 +357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8721">
           <caret line="542" selection-start-line="542" selection-end-line="542" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Acer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -409,20 +395,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Parts/Storage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parts/PartStruct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Laptop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="43" selection-start-line="43" selection-end-line="46" selection-end-column="96" />
+        <state relative-caret-position="353">
+          <caret line="58" column="28" lean-forward="true" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -431,29 +421,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LG.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="136" column="38" selection-start-line="136" selection-start-column="31" selection-end-line="136" selection-end-column="38" />
+        <state relative-caret-position="94">
+          <caret line="156" column="7" lean-forward="true" selection-start-line="156" selection-start-column="7" selection-end-line="167" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Dell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="60" column="82" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="82" />
+        <state relative-caret-position="5219">
+          <caret line="316" column="1" lean-forward="true" selection-start-line="316" selection-start-column="1" selection-end-line="316" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parts/Storage.java">
+    <entry file="file://$PROJECT_DIR$/cpu_list.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="102">
+          <caret column="38718" selection-start-column="38711" selection-end-column="38718" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_list.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22445" selection-start-column="22441" selection-end-column="22445" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Acer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="236" column="65" lean-forward="true" selection-start-line="236" selection-end-line="237" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Lenovo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="51" column="40" lean-forward="true" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+        <state relative-caret-position="230">
+          <caret line="30" column="105" lean-forward="true" selection-start-line="30" selection-start-column="105" selection-end-line="30" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

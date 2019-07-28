@@ -85,7 +85,6 @@ public class Dell {
 
             // OS
             final String operatingSystemStr = document2.select("div.tech-spec-title:contains(Operating System)").select("div.tech-spec-content").text();
-
             String[] splitOS = operatingSystemStr.split(" ");
             String OS_Manufacture = splitOS[0];
             String OS_Version = splitOS[2];
@@ -120,6 +119,7 @@ public class Dell {
 
             //Storage
             String storageString = document2.select("div.tech-spec-title:contains(Hard Drive)").select("div.tech-spec-content").text();
+            storageString = storageString.replaceAll("M.2 ", "");
             int storageCapacity;
 
             boolean isSSD;
@@ -131,6 +131,7 @@ public class Dell {
 
             String[] arrStorage = storageString.split(" ", 2);
             String GBString;
+
 
             if (arrStorage[0].contains("TB")) {
                 GBString = arrStorage[0].replaceAll("TB", "");
@@ -292,9 +293,17 @@ public class Dell {
 
     private static boolean Exclude_Dell_Comps(String i_Url) {
         boolean isOkComp = true;
+        String[] excludeUrls = {"https://deals.dell.com/en-us/productdetail/2rdk",
+                "https://deals.dell.com/en-us/productdetail/2qam",
+                "https://deals.dell.com/en-us/productdetail/2rdm"
+        };
 
-        if (i_Url.equals("https://deals.dell.com/en-us/productdetail/2qam"))
-            isOkComp = false;
+        for(int i=0;i<excludeUrls.length;i++) {
+            if (i_Url.equals(excludeUrls[i])) {
+                isOkComp = false;
+                break;
+            }
+        }
 
         return isOkComp;
     }
