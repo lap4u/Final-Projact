@@ -3,6 +3,7 @@ import Parts.OS;
 import Parts.PartStruct;
 import Parts.Storage;
 import java.io.Serializable;
+import java.util.ArrayList;
 import javax.persistence.*;
 
 @Entity
@@ -29,7 +30,7 @@ public class Laptop implements Serializable {
     private String battery;
     private Boolean touch_screen;
     private double price;
-    private String img_url;
+    private String imageURL;
     private String description;
 
 
@@ -60,7 +61,7 @@ public class Laptop implements Serializable {
         touch_screen = i_touch_screen;
         price = i_price;
         description = i_Description;
-        img_url = i_ImgURL;
+        imageURL = i_ImgURL;
     }
 
     // Getters
@@ -121,8 +122,9 @@ public class Laptop implements Serializable {
         return price;
     }
 
-    public String getImg_url() {
-        return img_url;
+
+    public String getImageURL() {
+        return imageURL;
     }
 
     public String getDescription() {
@@ -188,12 +190,12 @@ public class Laptop implements Serializable {
         this.price = price;
     }
 
-    public void setImg_url(String img_url) {
-        this.img_url = img_url;
-    }
-
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
 
@@ -213,7 +215,7 @@ public class Laptop implements Serializable {
                     + "\nScreen Size: " + screen_size
                     + "\nWeight: " + weight
                     + "\nBattery: " + battery
-                    + "\nImage URL: " + img_url
+                    +"\nImage URL:" + imageURL
                     + "\nDescription: " + description);
             System.out.println("Storage: " + storage.getM_GB() + "GB");
             if(storage.getM_SSD())
@@ -226,6 +228,7 @@ public class Laptop implements Serializable {
             else
                 System.out.println("Touch Screen: No");
             System.out.println("Price: " + price);
+
         }  catch (Exception ex) {
         System.out.println("ERROR: " + url_model);
         ex.printStackTrace();

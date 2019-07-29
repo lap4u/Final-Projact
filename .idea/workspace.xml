@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ff58b578-1157-409a-9592-d2a97cb66ff6" name="Default Changelist" comment="database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpu_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/cpu_list.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Acer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Acer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CreateJSONFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CreateJSONFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Dell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Dell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Lenovo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Lenovo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/LG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Laptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Laptop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Lenovo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Microsoft.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,32 +24,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Microsoft.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Lenovo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="30" column="105" lean-forward="true" selection-start-line="30" selection-start-column="105" selection-end-line="30" selection-end-column="105" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Acer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="236" column="65" lean-forward="true" selection-start-line="236" selection-end-line="237" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state relative-caret-position="238">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,8 +56,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>size of</find>
-      <find>laptop</find>
       <find>System.out.println</find>
       <find>system</find>
       <find>amsterdam</find>
@@ -95,6 +84,8 @@
       <find>2070</find>
       <find>subst</find>
       <find>df</find>
+      <find>img</find>
+      <find>site_url</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -107,16 +98,18 @@
         <option value="$PROJECT_DIR$/src/Parts/PartStruct.java" />
         <option value="$PROJECT_DIR$/src/Parts/Storage.java" />
         <option value="$PROJECT_DIR$/src/com/company/DB.java" />
-        <option value="$PROJECT_DIR$/src/com/company/LG.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Acer.java" />
         <option value="$PROJECT_DIR$/src/Softwares/SoftwareGame.java" />
         <option value="$PROJECT_DIR$/src/Parts/OS.java" />
         <option value="$PROJECT_DIR$/src/Softwares/FindGames.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Laptop.java" />
         <option value="$PROJECT_DIR$/cpu_list.json" />
-        <option value="$PROJECT_DIR$/src/com/company/Dell.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Lenovo.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Laptop.java" />
+        <option value="$PROJECT_DIR$/src/com/company/LG.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Acer.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Dell.java" />
+        <option value="$PROJECT_DIR$/src/com/company/CreateJSONFile.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Microsoft.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
       </list>
     </option>
   </component>
@@ -131,31 +124,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Final-Projact287" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact287" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact297" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact297" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact287" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact287" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact297" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact297" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact287" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact287" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact297" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact297" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Final-Projact287" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact287" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Parts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -167,7 +154,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564336241682" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564427126135" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -221,6 +208,7 @@
       <workItem from="1563795654876" duration="12375000" />
       <workItem from="1563866858373" duration="9497000" />
       <workItem from="1564303828351" duration="15693000" />
+      <workItem from="1564389125091" duration="10827000" />
     </task>
     <task id="LOCAL-00001" summary="database">
       <created>1558099045113</created>
@@ -233,7 +221,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59031000" />
+    <option name="totallyTimeSpent" value="69858000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -248,7 +236,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1301059" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13161875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -339,24 +327,10 @@
     <entry file="file://$PROJECT_DIR$/src/Dependices/objectdb-2.6.9/tutorials/guestbook-jee6/src/main/java/guest/GuestDao.java" />
     <entry file="file://$PROJECT_DIR$/src/Dependices/objectdb-2.6.9/tutorials/guestbook-spring/src/main/java/guest/GuestDao.java" />
     <entry file="file://$PROJECT_DIR$/ListOfLaptops.json" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/DB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Desktop/jdk-11.0.2/lib/src.zip!/java.base/jdk/internal/math/FloatingDecimal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="109" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/jdk-11.0.2/lib/src.zip!/java.base/java/lang/Double.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8721">
-          <caret line="542" selection-start-line="542" selection-end-line="542" />
         </state>
       </provider>
     </entry>
@@ -409,30 +383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Laptop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="58" column="28" lean-forward="true" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="156" column="7" lean-forward="true" selection-start-line="156" selection-start-column="7" selection-end-line="167" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Dell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5219">
-          <caret line="316" column="1" lean-forward="true" selection-start-line="316" selection-start-column="1" selection-end-line="316" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cpu_list.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -447,10 +397,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/LaptopData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        <state relative-caret-position="170">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/DB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2494">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Laptop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="221" column="47" lean-forward="true" selection-start-line="221" selection-start-column="47" selection-end-line="221" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -459,15 +430,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Acer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="236" column="65" lean-forward="true" selection-start-line="236" selection-end-line="237" />
+        <state relative-caret-position="-3038">
+          <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Lenovo.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Dell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="30" column="105" lean-forward="true" selection-start-line="30" selection-start-column="105" selection-end-line="30" selection-end-column="105" />
+        <state relative-caret-position="748">
+          <caret line="55" column="67" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/CreateJSONFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="50" column="47" lean-forward="true" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/jdk-11.0.2/lib/src.zip!/java.base/java/lang/Double.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="542" selection-start-line="542" selection-end-line="542" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Microsoft.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

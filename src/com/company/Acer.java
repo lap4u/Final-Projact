@@ -51,7 +51,8 @@ public class Acer {
             String Price = document.select("p.heading-l").text();
             String Description = document.select("p.text-tertiary-dark").first().text();
 
-            String imgUrl= document.select(".newStyle:nth-of-type(6) > .bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .gutter.b-7.a-12.col > .imgModelCont > .imgModel > .centerImage").attr("src");
+            String imgUrl= "http:" + document.select(".newStyle:nth-of-type(6) > .bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .gutter.b-7.a-12.col > .imgModelCont > .imgModel > .centerImage").attr("src");
+
             org.jsoup.select.Elements attributes = document.select(".margin-bottom-l.margin-top-l.gutter.row > .a-12.col > .gutter.row");
             for(Element attribute:attributes) {
                 String header = attribute.select(".bordR.c-3.a-12.col").text();
@@ -75,7 +76,7 @@ public class Acer {
             laptop.setModel_name(ModelName);
             laptop.setDescription(Description);
            laptop.setPrice(Double.parseDouble(Price.replaceAll("[^\\d.]", "").trim()));
-            laptop.setImg_url("http:" + imgUrl);
+            laptop.setImageURL(imgUrl);
             laptop.setUrl_model(finalUrl);
             if(!laptop.NotAllAttributeisFilled())
                 LaptopArray.add(laptop);
@@ -246,60 +247,5 @@ public class Acer {
 
         return flag;
     }
-    /*public static void ParseData(List<Laptop> LaptopArray) {
-        String Processor = "";
-        String Memory = "";
-        String GPU;
-        String[] GPUSplit;
-        String Battery="";
-        String[] BatterySplit;
-        for (Laptop laptop : LaptopArray) {
-            if (laptop.getProcessor() != null) {
-                if (laptop.getProcessor().contains("Intel")) {
-                }
-                Processor = laptop.getProcessor().replace("®", "");
-                laptop.setProcessor(Processor);
-            }
-            if (laptop.getMemory() != null) {
-                if (laptop.getMemory().toLowerCase().contains("gb")) {
-                    Memory = laptop.getMemory().split("GB")[0].trim();
-                } else {
-                    Memory = laptop.getMemory();
-                }
-                laptop.setMemory(Memory + " GB");
-            }
-            if (laptop.getBattery() != null) {
-                if (laptop.getBattery().contains("mAh")) {
-                    BatterySplit = laptop.getBattery().split("mAh")[0].split(" ");
-                    Battery = BatterySplit[BatterySplit.length - 1];
-                } else {
-                    Battery = laptop.getBattery();
-                }
-                laptop.setBattery(Battery.trim() + " Wh");
-
-            }
-            if (laptop.getGpu() != null) {
-                if (laptop.getGpu().contains("Intel")) {
-                    GPU = "Intel " + laptop.getGpu().replaceAll("[^0-9]+", " ").trim();
-                    laptop.setGpu(GPU);
-                } else if (laptop.getGpu().toLowerCase().contains("nvidia")) {
-                    if (laptop.getGpu().contains(" GTX ")) {
-                        GPUSplit = laptop.getGpu().split(" GTX ");
-                        GPU = ("Nvidia P" + GPUSplit[1].split(" ")[0]).trim();
-                        laptop.setGpu(GPU);
-                    } else if (laptop.getGpu().contains(" P")) {
-                        GPUSplit = laptop.getGpu().split(" P");
-                        GPU = ("Nvidia P" + GPUSplit[1].split(" ")[0]).trim();
-                        laptop.setGpu(GPU);
-                    } else if (laptop.getGpu().contains(" M")) {
-                        GPUSplit = laptop.getGpu().split(" M");
-                        GPU = ("Nvidia M" + GPUSplit[1].split(" ")[0]).trim();
-                        laptop.setGpu(GPU);
-                    }
-                }
-            }
-        }
-
-    }*/
 }
 

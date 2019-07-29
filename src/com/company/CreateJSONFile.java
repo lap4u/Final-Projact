@@ -48,7 +48,7 @@ public class CreateJSONFile {
         obj.put("Battery",laptop.getBattery());
         obj.put("Touch Screen",laptop.getTouch_screen());
         obj.put("Price",laptop.getPrice());
-        obj.put("imgURL",laptop.getImg_url());
+        obj.put("imgURL",laptop.getImageURL());
         obj.put("Description",laptop.getDescription());
 
         jsonLaptopArray.add(obj);
