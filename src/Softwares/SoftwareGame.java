@@ -1,17 +1,35 @@
 package Softwares;
+
 import Parts.OS;
 import Parts.PartStruct;
 
 public class SoftwareGame {
     private String name;
-    private OS OperatingSystems[];
-    private PartStruct processor;
-    private int Memory;
-    private PartStruct GPU;
-    private double HardDrive;
+    private String description;
     private String imgURL;
+    private boolean isGame;
+    private int memory;
+    private double hardDrive;
+    private OS operatingSystem;
+    private PartStruct processor;
+    private PartStruct gpu;
 
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isGame() {
+        return isGame;
+    }
+
+    public void setGame(boolean game) {
+        isGame = game;
+    }
 
     public String getName() {
         return name;
@@ -21,12 +39,12 @@ public class SoftwareGame {
         this.name = name;
     }
 
-    public OS[] getOperatingSystems() {
-        return OperatingSystems;
+    public OS getOperatingSystem() {
+        return operatingSystem;
     }
 
-    public void setOperatingSystems(OS[] operatingSystems) {
-        OperatingSystems = operatingSystems;
+    public void setOperatingSystem(OS operatingSystem) {
+        this.operatingSystem = operatingSystem;
     }
 
     public PartStruct getProcessor() {
@@ -38,26 +56,35 @@ public class SoftwareGame {
     }
 
     public int getMemory() {
-        return Memory;
+        return memory;
     }
 
     public void setMemory(int memory) {
-        Memory = memory;
+        this.memory = memory;
     }
 
-    public PartStruct getGPU() {
-        return GPU;
+    public PartStruct getGpu() {
+        return gpu;
     }
 
-    public void setGPU(PartStruct GPU) {
-        this.GPU = GPU;
+    public void setGpu(PartStruct gpu) {
+        this.gpu = gpu;
     }
 
     public double getHardDrive() {
-        return HardDrive;
+        return hardDrive;
     }
 
-    public void setHardDrive(int hardDrive) {
-        HardDrive = hardDrive;
+    public void setHardDrive(double hardDrive) {
+        this.hardDrive = hardDrive;
     }
+
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
+    }
+
 }

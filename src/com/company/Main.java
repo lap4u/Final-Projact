@@ -1,5 +1,7 @@
 package com.company;
 
+import Softwares.FindGames;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -10,6 +12,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+
+        FindGames.FindGames();
+        /*
         ArrayList<Laptop> LaptopsArray = new ArrayList<Laptop>();
         Microsoft.Find_Laptops(LaptopsArray); // Lenovo + ASUS + MSI + Ryzer + HP
         System.out.println("Microsoft is ok!");
@@ -20,7 +25,7 @@ public class Main {
         LG.FindLGLaptops(LaptopsArray);
         System.out.println("LG is ok!");
         System.out.println("Total Comps: " + LaptopsArray.size());
-
+*/
         // Now this time: "LaptopsArray" contained all laptops
         //printAllLaptops(LaptopsArray);
     }
