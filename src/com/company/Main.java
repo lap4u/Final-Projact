@@ -13,21 +13,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FindGames.FindGames();
-        /*
+
         ArrayList<Laptop> LaptopsArray = new ArrayList<Laptop>();
         Microsoft.Find_Laptops(LaptopsArray); // Lenovo + ASUS + MSI + Ryzer + HP
-        System.out.println("Microsoft is ok!");
+    /*    System.out.println("Microsoft is ok!");
         Acer.Find_Laptops(LaptopsArray);
         System.out.println("Acer is ok!");
         Dell.FindDellLaptops(LaptopsArray);
-        System.out.println("Dell is ok!");
+        System.out.println("Dell is ok!"); */
         LG.FindLGLaptops(LaptopsArray);
         System.out.println("LG is ok!");
         System.out.println("Total Comps: " + LaptopsArray.size());
-*/
+          //      FindGames.FindGames();
+
         // Now this time: "LaptopsArray" contained all laptops
-        //printAllLaptops(LaptopsArray);
+        printAllLaptops(LaptopsArray);
     }
 
     private static void printAllLaptops(List<Laptop> laptopArray) {
@@ -48,7 +48,7 @@ public class Main {
                     "<body>" +
                     "<div class=\"headline\"><h1>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</h1></div><br><br>" +
                     "<div>" +
-                    "<img src=\"" + laptop.getImageURL() + "\" alt=\"laptop img\" height=\"400px\" width=\"auto\">" +
+                    "<img src=\"" + laptop.getImagesUrls().get(0) + "\" alt=\"laptop img\" height=\"400px\" width=\"auto\">" +
                     "<div class = \"description\">" + laptop.getDescription() + "</div>" +
                     "<div class=\"price\">" + laptop.getPrice() + "$</div>" +
                     "</div>" +

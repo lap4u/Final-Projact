@@ -8,6 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,8 @@ public class Microsoft {
     // This class get laptops of: Lenovo, HP, Razer, ASUS, MSI
 
     public static void Find_Laptops(List<Laptop> i_LaptopArray) {
-        String[] url = {"https://www.microsoft.com/en-us/store/b/shop-all-pcs?manufacturer=Lenovo&categories=Laptops",
+        String[] url = {
+                "https://www.microsoft.com/en-us/store/b/shop-all-pcs?manufacturer=Lenovo&categories=Laptops",
                 "https://www.microsoft.com/en-us/store/b/shop-all-pcs?manufacturer=HP&categories=Laptops",
                 "https://www.microsoft.com/en-us/store/b/shop-all-pcs?manufacturer=Razer&categories=Laptops",
                 "https://www.microsoft.com/en-us/store/b/shop-all-pcs?manufacturer=ASUS&categories=Laptops",
@@ -35,6 +37,11 @@ public class Microsoft {
             for (int j = 0; j < url.length; j++) {
                 Document document3 = Jsoup.connect(url[j]).get();
                 Elements computers = document3.select("div.c-group.f-wrap-items.context-list-page").select("a");
+                if(computers.size() == 0)
+                {
+                    System.out.println("~~!~~ Error MICROSOFT SIZE ~~!~~ Size 0 Problem !!!! END PROGRAM");
+                    System.exit(0);
+                }
                 for (Element comp : computers) {
                     String urlComp = mainUrl + comp.attr("href");
                     laptop = buildLaptop(urlComp, i_LaptopArray.size());
@@ -60,8 +67,11 @@ public class Microsoft {
             final Document documentDesc = Jsoup.connect(urlDesc).get();
 
             final String imgURL = document2.select("div.pi-product-image").select("img").first().attr("src");
+            ArrayList<String> imagesUrlsArray = new ArrayList<>();
+            imagesUrlsArray.add(imgURL);
+
+            String desc = getDesc(documentDesc);
             final String modelName = document2.select("h1#DynamicHeading_productTitle").text();
-            final String desc = documentDesc.select("div.c-paragraph").first().text();
             String[] splitNameCompany = modelName.split(" ", 2);
             final String companyName = splitNameCompany[0].trim();
             double priceNum = getPrice(document2);
@@ -75,7 +85,7 @@ public class Microsoft {
             PartStruct processor = getProcessor(document2);
             PartStruct gpu = getGPU(document2, companyName);
 
-            laptop = new Laptop(i_Idlaptop, modelName, i_Url, companyName, processor, memoryNum, operatingSystem, gpu, theStorage, screenSizeNum, weightNum, batteryString, isTouchScreen, priceNum, imgURL, desc);
+            laptop = new Laptop(i_Idlaptop, modelName, i_Url, companyName, processor, memoryNum, operatingSystem, gpu, theStorage, screenSizeNum, weightNum, batteryString, isTouchScreen, priceNum, imagesUrlsArray, desc);
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -84,6 +94,17 @@ public class Microsoft {
         return laptop;
     }
 
+    private static String getDesc(Document i_Document)
+    {
+        String desc;
+        Elements descs = i_Document.select("div.c-paragraph");
+        if(descs.size() != 0)
+            desc = i_Document.select("div.c-paragraph").first().text();
+        else
+            desc = "-";
+
+        return desc;
+    }
 
     private static double getPrice(Document i_Document) {
         String priceIfDiscount = i_Document.select("div#purchaseColumn").select("div#ProductPrice_productPrice_PriceContainer.pi-price-text").select("span.price-disclaimer").text();
@@ -153,7 +174,7 @@ public class Microsoft {
 
         String[] splitGPU = gpuString.split(" ", 2);
         if (i_CompanyName.toUpperCase().equals("ASUS")) {
-            splitGPU[1] = splitGPU[1].replaceAll(" 4GB", "").replaceAll(" 6GB", "").replaceAll(" GDDR5", "");
+            splitGPU[1] = splitGPU[1].replaceAll(" 4GB", "").replaceAll(" 6GB", "").replaceAll(" GDDR5", "").replaceAll("GTX 1060 Ti", "GTX 1060");
         } else if (i_CompanyName.equals("MSI"))
             splitGPU[1] = splitGPU[1].replaceAll(" 6GB", "").replaceAll(" 8GB", "").replaceAll(" GDDR6", "");
 
@@ -172,7 +193,7 @@ public class Microsoft {
         if (splitProcessor[1].contains("i7"))
             modelProcessor = splitProcessor[1];
         else
-            modelProcessor = splitProcessor[2].replaceAll("5-", "5 ");
+            modelProcessor = splitProcessor[2].replaceAll("5-", "5 ").replaceAll("x5 ", "x5-").replaceAll("i5 ", "i5-").replaceAll("A4-9120e", "A4-9120");
 
         PartStruct processor = new PartStruct(manuProcessor, modelProcessor);
 

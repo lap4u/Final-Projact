@@ -52,6 +52,8 @@ public class Acer {
             String Description = document.select("p.text-tertiary-dark").first().text();
 
             String imgUrl= "http:" + document.select(".newStyle:nth-of-type(6) > .bg-gray-2.sectionModelInfo.container > .max-width-d.container > .zh-bxsliderCont.gutter.row > .gutter.b-7.a-12.col > .imgModelCont > .imgModel > .centerImage").attr("src");
+            ArrayList<String> imagesUrls = getImagesArray(document);
+
 
             org.jsoup.select.Elements attributes = document.select(".margin-bottom-l.margin-top-l.gutter.row > .a-12.col > .gutter.row");
             for(Element attribute:attributes) {
@@ -75,8 +77,8 @@ public class Acer {
             laptop.setCompany_name("Acer");
             laptop.setModel_name(ModelName);
             laptop.setDescription(Description);
-           laptop.setPrice(Double.parseDouble(Price.replaceAll("[^\\d.]", "").trim()));
-            laptop.setImageURL(imgUrl);
+            laptop.setPrice(Double.parseDouble(Price.replaceAll("[^\\d.]", "").trim()));
+            laptop.setImagesUrls(imagesUrls);
             laptop.setUrl_model(finalUrl);
             if(!laptop.NotAllAttributeisFilled())
                 LaptopArray.add(laptop);
@@ -87,6 +89,23 @@ public class Acer {
     }
 
     }
+
+
+    public static ArrayList<String> getImagesArray(Document i_Document)
+    {
+        ArrayList<String> imagesArray = new ArrayList<>();
+        Elements getImages = i_Document.select("div.flex.zh-galleryMobile").select("img.centerImage");
+
+
+            for(int i=0;i<getImages.size();i++)
+            {
+                imagesArray.add("https:" + getImages.eq(i).attr("src"));
+                System.out.println(imagesArray.get(i));
+            }
+
+            return imagesArray;
+    }
+
     public  static void operation_system_handler(Element operation_system_element, Laptop laptop) {
         OS OS_Struct = null;
         Elements rows = operation_system_element.select(".row");

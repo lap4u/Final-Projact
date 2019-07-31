@@ -53,6 +53,8 @@ public class LG {
             String processor = "", memoryString = "", screenSizeString = "", operatingSystemString = "", graphicCardString = "";
             String weightString = "", battery = "", touchScreen = "", storageType = "", storageCapacityString = "";
 
+
+
             Elements attributes = document2.select("div.tech-spacs");
             for (Element attr : attributes) {
                 String h2 = attr.select("h2").text();
@@ -92,20 +94,33 @@ public class LG {
             OS operatingSystem = getOS(operatingSystemString);
             PartStruct GPU = getGPU(graphicCardString);
             double weight = getWeight(weightString);
-            final String imgURL = i_siteURL + document2.select("div.pdp-summary-area").select("img").first().attr("data-src");
+            ArrayList<String> imageUrlsArray = getImagesUrls(document2);
             double price = getPrice(document2);
             final String desc = document2.select("div.copy.font-regular").first().text();
             Boolean isTouchScreen = getIsTouchScreen(touchScreen);
             Storage storageObject = getStorage(storageType, storageCapacityString);
 
 
-            laptop = new Laptop(id_laptop, modelName, url, companyName, CPU, memory, operatingSystem, GPU, storageObject, screenSize, weight, battery, isTouchScreen, price, imgURL, desc);
+            laptop = new Laptop(id_laptop, modelName, url, companyName, CPU, memory, operatingSystem, GPU, storageObject, screenSize, weight, battery, isTouchScreen, price, imageUrlsArray, desc);
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
 
         return laptop;
+    }
+
+    private static ArrayList<String> getImagesUrls(Document i_Document)
+    {
+        ArrayList<String> imagesUrlArr = new ArrayList<>();
+        Elements getImagesURLs = i_Document.select("div.zoom-area").select("img.pc");
+        for(int i=0;i<getImagesURLs.size();i++)
+        {
+            if(getImagesURLs.eq(i).attr("data-lazy").equals("") == false)
+            imagesUrlArr.add("https://www.lg.com" + getImagesURLs.eq(i).attr("data-lazy"));
+        }
+
+        return imagesUrlArr;
     }
 
     private static PartStruct getCPU(String i_ProcessorString)
@@ -122,7 +137,7 @@ public class LG {
         for (int i = 0; i < splitCPU.length; i++) {
             // Because LG work only with Intel i3\i5\i7 so its fine with this if.
             if (splitCPU[i].contains("i3") || splitCPU[i].contains("i5") || splitCPU[i].contains("i7")) {
-                processorModel = splitCPU[i];
+                processorModel = splitCPU[i].replaceAll("5U,","5U");
             }
         }
         PartStruct CPU = new PartStruct(processorManufacture, processorModel);

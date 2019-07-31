@@ -4,6 +4,7 @@ import Parts.PartStruct;
 import Parts.Storage;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -30,7 +31,7 @@ public class Laptop implements Serializable {
     private String battery;
     private Boolean touch_screen;
     private double price;
-    private String imageURL;
+    private ArrayList<String> imagesUrls;
     private String description;
 
 
@@ -45,7 +46,7 @@ public class Laptop implements Serializable {
     public Laptop(int i_id_prod, String i_model_name, String i_url_model, String i_company_name,
                   PartStruct i_processor, int i_memory, OS i_operation_system, PartStruct i_gpu,
                   Storage i_storage, double i_screen_size, double i_weight, String i_battery,
-                  Boolean i_touch_screen, double i_price, String i_ImgURL, String i_Description) {
+                  Boolean i_touch_screen, double i_price, ArrayList<String> i_ImgURL, String i_Description) {
         id_prod = i_id_prod;
         model_name = i_model_name;
         url_model = i_url_model;
@@ -61,10 +62,18 @@ public class Laptop implements Serializable {
         touch_screen = i_touch_screen;
         price = i_price;
         description = i_Description;
-        imageURL = i_ImgURL;
+        imagesUrls = i_ImgURL;
     }
 
     // Getters
+
+    public ArrayList<String> getImagesUrls() {
+        return imagesUrls;
+    }
+
+    public void setImagesUrls(ArrayList<String> imagesUrls) {
+        this.imagesUrls = imagesUrls;
+    }
 
     public int getId_prod() {
         return id_prod;
@@ -122,10 +131,6 @@ public class Laptop implements Serializable {
         return price;
     }
 
-
-    public String getImageURL() {
-        return imageURL;
-    }
 
     public String getDescription() {
         return description;
@@ -194,10 +199,6 @@ public class Laptop implements Serializable {
         this.description = description;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
-    }
-
 
     // Methods.
 
@@ -215,7 +216,6 @@ public class Laptop implements Serializable {
                     + "\nScreen Size: " + screen_size
                     + "\nWeight: " + weight
                     + "\nBattery: " + battery
-                    +"\nImage URL:" + imageURL
                     + "\nDescription: " + description);
             System.out.println("Storage: " + storage.getM_GB() + "GB");
             if(storage.getM_SSD())
@@ -228,6 +228,11 @@ public class Laptop implements Serializable {
             else
                 System.out.println("Touch Screen: No");
             System.out.println("Price: " + price);
+
+            for(int i=0;i<imagesUrls.size();i++)
+            {
+                System.out.println("Image Number " + (i + 1) + ": " + imagesUrls.get(i));
+            }
 
         }  catch (Exception ex) {
         System.out.println("ERROR: " + url_model);

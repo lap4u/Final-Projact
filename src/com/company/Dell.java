@@ -61,7 +61,7 @@ public class Dell {
             PartStruct GPU = getGPU(document2);
             Double priceNumber = getPrice(document2);
             String desc = document2.select("div#heroDescription.hidden-xs").text();
-            String imgURL = getImgURL(document2);
+            ArrayList<String> imgURL = getImgURL(document2);
             Boolean isTouchScreen = getIsTouchScreen(document2);
             double screenSizeNum = getScreenSize(document2);
             double weightNum = getWeight(document2);
@@ -184,7 +184,8 @@ public class Dell {
         return isTouchScreen;
     }
 
-    private static String getImgURL(Document i_Document) {
+    private static ArrayList<String> getImgURL(Document i_Document) {
+        ArrayList<String> imagesArray = new ArrayList<>();
         String imgURL = "";
         Element checkImgURL = i_Document.select("img#heroStaticImage.max-width-100.margin-bottom-10").first();
 
@@ -194,7 +195,10 @@ public class Dell {
         else
             imgURL = "http:" + checkImgURL.attr("src");
 
-        return imgURL;
+
+        imagesArray.add(imgURL);
+
+        return imagesArray;
     }
 
     private static double getPrice(Document i_Document) {
@@ -221,7 +225,7 @@ public class Dell {
                 gpuModel = splitGPU[1];
         }
 
-        gpuModel = gpuModel.replaceAll("™", "").replaceAll("®", "");
+        gpuModel = gpuModel.replaceAll("™", "").replaceAll("®", "").replaceAll(" GDDR5","").replaceAll(" 2GB", "").replaceAll(" 4GB", "").replaceAll("0Ti", "0 Ti").replaceAll("GL Graphics ","GL");
 
         PartStruct GPU = new PartStruct(gpuManufacture, gpuModel);
         return GPU;
@@ -322,9 +326,8 @@ public class Dell {
 
     private static boolean Exclude_Dell_Comps(String i_Url) {
         boolean isOkComp = true;
-        String[] excludeUrls = {"https://deals.dell.com/en-us/productdetail/2rdk",
-                "https://deals.dell.com/en-us/productdetail/2qam",
-                "https://deals.dell.com/en-us/productdetail/2rdm"
+        String[] excludeUrls = {"https://deals.dell.com/en-us/productdetail/2spq"
+                ,"https://deals.dell.com/en-us/productdetail/2sps"
         };
 
         for (int i = 0; i < excludeUrls.length; i++) {
