@@ -1,5 +1,6 @@
 package com.company;
 
+import Positions.Position;
 import Softwares.FindGames;
 
 import java.io.BufferedWriter;
@@ -23,12 +24,19 @@ public class Main {
         System.out.println("Dell is ok!");
         LG.FindLGLaptops(LaptopsArray);
         System.out.println("LG is ok!");
-
-        System.out.println("Total Comps: " + LaptopsArray.size());
-          //      FindGames.FindGames();
-
+        System.out.println("Finish pull the computers!");
+        // Can Print the laptops: printAllLaptops(LaptopsArray);
         // Now this time: "LaptopsArray" contained all laptops
-       // printAllLaptops(LaptopsArray);
+        System.out.println("Total Comps: " + LaptopsArray.size());
+
+
+        // Now We build the GPU \ CPU Positions List From json.
+        ArrayList<Position> gpuPositions = new ArrayList<>();
+        ArrayList<Position> cpuPositions = new ArrayList<>();
+        // Action the method that convert the json file to the arrayLists.
+
+        // Now we pull the games from the games site.
+        // FindGames.FindGames();
     }
 
     private static void printAllLaptops(List<Laptop> laptopArray) {
