@@ -100,7 +100,6 @@ public class LG {
             Boolean isTouchScreen = getIsTouchScreen(touchScreen);
             Storage storageObject = getStorage(storageType, storageCapacityString);
 
-
             laptop = new Laptop(id_laptop, modelName, url, companyName, CPU, memory, operatingSystem, GPU, storageObject, screenSize, weight, battery, isTouchScreen, price, imageUrlsArray, desc);
 
         } catch (Exception ex) {

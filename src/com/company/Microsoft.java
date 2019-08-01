@@ -44,8 +44,12 @@ public class Microsoft {
                 }
                 for (Element comp : computers) {
                     String urlComp = mainUrl + comp.attr("href");
-                    laptop = buildLaptop(urlComp, i_LaptopArray.size());
-                    i_LaptopArray.add(laptop);
+                    if(isNotExclude(urlComp))
+                    {
+                        laptop = buildLaptop(urlComp, i_LaptopArray.size());
+                        i_LaptopArray.add(laptop);
+                    }
+
                 }
             }
         } catch (Exception ex) {
@@ -266,5 +270,24 @@ public class Microsoft {
         }
         return true;
     }
+
+
+    private static boolean isNotExclude(String i_Url) {
+        boolean isOkComp = true;
+        String[] excludeUrls = {"https://www.microsoft.com/en-us/p/lenovo-miix-630-2-in-1-pc/8ttdtw3s27dr/5512",
+                "https://www.microsoft.com/en-us/p/hp-envy-x2-detachable-12-e091ms-2-in-1-pc/8mz2zfx8b03g/7zdw",
+                "https://www.microsoft.com/en-us/p/hp-envy-x2-detachable-12-e068ms-2-in-1-pc/8t5h01qwh6vb/4dt3"
+        };
+
+        for (int i = 0; i < excludeUrls.length; i++) {
+            if (i_Url.equals(excludeUrls[i])) {
+                isOkComp = false;
+                break;
+            }
+        }
+
+        return isOkComp;
+    }
+
 
 }

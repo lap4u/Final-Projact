@@ -8,6 +8,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.math.RoundingMode;
+import java.net.ServerSocket;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -80,8 +81,9 @@ public class Acer {
             laptop.setPrice(Double.parseDouble(Price.replaceAll("[^\\d.]", "").trim()));
             laptop.setImagesUrls(imagesUrls);
             laptop.setUrl_model(finalUrl);
-            if(!laptop.NotAllAttributeisFilled())
+            if(!laptop.NotAllAttributeisFilled()) {
                 LaptopArray.add(laptop);
+            }
 
         }catch (Exception ex) {
         System.out.println(url);
@@ -98,10 +100,7 @@ public class Acer {
 
 
             for(int i=0;i<getImages.size();i++)
-            {
                 imagesArray.add("https:" + getImages.eq(i).attr("src"));
-                System.out.println(imagesArray.get(i));
-            }
 
             return imagesArray;
     }
@@ -177,7 +176,7 @@ public class Acer {
             if (attribute_lable.equals("Graphics Controller Manufacturer"))
                 Manufacture = attribute_value.replaceAll("®","").trim();
             else if (attribute_lable.equals("Graphics Controller Model"))
-                Model = attribute_value.replaceAll("GeForce®","").trim();
+                Model = attribute_value.replaceAll("®","").replaceAll("™","").trim();
             else if (attribute_lable.equals("Screen Size"))
                 Screen_Size = Double.parseDouble(attribute_value.replaceAll("[^\\d.]", ""));
             else if (attribute_lable.equals("Touchscreen"))
@@ -257,14 +256,22 @@ public class Acer {
         laptop.setWeight(Double.parseDouble(df2.format(Weight)));
     }
 
-    private static boolean isNotExclude(String i_href)
-    {
-        boolean flag = true;
-        if(i_href.equals("en/US/content/model/NX.HGMAA.001"))
-            flag = false;
 
+    private static boolean isNotExclude(String i_Url) {
+        boolean isOkComp = true;
+        String[] excludeUrls = {"en/US/content/model/NX.HGMAA.001",
+                "en/US/content/model/NH.Q52AA.002",
+                "en/US/content/model/NX.GL4AA.018"
+        };
 
-        return flag;
+        for (int i = 0; i < excludeUrls.length; i++) {
+            if (i_Url.equals(excludeUrls[i])) {
+                isOkComp = false;
+                break;
+            }
+        }
+
+        return isOkComp;
     }
 }
 
