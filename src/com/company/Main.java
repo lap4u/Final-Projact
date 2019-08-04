@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-
+/*
         ArrayList<Laptop> LaptopsArray = new ArrayList<Laptop>();
         Microsoft.Find_Laptops(LaptopsArray); // Lenovo + ASUS + MSI + Ryzer + HP
         System.out.println("Microsoft is ok!");
@@ -29,14 +29,14 @@ public class Main {
         // Now this time: "LaptopsArray" contained all laptops
         System.out.println("Total Comps: " + LaptopsArray.size());
 
-
+*/
         // Now We build the GPU \ CPU Positions List From json.
-        ArrayList<Position> gpuPositions = new ArrayList<>();
-        ArrayList<Position> cpuPositions = new ArrayList<>();
+        //ArrayList<Position> gpuPositions = new ArrayList<>();
+        //ArrayList<Position> cpuPositions = new ArrayList<>();
         // Action the method that convert the json file to the arrayLists.
 
         // Now we pull the games from the games site.
-        // FindGames.FindGames();
+         FindGames.FindGames();
     }
 
     private static void printAllLaptops(List<Laptop> laptopArray) {
