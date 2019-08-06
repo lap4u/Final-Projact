@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ff58b578-1157-409a-9592-d2a97cb66ff6" name="Default Changelist" comment="database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpu_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/cpu_list.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpu_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_list.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Acer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Acer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LG.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Microsoft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Microsoft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Softwares/FindGames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Softwares/FindGames.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,14 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+            <state relative-caret-position="313">
+              <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Softwares/FindGames.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="72" column="69" lean-forward="true" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -46,11 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>7-8550U</find>
-      <find>N3060</find>
-      <find>i7-8565U,</find>
-      <find>Processor</find>
-      <find>i5-8265U</find>
       <find>Processor:</find>
       <find>POSITION&quot;:217</find>
       <find>POSITION&quot;:216</find>
@@ -76,6 +75,11 @@
       <find>i5-7200U</find>
       <find>CPU</find>
       <find>isnotex</find>
+      <find>~~~~~~~!~~~~~ERROR~~~~~!~~~~~~~</find>
+      <find>i7-4771</find>
+      <find>getmem</find>
+      <find>i7-7700k</find>
+      <find>i5-4670K</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -91,7 +95,6 @@
         <option value="$PROJECT_DIR$/src/Parts/OS.java" />
         <option value="$PROJECT_DIR$/src/com/company/Lenovo.java" />
         <option value="$PROJECT_DIR$/src/Softwares/SoftwareGame.java" />
-        <option value="$PROJECT_DIR$/src/Softwares/FindGames.java" />
         <option value="$PROJECT_DIR$/src/com/company/CreateJSONFile.java" />
         <option value="$PROJECT_DIR$/src/com/company/Laptop.java" />
         <option value="$PROJECT_DIR$/src/com/company/Microsoft.java" />
@@ -101,6 +104,7 @@
         <option value="$PROJECT_DIR$/cpu_list.json" />
         <option value="$PROJECT_DIR$/src/com/company/Acer.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/Softwares/FindGames.java" />
       </list>
     </option>
   </component>
@@ -115,29 +119,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Final-Projact018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact018" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact0608" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact0608" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact018" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact0608" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact0608" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact018" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact0608" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact0608" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="Softwares" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -203,6 +207,7 @@
       <workItem from="1564476192223" duration="13916000" />
       <workItem from="1564578445952" duration="12752000" />
       <workItem from="1564655590494" duration="5675000" />
+      <workItem from="1565072571169" duration="9387000" />
     </task>
     <task id="LOCAL-00001" summary="database">
       <created>1558099045113</created>
@@ -215,7 +220,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102201000" />
+    <option name="totallyTimeSpent" value="111588000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -230,7 +235,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13615733" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1376702" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -397,13 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Softwares/FindGames.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="142" column="58" selection-start-line="142" selection-start-column="58" selection-end-line="142" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Softwares/SoftwareGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -442,20 +440,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpu_list.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11181" selection-start-column="11168" selection-end-column="11181" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpu_list.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret column="80213" selection-start-column="80205" selection-end-column="80213" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gpu_list.json" />
+    <entry file="file://$PROJECT_DIR$/cpu_list.json" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Acer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1931">
@@ -477,13 +463,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Positions/cpu_list.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret column="77237" selection-start-column="77229" selection-end-column="77237" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+        <state relative-caret-position="313">
+          <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Softwares/FindGames.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="72" column="69" lean-forward="true" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
         </state>
       </provider>
     </entry>

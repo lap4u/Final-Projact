@@ -15,9 +15,14 @@ public class FindGames {
 
     public static void FindGames() {
 
-        String main_url[] = {"https://www.game-debate.com/games/index.php?year=2018"
-                ,"https://www.game-debate.com/games",
+        String main_url[] = {"https://www.game-debate.com/games/index.php?year=2017",
         };
+
+        // https://www.game-debate.com/games/index.php?year=2018
+        // "https://www.game-debate.com/games"
+
+        int count = 0;
+        boolean flag;
 
         try {
 
@@ -37,14 +42,19 @@ public class FindGames {
                             url = url.replaceFirst(".", "");
                             url = url.replaceFirst(".", "");
                             url = "https://www.game-debate.com" + url;
-                            saveGame(nameGame, url);
+                            count = count + saveGame(nameGame, url);
+                            // flag = saveGame(nameGame, url);
+
                         }
                     }
+
 
                     //laptop = compSaveLG(product_url, i_ArrLaptops.size());
                     //i_ArrLaptops.add(laptop);
                 }
 
+                System.out.println("TOTAL COUNT END: " + count);
+
             }
 
 
@@ -55,24 +65,38 @@ public class FindGames {
     }
 
 
-    private static void saveGame(String i_NameGame, String i_Url) {
+    private static int saveGame(String i_NameGame, String i_Url) {
+
+        int cpuX = 0;
 
         try {
             final Document documentSite = Jsoup.connect(i_Url).get();
-            String Cpu, Graphic_Card;
+            String Graphic_Card;
 
             Elements ReqMin = documentSite.select("div.devDefSysReqMinWrapper.new-box-style.boxes-enable-opacity");
             Elements ReqRec = documentSite.select("div.devDefSysReqRecWrapper.new-box-style.boxes-enable-opacity");
 
             if ((ReqMin.size() != 0 || ReqRec.size() != 0) && isNotExclude(i_Url)) {
-                String Description = getDesc(documentSite);
-                String imgURL = documentSite.select("img.game-boxart-image").first().attr("src");
-                boolean isGame = true;
-                System.out.println(i_Url);
-                int memory = getMemory(ReqMin, ReqRec);
-                double hardDrive = getHardDrive(ReqMin, ReqRec);
-                OS Os = getOs(ReqMin, ReqRec);
                 PartStruct cpu = getCPU(ReqMin,ReqRec);
+                if(cpu == null)
+                {
+                    //
+                }
+                else
+                {
+                    System.out.println(i_Url);
+                    System.out.println(cpu.getModel());
+                    cpuX = 1;
+                    String Description = getDesc(documentSite);
+                    String imgURL = documentSite.select("img.game-boxart-image").first().attr("src");
+                    boolean isGame = true;
+                    int memory = getMemory(ReqMin, ReqRec);
+                    double hardDrive = getHardDrive(ReqMin, ReqRec);
+                    OS Os = getOs(ReqMin, ReqRec);
+                }
+
+                // if GPU == null - stop
+                // else - SUCCESS
 
             }
 
@@ -80,27 +104,73 @@ public class FindGames {
             ex.printStackTrace();
         }
 
+
+        return cpuX;
+
     }
 
     private static PartStruct getCPU(Elements i_ReqMin, Elements i_ReqRec) {
-        String cpuString = i_ReqRec.select("li:contains(Processor:)").text();
+
+        String cpu_Manu = "Intel";
+        String cpu_Model = null;
+        PartStruct cpu = null;
+        int count = 1;
+        String cpuString = i_ReqRec.select("li:contains(i3)").text();
         if(cpuString.equals(""))
-            cpuString =  i_ReqRec.select("li:contains(CPU: )").text();
+            cpuString =  i_ReqRec.select("li:contains(i5)").text();
 
         if(cpuString.equals(""))
-            cpuString =  i_ReqRec.select("li:contains(CPU : )").text();
+            cpuString =  i_ReqRec.select("li:contains(i7)").text();
 
         if(cpuString.equals(""))
-            cpuString =  i_ReqRec.select("li:contains(Processor (Intel): )").text();
+            cpuString =  i_ReqMin.select("li:contains(i3)").text();
 
         if(cpuString.equals(""))
-            cpuString =  i_ReqMin.select("li:contains(Processor: )").text();
+            cpuString =  i_ReqMin.select("li:contains(i5)").text();
 
         if(cpuString.equals(""))
-            System.out.println("~~~~~~~!~~~~~ERROR~~~~~!~~~~~~~");
+            cpuString =  i_ReqMin.select("li:contains(i7)").text();
 
-        System.out.println(cpuString);
-        return null;
+
+        if(cpuString.equals(""))
+        {
+            cpu = null;
+        }
+        else {
+            String[] splitCPU = cpuString.split(" ");
+
+            for (int i = 0; i < splitCPU.length; i++) {
+                if (splitCPU[i].contains("i3-") || splitCPU[i].contains("i5-") || splitCPU[i].contains("i7-")) {
+                    if (splitCPU.equals("i3-") || splitCPU[i].equals("i5-") || splitCPU[i].equals("i7-")) {
+                        if ((i + 1) < splitCPU.length)
+                            cpu_Model = splitCPU[i] + splitCPU[i + 1];
+                    } else {
+                        cpu_Model = splitCPU[i];
+                    }
+                } else if (splitCPU[i].equals("i3") || splitCPU[i].equals("i5") || splitCPU[i].equals("i7"))
+                {
+                    if ((i + 1) < splitCPU.length)
+                    {
+                        if(splitCPU[i+1].length() > 2)
+                        {
+                            String model = new StringBuilder().append(splitCPU[i+1].charAt(0)).append(splitCPU[i+1].charAt(1)).append(splitCPU[i+1].charAt(2)).toString();
+                            if(isInteger(model))
+                                cpu_Model = splitCPU[i] + "-" + splitCPU[i+1];
+
+                        }
+                    }
+                }
+            }
+        }
+
+        if(cpu_Model!=null) {
+            cpu_Model = cpu_Model.replaceAll(",", "").replaceAll("/AMD", "").replaceAll("/", "").replaceAll("\\)","").replaceAll("、～3.1GHz","").replaceAll(";","").replaceAll("（3.4GHz","").replaceAll("\\(3.30GHz","").replaceAll("CPU:","").replaceAll("--","-").replaceAll("-series","").replaceAll("@","");
+            cpu = new PartStruct(cpu_Manu,cpu_Model);
+        }
+
+       // System.out.println(cpuString);
+        //System.out.println(cpu_Model);
+        return cpu;
     }
 
     private static OS getOs(Elements i_ReqMin, Elements i_ReqRec) {
@@ -191,7 +261,7 @@ public class FindGames {
                     if (isNumeric(takeGB))
                         storageNum = Double.parseDouble(takeGB);
                     else
-                        storageNum = Double.parseDouble(splitStorage[i - 1]);
+                        storageNum = Double.parseDouble(splitStorage[i - 1].replaceAll("Drive:",""));
 
                     break;
                 } else if (splitStorage[i].contains("MB")) {
@@ -208,6 +278,7 @@ public class FindGames {
 
         if (storageNum == 0)
             storageNum = 1; // Because is between 0-1000MB.
+
 
         return storageNum;
     }
@@ -228,15 +299,16 @@ public class FindGames {
 
 
         for (int i = 0; i < memories.size(); i++) {
-            if (memories.eq(i).text().contains("Video") || memories.eq(i).text().contains("video") || memories.eq(i).text().contains("GPU") || memories.eq(i).text().contains("Graphics") || memories.eq(i).text().contains("VRAM:"))
+            if (memories.eq(i).text().contains("Video") || memories.eq(i).text().contains("video") || memories.eq(i).text().contains("GPU") || memories.eq(i).text().contains("Graphics") || memories.eq(i).text().contains("VRAM"))
                 continue;
             else {
                 memoryString = memories.eq(i).text();
             }
         }
 
+
         if (memoryString.equals("") == false) {
-            memoryString = memoryString.replaceAll("System Memory: ", "").replaceAll("Memory: ", "").replaceAll("SYSTEM RAM: ", "").replaceAll("RAM: from ","").replaceAll("RAM: ", "").replaceAll("Memory - ", "").replaceAll("RAM : ", "").replaceAll("RAM ", "").replaceAll("– ", "").replaceAll("• ", "").replaceAll("- ", "").replaceAll("Memory:", "").replaceAll("MEMORY: ","");
+            memoryString = memoryString.replaceAll("System Memory: ", "").replaceAll("Memory: ", "").replaceAll("System RAM: ","").replaceAll("SYSTEM RAM: ", "").replaceAll("RAM: from ","").replaceAll("RAM: ", "").replaceAll("Memory - ", "").replaceAll("RAM : ", "").replaceAll("RAM ", "").replaceAll("– ", "").replaceAll("• ", "").replaceAll("- ", "").replaceAll("Memory:", "").replaceAll("MEMORY: ","").replaceAll("\\+","");
             memorySplit = memoryString.split(" ", 2);
         }
 
@@ -253,8 +325,6 @@ public class FindGames {
         if (theMemory == 0)
             theMemory = 1;
 
-        //System.out.println("String Memory: " + memoryString);
-        //System.out.println("Final Memory: " + theMemory);
         return theMemory;
     }
 
@@ -286,6 +356,15 @@ public class FindGames {
         }
     }
 
+    private static boolean isInteger(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
     private static boolean isNotExclude(String i_Url) {
         String[] urlsArray = {"https://www.game-debate.com/games/index.php?g_id=35627&game=Lords Of The Fallen 2",
                 "https://www.game-debate.com/games/index.php?g_id=23932&game=Payday 3",
@@ -297,7 +376,10 @@ public class FindGames {
                 "https://www.game-debate.com/games/index.php?g_id=24086&game=Combat core",
                 "https://www.game-debate.com/games/index.php?g_id=20894&game=Far Cry: Primal",
                 "https://www.game-debate.com/games/index.php?g_id=24352&game=Dauntless",
-                "https://www.game-debate.com/games/index.php?g_id=36069&game=Jupiter Hell"
+                "https://www.game-debate.com/games/index.php?g_id=36069&game=Jupiter Hell",
+                "https://www.game-debate.com/games/index.php?g_id=35419&game=Civilization VI - Rise and Fall",
+                "https://www.game-debate.com/games/index.php?g_id=35451&game=Donut County",
+                "https://www.game-debate.com/games/index.php?g_id=35293&game=DRAGON BALL FighterZ",
         };
         boolean isNotExclude = true;
 
