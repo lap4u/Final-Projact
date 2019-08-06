@@ -7,6 +7,10 @@
       <root url="jar://$PROJECT_DIR$/src/Dependices/com.fasterxml.jackson.core.jar!/" />
       <root url="file://$PROJECT_DIR$/src/Dependices" />
       <root url="jar://$MAVEN_REPOSITORY$/javax/transaction/jta/1.1/jta-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/javax.persistence-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jackson-databind-2.10.0.pr1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jackson-annotations-2.10.0.pr1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jackson-core-2.10.0.pr1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

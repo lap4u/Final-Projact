@@ -1,8 +1,13 @@
 package Positions;
 
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Position {
 
+    @JsonProperty("name")
     private String m_ModelName;
+   @JsonProperty("position")
     private int m_PositionNumber;
 
     public Position(String i_ModelName, int i_PositionNumber) {

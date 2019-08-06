@@ -1,5 +1,4 @@
 package Softwares;
-
 import Parts.OS;
 import Parts.PartStruct;
 import org.jsoup.Jsoup;
@@ -15,11 +14,11 @@ public class FindGames {
 
     public static void FindGames() {
 
-        String main_url[] = {"https://www.game-debate.com/games/index.php?year=2017",
+        String main_url[] = {"https://www.game-debate.com/games/index.php?year=2016"
         };
-
-        // https://www.game-debate.com/games/index.php?year=2018
-        // "https://www.game-debate.com/games"
+        //"https://www.game-debate.com/games",
+          //      "https://www.game-debate.com/games/index.php?year=2018",
+            //    "https://www.game-debate.com/games/index.php?year=2017"
 
         int count = 0;
         boolean flag;
@@ -164,7 +163,7 @@ public class FindGames {
         }
 
         if(cpu_Model!=null) {
-            cpu_Model = cpu_Model.replaceAll(",", "").replaceAll("/AMD", "").replaceAll("/", "").replaceAll("\\)","").replaceAll("、～3.1GHz","").replaceAll(";","").replaceAll("（3.4GHz","").replaceAll("\\(3.30GHz","").replaceAll("CPU:","").replaceAll("--","-").replaceAll("-series","").replaceAll("@","");
+            cpu_Model = cpu_Model.replaceAll(",", "").replaceAll("/AMD", "").replaceAll("/", "").replaceAll("\\)","").replaceAll("、～3.1GHz","").replaceAll(";","").replaceAll("（3.4GHz","").replaceAll("\\(3.30GHz","").replaceAll("CPU:","").replaceAll("--","-").replaceAll("-series","").replaceAll("@","").replaceAll("750S","750").replaceAll("k","K").replaceAll("2400s","2400S").replaceAll("\\(4","").replaceAll("3.3GHz","").replaceAll("2115C","2100").replaceAll("i5-3550K","i5-3550").replaceAll("i5-45690","i5-4590").replaceAll("i5-3770","i7-3770").replaceAll("i5-4000","i5-4430").replaceAll("i5-3000","i5-3330"); // because 3000 is 3330 (Mistake)
             cpu = new PartStruct(cpu_Manu,cpu_Model);
         }
 
