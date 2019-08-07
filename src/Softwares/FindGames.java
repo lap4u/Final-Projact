@@ -6,30 +6,31 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
+
 
 public class FindGames {
 
     public FindGames() {
     }
 
-    public static void FindGames() {
+    public static void FindGames(ArrayList<SoftwareGame> i_GamesArray) {
 
-        String main_url[] = {"https://www.game-debate.com/games/index.php?year=2016"
+        String main_url[] = {"https://www.game-debate.com/games/index.php?year=2016",
+                //"https://www.game-debate.com/games/index.php?year=2017",
+                //"https://www.game-debate.com/games/index.php?year=2018",
+                //"https://www.game-debate.com/games"
         };
-        //"https://www.game-debate.com/games",
-          //      "https://www.game-debate.com/games/index.php?year=2018",
-            //    "https://www.game-debate.com/games/index.php?year=2017"
 
-        int count = 0;
-        boolean flag;
+        SoftwareGame newGame = null;
 
         try {
 
             for (int i = 0; i < main_url.length; i++) {
+                System.out.println("Start Part: " + (i+1) + "/" + main_url.length);
                 final Document document = Jsoup.connect(main_url[i]).get();
                 Element div = document.select("div.darkBox2013").first();
                 Elements games = div.select("div.srRowFull");
-                System.out.println("Total Games: " + games.size());
                 for (Element comp : games) {
                     Elements checkIfPS3 = comp.select("div.srTitleFull.ps3Link");
                     Elements checkIfXBOX = comp.select("div.srTitleFull.xbox360Link");
@@ -41,19 +42,14 @@ public class FindGames {
                             url = url.replaceFirst(".", "");
                             url = url.replaceFirst(".", "");
                             url = "https://www.game-debate.com" + url;
-                            count = count + saveGame(nameGame, url);
-                            // flag = saveGame(nameGame, url);
+                           newGame = saveGame(nameGame, url);
+                           if(newGame!=null)
+                            i_GamesArray.add(newGame);
 
                         }
                     }
-
-
-                    //laptop = compSaveLG(product_url, i_ArrLaptops.size());
-                    //i_ArrLaptops.add(laptop);
                 }
-
-                System.out.println("TOTAL COUNT END: " + count);
-
+                System.out.println("Finish Part: " + (i+1) + "/" + main_url.length);
             }
 
 
@@ -64,9 +60,9 @@ public class FindGames {
     }
 
 
-    private static int saveGame(String i_NameGame, String i_Url) {
+    private static SoftwareGame saveGame(String i_NameGame, String i_Url) {
 
-        int cpuX = 0;
+        SoftwareGame theGame = null;
 
         try {
             final Document documentSite = Jsoup.connect(i_Url).get();
@@ -74,29 +70,25 @@ public class FindGames {
 
             Elements ReqMin = documentSite.select("div.devDefSysReqMinWrapper.new-box-style.boxes-enable-opacity");
             Elements ReqRec = documentSite.select("div.devDefSysReqRecWrapper.new-box-style.boxes-enable-opacity");
+            PartStruct gpu = null;
+            PartStruct cpu = null;
 
             if ((ReqMin.size() != 0 || ReqRec.size() != 0) && isNotExclude(i_Url)) {
-                PartStruct cpu = getCPU(ReqMin,ReqRec);
-                if(cpu == null)
+                 cpu = getCPU(ReqMin,ReqRec);
+                if(cpu!=null)
                 {
-                    //
+                    gpu = getGPU(ReqMin,ReqRec);
+                    if(gpu !=null)
+                    {
+                        String Description = getDesc(documentSite);
+                        String imgURL = documentSite.select("img.game-boxart-image").first().attr("src");
+                        boolean isGame = true;
+                        int memory = getMemory(ReqMin, ReqRec);
+                        double hardDrive = getHardDrive(ReqMin, ReqRec);
+                        OS Os = getOs(ReqMin, ReqRec);
+                        theGame = new SoftwareGame(i_NameGame, Description, imgURL, isGame, memory, hardDrive, Os, cpu, gpu); // EDIT C'TOR
+                    }
                 }
-                else
-                {
-                    System.out.println(i_Url);
-                    System.out.println(cpu.getModel());
-                    cpuX = 1;
-                    String Description = getDesc(documentSite);
-                    String imgURL = documentSite.select("img.game-boxart-image").first().attr("src");
-                    boolean isGame = true;
-                    int memory = getMemory(ReqMin, ReqRec);
-                    double hardDrive = getHardDrive(ReqMin, ReqRec);
-                    OS Os = getOs(ReqMin, ReqRec);
-                }
-
-                // if GPU == null - stop
-                // else - SUCCESS
-
             }
 
         } catch (Exception ex) {
@@ -104,8 +96,41 @@ public class FindGames {
         }
 
 
-        return cpuX;
+        return theGame;
 
+    }
+
+    private static PartStruct getGPU(Elements i_ReqMin, Elements i_ReqRec) {
+        PartStruct theGPU = null;
+        String gpuModel = null, gpuManu = null, gpuNumber;
+        String gpuString = i_ReqRec.select("li:contains(GT)").text();
+        if(gpuString.equals(""))
+            gpuString = i_ReqMin.select("li:contains(GT)").text();
+
+        String[] splitGpu = gpuString.split(" ");
+
+        if(gpuString.equals("") == false) {
+            for (int i = 0; i < splitGpu.length; i++) {
+                if ((splitGpu[i].equals("GTX") || splitGpu[i].equals("GT") || splitGpu[i].equals("GTS")) && (i + 1) < splitGpu.length) {
+                        gpuNumber = splitGpu[i + 1].replaceAll("Radeon", "").replaceAll("-class", "").replaceAll(",", "").replaceAll("/", "").replaceAll("AMD", "").replaceAll("VGA", "").replaceAll("ti", "").replaceAll("9701060", "970").replaceAll("9701660", "970").replaceAll("\\+", "").replaceAll("\\)", "").replaceAll("\\(2GB", "").replaceAll(";", "");
+                        if (isNumeric(gpuNumber)) {
+                            gpuModel = "GeForce " + splitGpu[i].replaceAll("\\(", "") + " " + gpuNumber;
+
+                            gpuModel = gpuModel.replaceAll("GTX 790", "GTX 780").replaceAll("GT 960", "GTX 960").replaceAll("GT 660", "GTX 660"); // BECAUSE IT MISTAKE GT 660 . IT GTX 660
+
+                            if (gpuString.contains("Ti") && gpuModel.equals("GeForce GTX 670") == false && gpuModel.equals("GeForce GTX 470") == false && gpuModel.equals("GeForce GTX 970") == false)
+                                gpuModel = gpuModel + " Ti";
+
+                            gpuManu = "Nvidia";
+                            theGPU = new PartStruct(gpuManu, gpuModel);
+                            break;
+                        }
+                }
+            }
+
+        }
+
+        return theGPU;
     }
 
     private static PartStruct getCPU(Elements i_ReqMin, Elements i_ReqRec) {
@@ -179,6 +204,13 @@ public class FindGames {
         int BitSize = 0; // Default Value
         OS operatingSystem = null;
         String osString = i_ReqRec.select("li:contains(OS)").text();
+
+        if(osString.equals(""))
+            osString = i_ReqRec.select("li:contains(O/S:)").text();
+
+        if(osString.equals(""))
+            osString = i_ReqRec.select("li:contains(Windows)").text();
+
         if (osString.equals(""))
             osString = i_ReqMin.select("li:contains(OS)").text();
 
@@ -215,6 +247,9 @@ public class FindGames {
                             Series = 10;
 
         }
+
+        if(Series == 0 && Version.equals("-"))
+            Series = 7; //If not found OS so we set 7 Because 7 is default.
 
         operatingSystem = new OS(Manufacture,Version,Series,BitSize);
         return operatingSystem;
@@ -367,17 +402,9 @@ public class FindGames {
     private static boolean isNotExclude(String i_Url) {
         String[] urlsArray = {"https://www.game-debate.com/games/index.php?g_id=35627&game=Lords Of The Fallen 2",
                 "https://www.game-debate.com/games/index.php?g_id=23932&game=Payday 3",
-                "https://www.game-debate.com/games/index.php?g_id=36070&game=Descent (2019)",
-                "https://www.game-debate.com/games/index.php?g_id=35884&game=Conan Unconquered",
                 "https://www.game-debate.com/games/index.php?g_id=35828&game=The Elder Scrolls Online: Elsweyr",
-                "https://www.game-debate.com/games/index.php?g_id=35781&game=Civilization VI - Gathering Storm",
                 "https://www.game-debate.com/games/index.php?g_id=23901&game=Bless",
-                "https://www.game-debate.com/games/index.php?g_id=24086&game=Combat core",
                 "https://www.game-debate.com/games/index.php?g_id=20894&game=Far Cry: Primal",
-                "https://www.game-debate.com/games/index.php?g_id=24352&game=Dauntless",
-                "https://www.game-debate.com/games/index.php?g_id=36069&game=Jupiter Hell",
-                "https://www.game-debate.com/games/index.php?g_id=35419&game=Civilization VI - Rise and Fall",
-                "https://www.game-debate.com/games/index.php?g_id=35451&game=Donut County",
                 "https://www.game-debate.com/games/index.php?g_id=35293&game=DRAGON BALL FighterZ",
         };
         boolean isNotExclude = true;

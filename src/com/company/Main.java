@@ -2,6 +2,7 @@ package com.company;
 
 import Positions.Position;
 import Softwares.FindGames;
+import Softwares.SoftwareGame;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,6 +14,10 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        ArrayList<SoftwareGame> gamesArray = new ArrayList<>();
+        FindGames.FindGames(gamesArray);
+        System.out.println("Size Games Array: " + gamesArray.size());
+        //printAllGames(gamesArray);
 
 /*
         ArrayList<Laptop> LaptopsArray = new ArrayList<Laptop>();
@@ -36,12 +41,17 @@ public class Main {
         // Action the method that convert the json file to the arrayLists.
 
         // Now we pull the games from the games site.
-         FindGames.FindGames();
     }
 
     private static void printAllLaptops(List<Laptop> laptopArray) {
         for (Laptop laptop : laptopArray) {
             laptop.printLaptop();
+        }
+    }
+
+    private static void printAllGames(List<SoftwareGame> gamesArray) {
+        for (SoftwareGame game : gamesArray) {
+            game.printGame();
         }
     }
 

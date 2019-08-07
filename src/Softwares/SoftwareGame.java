@@ -14,6 +14,22 @@ public class SoftwareGame {
     private PartStruct processor;
     private PartStruct gpu;
 
+    public SoftwareGame()
+    {
+
+    }
+
+    public SoftwareGame(String i_Name, String i_Desc, String i_imgUrl, boolean i_IsGame, int i_Memory, double i_HardDrive, OS i_Os, PartStruct i_Processor, PartStruct i_Gpu) {
+      name = i_Name;
+      description = i_Desc;
+      imgURL = i_imgUrl;
+      isGame = i_IsGame;
+      memory = i_Memory;
+      hardDrive = i_HardDrive;
+      operatingSystem = i_Os;
+      processor = i_Processor;
+      gpu = i_Gpu;
+    }
 
     public String getDescription() {
         return description;
@@ -85,6 +101,25 @@ public class SoftwareGame {
 
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
+    }
+
+    public void printGame()
+    {
+        try {
+            System.out.println("\n\nName Game: " + name
+                    + "\nImg Url: " + imgURL
+                    + "\nProcessor: " + processor.getManufacture() + " ~ " + processor.getModel()
+                    + "\nMemory: " + memory
+                    + "\nStorage: " + hardDrive + "GB"
+                    + "\nis Game? " + isGame
+                    + "\nOperation System: " +operatingSystem.getManufacture() + " ~ " + operatingSystem.getVersion() + " ~ " + operatingSystem.getSeries() + " ~ " + operatingSystem.getBitSize()
+                    + "\nGraphics: " + gpu.getManufacture() + " ~ " + gpu.getModel()
+                    + "\nDescription: " + description);
+
+        }  catch (Exception ex) {
+            System.out.println("ERROR: " + name);
+            ex.printStackTrace();
+        }
     }
 
 }
