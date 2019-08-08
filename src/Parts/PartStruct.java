@@ -1,9 +1,28 @@
 package Parts;
 
-public class
-PartStruct {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.io.Serializable;
+
+@Entity
+
+public class
+PartStruct implements Serializable {
+
+private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue
+
+    private long id;
+
+ @JsonProperty("manufactor")
     private String Manufacture;
+	
+	@JsonProperty("model")
     private String Model;
 
     public PartStruct(){}

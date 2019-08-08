@@ -3,16 +3,51 @@ package Softwares;
 import Parts.OS;
 import Parts.PartStruct;
 
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import javax.persistence.Entity;
+
+import static javax.persistence.CascadeType.ALL;
+
+@Entity
+
+
 public class SoftwareGame {
+	
+	
+	
+    private static final long serialVersionUID = 1L;
+
+
+    @Id
+    @GeneratedValue
+    private long id;
+	
+	
+	 @JsonProperty("name")
     private String name;
+	 @JsonProperty("description")
     private String description;
+	
+	 @JsonProperty("imgURL")
     private String imgURL;
+	 @JsonProperty("isGame")
     private boolean isGame;
+	 @JsonProperty("Memory")
     private int memory;
+	 @JsonProperty("Hard disk")
     private double hardDrive;
-    private OS operatingSystem;
-    private PartStruct processor;
-    private PartStruct gpu;
+	
+	@JsonProperty("Operating Systems")
+    @ManyToMany(cascade=ALL) private OS operatingSystem;
+	
+	@JsonProperty("Processor")
+    @ManyToMany(cascade=ALL) private PartStruct processor;
+	 @JsonProperty("GPU")
+     @ManyToMany(cascade=ALL) private PartStruct gpu;
 
     public SoftwareGame()
     {

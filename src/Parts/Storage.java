@@ -1,11 +1,42 @@
 package Parts;
 
-public class Storage {
+
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.io.Serializable;
+
+
+
+@Entity
+public class Storage implements Serializable {
+
+
+private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue
+    private long id;
+
+
+
+    public Storage()
+    {
+
+
+
+    }
+    
 
     public Storage(boolean i_isSSD, int i_GB) {
         m_isSSD = i_isSSD;
         m_GB = i_GB;
     }
+
+
+
 
     public boolean isM_isSSD() {
         return m_isSSD;

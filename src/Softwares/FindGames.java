@@ -17,9 +17,9 @@ public class FindGames {
     public static void FindGames(ArrayList<SoftwareGame> i_GamesArray) {
 
         String main_url[] = {"https://www.game-debate.com/games/index.php?year=2016",
-                //"https://www.game-debate.com/games/index.php?year=2017",
-                //"https://www.game-debate.com/games/index.php?year=2018",
-                //"https://www.game-debate.com/games"
+                "https://www.game-debate.com/games/index.php?year=2017",
+                "https://www.game-debate.com/games/index.php?year=2018",
+                "https://www.game-debate.com/games"
         };
 
         SoftwareGame newGame = null;

@@ -4,6 +4,9 @@ import Positions.Position;
 import Softwares.FindGames;
 import Softwares.SoftwareGame;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -18,6 +21,41 @@ public class Main {
         FindGames.FindGames(gamesArray);
         System.out.println("Size Games Array: " + gamesArray.size());
         //printAllGames(gamesArray);
+
+
+
+
+
+
+        SoftwareGame[] a = Softwares.ParseJsonToArray.Parse();
+
+
+
+
+
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("projectdb.odb");
+//
+        EntityManager em = emf.createEntityManager();
+////
+        em.getTransaction().begin();
+//
+//
+        for (SoftwareGame c :   gamesArray)
+        {
+            em.persist(c);
+
+        }
+        for (SoftwareGame b : a) {
+            em.persist(b);
+        }
+        em.getTransaction().commit();
+
+
+
+
+
+
+
 
 /*
         ArrayList<Laptop> LaptopsArray = new ArrayList<Laptop>();
