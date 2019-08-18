@@ -1,5 +1,5 @@
 package com.company;
-
+import Parts.OS;
 import Positions.Position;
 import Softwares.FindGames;
 import Softwares.SoftwareGame;
@@ -7,6 +7,7 @@ import Softwares.SoftwareGame;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -17,46 +18,27 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<SoftwareGame> gamesArray = new ArrayList<>();
+
+        CreateHtmlPages.startCreate();
+
+        /*
+         ArrayList<SoftwareGame> gamesArray = new ArrayList<>();
         FindGames.FindGames(gamesArray);
         System.out.println("Size Games Array: " + gamesArray.size());
         //printAllGames(gamesArray);
-
-
-
-
-
-
         SoftwareGame[] a = Softwares.ParseJsonToArray.Parse();
-
-
-
-
-
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("projectdb.odb");
-//
         EntityManager em = emf.createEntityManager();
-////
         em.getTransaction().begin();
-//
-//
         for (SoftwareGame c :   gamesArray)
         {
             em.persist(c);
-
         }
         for (SoftwareGame b : a) {
             em.persist(b);
         }
         em.getTransaction().commit();
-
-
-
-
-
-
-
-
+        */
 /*
         ArrayList<Laptop> LaptopsArray = new ArrayList<Laptop>();
         Microsoft.Find_Laptops(LaptopsArray); // Lenovo + ASUS + MSI + Ryzer + HP
@@ -93,44 +75,9 @@ public class Main {
         }
     }
 
-    private static void createHtmlFiles(List<Laptop> laptopArray) {
-        for (int i = 0; i < 5; i++) {
-            Laptop laptop = laptopArray.get(i);
-            String html = "<html>" +
-                    "<head>" +
-                    "<title>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</title>" +
-                    "<link rel=\"stylesheet\" href=\"test.css\">" +
-                    "<link href=\"https://fonts.googleapis.com/css?family=Ubuntu\" rel=\"stylesheet\">" +
-                    "</head>" +
-                    "<body>" +
-                    "<div class=\"headline\"><h1>" + laptop.getCompany_name() + ": " + laptop.getModel_name() + "</h1></div><br><br>" +
-                    "<div>" +
-                    "<img src=\"" + laptop.getImagesUrls().get(0) + "\" alt=\"laptop img\" height=\"400px\" width=\"auto\">" +
-                    "<div class = \"description\">" + laptop.getDescription() + "</div>" +
-                    "<div class=\"price\">" + laptop.getPrice() + "$</div>" +
-                    "</div>" +
-                    "<br><br><table>" +
-                    "<tr><td class=\"title\">Processor</td><td class=\"value\">" + laptop.getProcessor().getManufacture() + " " + laptop.getProcessor().getModel() + "</td></tr>" +
-                    "<tr><td class=\"title\">Memory</td><td class=\"value\">" + laptop.getMemory() + " GB</td></tr>" +
-                    "<tr><td class=\"title\">Operation System</td><td class=\"value\">" + laptop.getOperation_system().getManufacture() + " " + laptop.getOperation_system().getSeries() + " " + laptop.getOperation_system().getVersion() + " " + laptop.getOperation_system().getBitSize() + "</td></tr>" +
-                    "<tr><td class=\"title\">Graphic Card</td><td class=\"value\">" + laptop.getGpu().getManufacture() + " " + laptop.getGpu().getModel() + "</td></tr>" +
-                    "<tr><td class=\"title\">Screen Size</td><td class=\"value\">" + laptop.getScreen_size() + "\"</td></tr>" +
-                    "<tr><td class=\"title\">Storage</td><td class=\"value\">" + laptop.getStorage() + " GB</td></tr>" +
-                    "<tr><td class=\"title\">Weight</td><td class=\"value\">" + laptop.getWeight() + " kg</td></tr>" +
-                    "</td></tr></table><br><br>" +
-                    "<button onclick=\"window.location.href = '" + laptop.getUrl_model() + "';\">Click Here</button></center></body></html>";
-            File newHtmlFile = new File("laptop" + i + ".html");
-            try {
-                BufferedWriter bw = new BufferedWriter(new FileWriter(newHtmlFile));
-                bw.write(html);
-                bw.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
 
+
+    }
 
 //List<Struct> CPU_List = new ArrayList<Struct>();
 //List<Struct> GPU_List = new ArrayList<Struct>();

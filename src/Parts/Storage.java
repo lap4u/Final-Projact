@@ -38,9 +38,6 @@ private static final long serialVersionUID = 1L;
 
 
 
-    public boolean isM_isSSD() {
-        return m_isSSD;
-    }
 
     public void setM_isSSD(boolean m_isSSD) {
         this.m_isSSD = m_isSSD;
