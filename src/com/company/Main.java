@@ -18,8 +18,17 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        CreateHtmlPages.startCreateGamesSoftwaresPage(false);
+    /*CreateHtmlPages.startCreateLaptops();
+  CreateHtmlPages.startCreateCompanyPage("HP");
+        CreateHtmlPages.startCreateCompanyPage("Lenovo");
+        CreateHtmlPages.startCreateCompanyPage("Acer");
+        CreateHtmlPages.startCreateCompanyPage("Dell");
+        CreateHtmlPages.startCreateCompanyPage("MSI");
+        CreateHtmlPages.startCreateCompanyPage("Razer");
+        CreateHtmlPages.startCreateCompanyPage("LG");
+        CreateHtmlPages.startCreateCompanyPage("ASUS");*/
 
-        CreateHtmlPages.startCreate();
 
         /*
          ArrayList<SoftwareGame> gamesArray = new ArrayList<>();

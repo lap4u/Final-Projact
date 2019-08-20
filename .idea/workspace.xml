@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff58b578-1157-409a-9592-d2a97cb66ff6" name="Default Changelist" comment="Finish CPU Games (Without Check)">
-      <change afterPath="$PROJECT_DIR$/src/com/company/CreateHtmlPages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parts/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parts/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CreateHtmlPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CreateHtmlPages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/teyscrap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/teyscrap.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7072">
-              <caret line="430" column="8" selection-start-line="430" selection-start-column="8" selection-end-line="430" selection-end-column="8" />
+            <state relative-caret-position="207">
+              <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -40,62 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/CreateHtmlPages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/Desktop/jdk-11.0.2/lib/src.zip!/java.base/java/util/Objects.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="371" selection-start-line="371" selection-end-line="371" />
-              <folding>
-                <element signature="e#13945#13946#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/Desktop/jdk-11.0.2/lib/src.zip!/java.base/java/util/ArrayList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="457" selection-start-line="457" selection-end-line="457" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Parts/OS.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Laptop.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2584">
-              <caret line="231" column="48" selection-start-line="231" selection-start-column="48" selection-end-line="231" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Parts/Storage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="115">
+              <caret line="121" column="71" selection-start-line="121" selection-start-column="71" selection-end-line="121" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,17 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>510</find>
-      <find>HD GRAPHICS</find>
-      <find>HD Graphics 520</find>
-      <find>GPU</find>
-      <find>GeForce 940MX</find>
-      <find>A4-9120C</find>
-      <find>E8000</find>
-      <find>i5-7200U</find>
-      <find>CPU</find>
-      <find>isnotex</find>
-      <find>~~~~~~~!~~~~~ERROR~~~~~!~~~~~~~</find>
       <find>i7-4771</find>
       <find>getmem</find>
       <find>i7-7700k</find>
@@ -145,6 +71,17 @@
       <find>i5-45690</find>
       <find>i5-3770</find>
       <find>i3-540</find>
+      <find>COMPANIES</find>
+      <find>home</find>
+      <find>Companies</find>
+      <find>companies</find>
+      <find>product-details</find>
+      <find>price</find>
+      <find>getprice</find>
+      <find>pricestring</find>
+      <find>comanies</find>
+      <find>$</find>
+      <find>assets</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -178,6 +115,22 @@
       </list>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="points" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="points" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-5" />
     <option name="width" value="963" />
@@ -189,22 +142,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Final-Projact1808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact1808" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact2008" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact2008" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact1808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact1808" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact2008" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact2008" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Final-Projact1808" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Projact1808" type="462c0819:PsiDirectoryNode" />
+              <item name="Final-Projact2008" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Projact2008" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -212,14 +166,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566145629738" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566325815847" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Json/jackson-databind-2.10.0.pr1.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -295,6 +248,7 @@
       <workItem from="1565213617944" duration="952000" />
       <workItem from="1565254433820" duration="2906000" />
       <workItem from="1566113791924" duration="16479000" />
+      <workItem from="1566296165927" duration="15105000" />
     </task>
     <task id="LOCAL-00001" summary="database">
       <created>1558099045113</created>
@@ -314,7 +268,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140941000" />
+    <option name="totallyTimeSpent" value="156046000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -326,10 +280,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16187595" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16414523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -338,8 +292,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6664145" visible="true" weight="0.30278233" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.77238804" weight="0.19079578" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6664145" visible="true" weight="0.30278233" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.77238804" weight="0.1898527" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840087" weight="0.32981783" />
@@ -355,8 +309,8 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.32980332" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.24962178" />
     </layout>
   </component>
@@ -550,16 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parts/PartStruct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Softwares/ParseJsonToArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
@@ -570,10 +514,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parts/Storage.java">
+    <entry file="jar://$USER_HOME$/Desktop/jdk-11.0.2/lib/src.zip!/java.base/java/util/Objects.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="5559">
+          <caret line="371" selection-start-line="371" selection-end-line="371" />
+          <folding>
+            <element signature="e#13945#13946#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/jdk-11.0.2/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6987">
+          <caret line="457" selection-start-line="457" selection-end-line="457" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parts/OS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -582,7 +543,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Laptop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
+        <state relative-caret-position="2737">
           <caret line="231" column="48" selection-start-line="231" selection-start-column="48" selection-end-line="231" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -590,44 +551,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parts/OS.java">
+    <entry file="file://$PROJECT_DIR$/src/Parts/Storage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="612">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Desktop/jdk-11.0.2/lib/src.zip!/java.base/java/util/ArrayList.java">
+    <entry file="file://$PROJECT_DIR$/src/Parts/PartStruct.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="457" selection-start-line="457" selection-end-line="457" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/jdk-11.0.2/lib/src.zip!/java.base/java/util/Objects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="371" selection-start-line="371" selection-end-line="371" />
+        <state relative-caret-position="153">
+          <caret line="21" column="11" lean-forward="true" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
           <folding>
-            <element signature="e#13945#13946#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7072">
-          <caret line="430" column="8" selection-start-line="430" selection-start-column="8" selection-end-line="430" selection-end-column="8" />
+        <state relative-caret-position="207">
+          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/CreateHtmlPages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="115">
+          <caret line="121" column="71" selection-start-line="121" selection-start-column="71" selection-end-line="121" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
