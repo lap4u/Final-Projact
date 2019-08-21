@@ -71,7 +71,7 @@ public class CreateHtmlPages {
                 "        <meta name=\"description\" content=\"LaptoPlus - "+ type+"s List\">\n" +
                 "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
                 "        <!-- Favicon -->\n" +
-                "        <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"assets/img/favicon.png\">\n" +
+                "<link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"assets/img/favicon.png\">\n" +
                 "\t\t\n" +
                 "\t\t<!-- all css here -->\n" +
                 "        <link rel=\"stylesheet\" href=\"assets/css/bootstrap.min.css\">\n" +
@@ -103,23 +103,28 @@ public class CreateHtmlPages {
                 "                            <i></i>\n" +
                 "                        </label>\n" +
                 "                        <span class=\"nav-logo\">\n" +
-                "                            <a href=\"#\">LaptoPlus</a>\n" +
+                "                            <a href=\"index.html\">LaptoPlus</a>\n" +
                 "                        </span>\n" +
                 "                        <span class=\"nav-wrapper\">\n" +
                 "                            <ul>\n" +
-                "                                <li><a href=\"#\">Home</a></li>\n" +
-                "                                <li><a href=\"#\">OverView</a></li>\n" +
-                "                                <li><a href=\"#\">Prices</a></li>\n" +
-                "                                <li><a href=\"#\">Purchases</a></li>\n" +
+                "                                <li><a href=\"findyourlaptop.html\">Find Your Laptop</a></li>\n" +
+                "                                <li><a href=\"index.html#services\">How It Works</a></li>\n" +
+                "                                <li><a href=\"index.html#testimonials\">Reviews</a></li>\n" +
+                "                                <li><a href=\"index.html#team\">Team</a></li>\n" +
+                "                                <li><a href=\"index.html#contact\">Contact</a></li>\n" +
                 "                            </ul>\n" +
                 "                        </span>\n" +
                 "                    </nav>\n" +
                 "                </div>\n" +
                 "            </header>\n" +
-                "            <div class=\"breadcrumb-area pt-255 pb-170\" style=\"background-image: url(assets/img/banner/"+ type +"s.jpg)\">\n" +
+                "            <div class=\"breadcrumb-area banner-img pt-255 pb-170\" style=\"background-image: url(assets/img/banner/"+ type +"s.jpg)\">\n" +
                 "                <div class=\"container-fluid\">\n" +
                 "                    <div class=\"breadcrumb-content text-center\">\n" +
                 "                        <h2>"+ type +"s List</h2>\n" +
+                "                        <ul>\n" +
+                "                            <li><a href=\"../systemreq.html\">System Requirements</a></li>\n" +
+                "                            <li>"+type+"s list</li>\n" +
+                "                        </ul>\n" +
                 "                    </div>\n" +
                 "                </div>\n" +
                 "            </div>\n" +
@@ -163,100 +168,139 @@ public class CreateHtmlPages {
                 "                    </div>\n" +
                 "                </div>\n" +
                 "            </div>\n" +
-                "            <footer class=\"footer-area footer--light\">\n" +
-                "                <div class=\"footer-big\">\n" +
-                "                  <!-- start .container -->\n" +
-                "                  <div class=\"container\">\n" +
-                "                    <div class=\"row\">\n" +
-                "                      <div class=\"col-md-3 col-sm-12\">\n" +
-                "                        <div class=\"footer-widget\">\n" +
-                "                          <div class=\"widget-about\">\n" +
-                "                            <img src=\"http://placehold.it/250x80\" alt=\"\" class=\"img-fluid\">\n" +
-                "                            <ul class=\"contact-details\">\n" +
-                "                              <li>\n" +
-                "                                <span class=\"icon-earphones\"></span> Call Us:\n" +
-                "                                <a href=\"tel:+972545988464\">+972-545988464</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <span class=\"icon-envelope-open\"></span>\n" +
-                "                                <a href=\"mailto:support@LaptoPlus.com\">support@LaptoPlus.com</a>\n" +
-                "                              </li>\n" +
-                "                            </ul>\n" +
-                "                          </div>\n" +
-                "                        </div>\n" +
-                "                        <!-- Ends: .footer-widget -->\n" +
-                "                      </div>\n" +
-                "                      <!-- end /.col-md-4 -->\n" +
-                "                      <div class=\"col-md-3 col-sm-4\">\n" +
-                "                        <div class=\"footer-widget\">\n" +
-                "                          <div class=\"footer-menu footer-menu--1\">\n" +
-                "                            <h4 class=\"footer-widget-title\">Popular Category</h4>\n" +
-                "                            <ul>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">Find your Laptop</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">Laptop Companies</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">Softwares</a>\n" +
-                "                              </li>\n" +
-                "                            </ul>\n" +
-                "                          </div>\n" +
-                "                          <!-- end /.footer-menu -->\n" +
-                "                        </div>\n" +
-                "                        <!-- Ends: .footer-widget -->\n" +
-                "                      </div>\n" +
-                "                      <!-- end /.col-md-3 -->\n" +
-                "              \n" +
-                "                      <div class=\"col-md-3 col-sm-4\">\n" +
-                "                        <div class=\"footer-widget\">\n" +
-                "                          <div class=\"footer-menu\">\n" +
-                "                            <h4 class=\"footer-widget-title\">Our Company</h4>\n" +
-                "                            <ul>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">About Us</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">How It Works</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">Testimonials</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">Contact Us</a>\n" +
-                "                              </li>\n" +
-                "                            </ul>\n" +
-                "                          </div>\n" +
-                "                          <!-- end /.footer-menu -->\n" +
-                "                        </div>\n" +
-                "                        <!-- Ends: .footer-widget -->\n" +
-                "                      </div>\n" +
-                "                      <!-- end /.col-lg-3 -->\n" +
+                "<footer class=\"footer-area footer--light\">\n" +
+                "      <div class=\"footer-big\">\n" +
+                "        <!-- start .container -->\n" +
+                "        <div class=\"container\">\n" +
+                "          <div class=\"row\">\n" +
+                "            <div class=\"col-md-3 col-sm-12\">\n" +
+                "              <div class=\"footer-widget\">\n" +
+                "                <div class=\"widget-about\">\n" +
+                "                  <img src=\"assets/img/logos/logo.jpg\" alt=\"main logo\" class=\"img-fluid\">\n" +
+                "                  <ul class=\"contact-details\">\n" +
+                "                    <li>\n" +
+                "                      <span class=\"icon-earphones\"></span> Call Us:\n" +
+                "                      <a href=\"tel:+972545988464\">+972-545988464</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <span class=\"icon-envelope-open\"></span>\n" +
+                "                      <a href=\"mailto:support@LaptoPlus.com\">support@laptoplus.com</a>\n" +
+                "                    </li>\n" +
+                "                  </ul>\n" +
+                "                </div>\n" +
+                "              </div>\n" +
+                "              <!-- Ends: .footer-widget -->\n" +
+                "            </div>\n" +
+                "            <!-- end /.col-md-4 -->\n" +
+                "\t\t\t\n" +
+                "\t\t\t  <div class=\"col-md-3 col-sm-4\">\n" +
+                "              <div class=\"footer-widget\">\n" +
+                "                <div class=\"footer-menu\">\n" +
+                "                  <a href=\"index.html\"><h4 class=\"footer-widget-title\">Our Company</h4></a>\n" +
+                "                  <ul>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"findyourlaptop.html\">Find Your Laptop</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"index.html#services\">How It Works</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"index.html#testimonials\">Testimonials</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t    <li>\n" +
+                "                      <a href=\"index.html#team\">Team</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"index.html#contact\">Contact Us</a>\n" +
+                "                    </li>\n" +
+                "                  </ul>\n" +
+                "                </div>\n" +
+                "                <!-- end /.footer-menu -->\n" +
+                "              </div>\n" +
+                "              <!-- Ends: .footer-widget -->\n" +
+                "            </div>\n" +
+                "            <!-- end /.col-lg-3 -->\n" +
+                "\t\t\t\n" +
+                "            <div class=\"col-md-3 col-sm-4\">\n" +
+                "              <div class=\"footer-widget\">\n" +
+                "                <div class=\"footer-menu footer-menu--1\">\n" +
+                "                  <a href=\"companieslist.html\"><h4 class=\"footer-widget-title\">Laptop Companies</h4></a>\n" +
+                "                  <ul>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"companies/acer.html\">Acer</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"companies/lenovo.html\">Lenovo</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"companies/dell.html\">Dell</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t  <li>\n" +
+                "                      <a href=\"companies/lg.html\">LG</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t  <li>\n" +
+                "                      <a href=\"companies/hp.html\">HP</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t  <li>\n" +
+                "                      <a href=\"companies/razer.html\">Razer</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t  <li>\n" +
+                "                      <a href=\"companies/msi.html\">MSI</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t  <li>\n" +
+                "                      <a href=\"companies/asus.html\">ASUS</a>\n" +
+                "                    </li>\n" +
+                "                  </ul>\n" +
+                "                </div>\n" +
+                "                <!-- end /.footer-menu -->\n" +
+                "              </div>\n" +
+                "              <!-- Ends: .footer-widget -->\n" +
+                "            </div>\n" +
+                "            <!-- end /.col-md-3 -->\n" +
+                "    \n" +
+                "         \n" +
                 "\n" +
-                "              \n" +
-                "                    </div>\n" +
-                "                    <!-- end /.row -->\n" +
-                "                  </div>\n" +
-                "                  <!-- end /.container -->\n" +
+                "\t\t\t        <div class=\"col-md-3 col-sm-4\">\n" +
+                "              <div class=\"footer-widget\">\n" +
+                "                <div class=\"footer-menu\">\n" +
+                "                  <a href=\"systemreq.html\"><h4 class=\"footer-widget-title\">System Requirements</h4></a>\n" +
+                "                  <ul>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"gameslist.html\">Games List</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"softwareslist.html\">Softwares List</a>\n" +
+                "                    </li>\n" +
+                "                  </ul>\n" +
                 "                </div>\n" +
-                "                <!-- end /.footer-big -->\n" +
-                "              \n" +
-                "                <div class=\"mini-footer\">\n" +
-                "                  <div class=\"container\">\n" +
-                "                    <div class=\"row\">\n" +
-                "                      <div class=\"col-md-12\">\n" +
-                "                        <div class=\"copyright-text\">\n" +
-                "                          <p>© 2019\n" +
-                "                            All rights reserved. Created by\n" +
-                "                            <a href=\"#\">LaptoPlus</a>\n" +
-                "                          </p>\n" +
-                "                        </div>\n" +
-                "                      </div>\n" +
-                "                    </div>\n" +
-                "                  </div>\n" +
-                "                </div>\n" +
-                "              </footer>\n" +
+                "                <!-- end /.footer-menu -->\n" +
+                "              </div>\n" +
+                "              <!-- Ends: .footer-widget -->\n" +
+                "            </div>\n" +
+                "            <!-- end /.col-lg-3 -->\n" +
+                "    \n" +
+                "          </div>\n" +
+                "          <!-- end /.row -->\n" +
+                "        </div>\n" +
+                "        <!-- end /.container -->\n" +
+                "      </div>\n" +
+                "      <!-- end /.footer-big -->\n" +
+                "    \n" +
+                "      <div class=\"mini-footer\">\n" +
+                "        <div class=\"container\">\n" +
+                "          <div class=\"row\">\n" +
+                "            <div class=\"col-md-12\">\n" +
+                "              <div class=\"copyright-text\">\n" +
+                "                <p>© 2019\n" +
+                "                  All rights reserved. Created by\n" +
+                "                  <a href=\"index.html\">LaptoPlus</a>\n" +
+                "                </p>\n" +
+                "              </div>\n" +
+                "            </div>\n" +
+                "          </div>\n" +
+                "        </div>\n" +
+                "      </div>\n" +
+                "    </footer>\n" +
                 "            <!-- modal -->\n" +
                 "            <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n" +
                 "                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n" +
@@ -442,22 +486,25 @@ public class CreateHtmlPages {
 
             laptopsSquareHtml = laptopsSquareHtml + "<div class=\"product-width col-md-6 col-xl-4 col-lg-6\">\n" +
                     "                                            <div class=\"product-wrapper mb-35\">\n" +
-                    "                                                <div class=\"product-img\">\n" +
+                    "                                                <div class=\"product-img product-img-padding\">\n" +
                     "                                                    <a href=\"../laptops/"+laptop.getId_prod()+".html\">\n" +
-                    "                                                        <img src=\""+ laptop.getImagesUrls().get(0)+"\" alt=\"\">\n" +
+                    "                                                        <img src=\""+laptop.getImagesUrls().get(0)+"\" alt=\"\">\n" +
                     "                                                    </a>\n" +
                     "                                                    <div class=\"product-content-wrapper\">\n" +
                     "                                                        <div class=\"product-title-spreed\">\n" +
-                    "                                                            <h4><a href=\"../laptops/"+laptop.getId_prod()+".html\">"+model_name+"</a></h4>\n" +
+                    "                                                            <h5><a href=\"../laptops/"+laptop.getId_prod()+".html\">"+laptop.getModel_name()+"</a></h5>\n" +
                     "                                                           \n" +
                     "                                                        </div>\n" +
                     "                                                        <div class=\"product-price\">\n" +
                     "                                                            <span>"+priceString+"</span>\n" +
                     "                                                        </div>\n" +
                     "                                                    </div>\n" +
+                    "                                                    \n" +
                     "                                                </div>\n" +
+                    "                                                <a href=\"../laptops/"+laptop.getId_prod()+".html\" class=\"product-get-in btn btn-primary btn-xl\">GO IN</a>\n" +
+                    "\n" +
                     "                                                <div class=\"product-list-details\">\n" +
-                    "                                                    <h2><a href=\"../laptops/"+laptop.getId_prod()+".html\">"+ laptop.getModel_name() +"</a></h2>\n" +
+                    "                                                    <h2><a href=\"../laptops/"+laptop.getId_prod()+".html\">"+laptop.getModel_name()+"</a></h2>\n" +
                     "                                                    <div class=\"quick-view-rating\">\n" +
                     "                                                        <i class=\"fa fa-star reting-color\"></i>\n" +
                     "                                                        <i class=\"fa fa-star reting-color\"></i>\n" +
@@ -481,13 +528,15 @@ public class CreateHtmlPages {
     {
         String laptopsSquareHtml = createSquaresLaptops(i_CompanyLaptops);
 
+
+
         String html = "<!doctype html>\n" +
                 "<html class=\"no-js\" lang=\"zxx\">\n" +
                 "    <head>\n" +
                 "        <meta charset=\"utf-8\">\n" +
                 "        <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n" +
-                "        <title>LaptoPlus - Companies - "+ i_CompanyName+"</title>\n" +
-                "        <meta name=\"description\" content=\"LaptoPlus - Companies - \"+ i_CompanyName+\"\">\n" +
+                "        <title>LaptoPlus - Companies - "+i_CompanyName+"</title>\n" +
+                "        <meta name=\"description\" content=\"LaptoPlus - Companies - "+ i_CompanyName+"\">\n" +
                 "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
                 "        <!-- Favicon -->\n" +
                 "        <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"../assets/img/favicon.png\">\n" +
@@ -522,33 +571,34 @@ public class CreateHtmlPages {
                 "                            <i></i>\n" +
                 "                        </label>\n" +
                 "                        <span class=\"nav-logo\">\n" +
-                "                            <a href=\"#\">LaptoPlus</a>\n" +
+                "                            <a href=\"../index.html\">LaptoPlus</a>\n" +
                 "                        </span>\n" +
                 "                        <span class=\"nav-wrapper\">\n" +
                 "                            <ul>\n" +
-                "                                <li><a href=\"#\">Home</a></li>\n" +
-                "                                <li><a href=\"#\">OverView</a></li>\n" +
-                "                                <li><a href=\"#\">Prices</a></li>\n" +
-                "                                <li><a href=\"#\">Purchases</a></li>\n" +
+                "                                <li><a href=\"../findyourlaptop.html\">Find Your Laptop</a></li>\n" +
+                "                                <li><a href=\"../index.html#services\">How It Works</a></li>\n" +
+                "                                <li><a href=\"../index.html#testimonials\">Reviews</a></li>\n" +
+                "                                <li><a href=\"../index.html#team\">Team</a></li>\n" +
+                "                                <li><a href=\"../index.html#contact\">Contact</a></li>\n" +
                 "                            </ul>\n" +
                 "                        </span>\n" +
                 "                    </nav>\n" +
                 "                </div>\n" +
                 "            </header>\n" +
-                "            <div class=\"breadcrumb-area pt-255 pb-170\" style=\"background-image: url(../assets/img/banner/"+ i_CompanyName +".jpg)\">\n" +
+                "            <div class=\"breadcrumb-area banner-img pt-255 pb-170\" style=\"background-image: url(../assets/img/banner/"+i_CompanyName+".jpg)\">\n" +
                 "                <div class=\"container-fluid\">\n" +
                 "                    <div class=\"breadcrumb-content text-center\">\n" +
-                "                        <h2>"+ i_CompanyName +"</h2>\n" +
+                "                        <h2>"+i_CompanyName+"</h2>\n" +
                 "                        <ul>\n" +
                 "                            <li>\n" +
-                "                                <a href=\"../companies.html\">Companies</a>\n" +
+                "                                <a href=\"../companieslist.html\">Companies</a>\n" +
                 "                            </li>\n" +
-                "                            <li>"+ i_CompanyName+"</li>\n" +
+                "                            <li>"+i_CompanyName+"</li>\n" +
                 "                        </ul>\n" +
                 "                    </div>\n" +
                 "                </div>\n" +
                 "            </div>\n" +
-                "            <div class=\"shop-wrapper fluid-padding-2 pt-120 pb-150\">\n" +
+                "            <div class=\"shop-wrapper fluid-padding-2 pt-50 pb-150\">\n" +
                 "                <div class=\"container-fluid\">\n" +
                 "                    <div class=\"row\">\n" +
                 "                        <div class=\"col-lg-1\">\n" +
@@ -558,27 +608,16 @@ public class CreateHtmlPages {
                 "                            <div class=\"shop-topbar-wrapper\">\n" +
                 "                                <div class=\"grid-list-options\">\n" +
                 "                                    <ul class=\"view-mode\">\n" +
-                "                                        <li class=\"active\"><a href=\"#product-grid\" data-view=\"product-grid\"><i class=\"ti-layout-grid2\"></i></a></li>\n" +
-                "                                        <li><a href=\"#product-list\" data-view=\"product-list\"><i class=\"ti-view-list\"></i></a></li>\n" +
+                "                                        <li id=\"show-grid\" class=\"active\"><a href=\"#product-grid\" data-view=\"product-grid\"><i class=\"ti-layout-grid2\"></i></a></li>\n" +
+                "                                        <li id=\"show-list\"><a href=\"#product-list\" data-view=\"product-list\"><i class=\"ti-view-list\"></i></a></li>\n" +
                 "                                    </ul>\n" +
-                "                                </div>\n" +
-                "                                <div class=\"product-sorting\">\n" +
-                "                                    <div class=\"sorting sorting-bg-1\">\n" +
-                "                                        <form>\n" +
-                "                                            <select class=\"select\">\n" +
-                "                                                <option value=\"\">Default softing </option>\n" +
-                "                                                <option value=\"\">Sort by news</option>\n" +
-                "                                                <option value=\"\">Sort by price</option>\n" +
-                "                                            </select>\n" +
-                "                                        </form>\n" +
-                "                                    </div>\n" +
                 "                                </div>\n" +
                 "                            </div>\n" +
                 "                            <div class=\"grid-list-product-wrapper tab-content\">\n" +
                 "                                <div id=\"new-product\" class=\"product-grid product-view tab-pane active\">\n" +
-                "                                    <div class=\"row\">\n" +
+                "                                    <div class=\"row\">" +
                 laptopsSquareHtml +
-                "                                    </div>\n" +
+                "</div>\n" +
                 "                                </div>\n" +
                 "                            </div>\n" +
                 "                        </div>\n" +
@@ -588,100 +627,139 @@ public class CreateHtmlPages {
                 "                    </div>\n" +
                 "                </div>\n" +
                 "            </div>\n" +
-                "            <footer class=\"footer-area footer--light\">\n" +
-                "                <div class=\"footer-big\">\n" +
-                "                  <!-- start .container -->\n" +
-                "                  <div class=\"container\">\n" +
-                "                    <div class=\"row\">\n" +
-                "                      <div class=\"col-md-3 col-sm-12\">\n" +
-                "                        <div class=\"footer-widget\">\n" +
-                "                          <div class=\"widget-about\">\n" +
-                "                            <img src=\"http://placehold.it/250x80\" alt=\"\" class=\"img-fluid\">\n" +
-                "                            <ul class=\"contact-details\">\n" +
-                "                              <li>\n" +
-                "                                <span class=\"icon-earphones\"></span> Call Us:\n" +
-                "                                <a href=\"tel:+972545988464\">+972-545988464</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <span class=\"icon-envelope-open\"></span>\n" +
-                "                                <a href=\"mailto:support@LaptoPlus.com\">support@LaptoPlus.com</a>\n" +
-                "                              </li>\n" +
-                "                            </ul>\n" +
-                "                          </div>\n" +
-                "                        </div>\n" +
-                "                        <!-- Ends: .footer-widget -->\n" +
-                "                      </div>\n" +
-                "                      <!-- end /.col-md-4 -->\n" +
-                "                      <div class=\"col-md-3 col-sm-4\">\n" +
-                "                        <div class=\"footer-widget\">\n" +
-                "                          <div class=\"footer-menu footer-menu--1\">\n" +
-                "                            <h4 class=\"footer-widget-title\">Popular Category</h4>\n" +
-                "                            <ul>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">Find your Laptop</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">Laptop Companies</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">Softwares</a>\n" +
-                "                              </li>\n" +
-                "                            </ul>\n" +
-                "                          </div>\n" +
-                "                          <!-- end /.footer-menu -->\n" +
-                "                        </div>\n" +
-                "                        <!-- Ends: .footer-widget -->\n" +
-                "                      </div>\n" +
-                "                      <!-- end /.col-md-3 -->\n" +
-                "              \n" +
-                "                      <div class=\"col-md-3 col-sm-4\">\n" +
-                "                        <div class=\"footer-widget\">\n" +
-                "                          <div class=\"footer-menu\">\n" +
-                "                            <h4 class=\"footer-widget-title\">Our Company</h4>\n" +
-                "                            <ul>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">About Us</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">How It Works</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">Testimonials</a>\n" +
-                "                              </li>\n" +
-                "                              <li>\n" +
-                "                                <a href=\"#\">Contact Us</a>\n" +
-                "                              </li>\n" +
-                "                            </ul>\n" +
-                "                          </div>\n" +
-                "                          <!-- end /.footer-menu -->\n" +
-                "                        </div>\n" +
-                "                        <!-- Ends: .footer-widget -->\n" +
-                "                      </div>\n" +
-                "                      <!-- end /.col-lg-3 -->\n" +
+                "<footer class=\"footer-area footer--light\">\n" +
+                "      <div class=\"footer-big\">\n" +
+                "        <!-- start .container -->\n" +
+                "        <div class=\"container\">\n" +
+                "          <div class=\"row\">\n" +
+                "            <div class=\"col-md-3 col-sm-12\">\n" +
+                "              <div class=\"footer-widget\">\n" +
+                "                <div class=\"widget-about\">\n" +
+                "                  <img src=\"../assets/img/logos/logo.jpg\" alt=\"main logo\" class=\"img-fluid\">\n" +
+                "                  <ul class=\"contact-details\">\n" +
+                "                    <li>\n" +
+                "                      <span class=\"icon-earphones\"></span> Call Us:\n" +
+                "                      <a href=\"tel:+972545988464\">+972-545988464</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <span class=\"icon-envelope-open\"></span>\n" +
+                "                      <a href=\"mailto:support@LaptoPlus.com\">support@laptoplus.com</a>\n" +
+                "                    </li>\n" +
+                "                  </ul>\n" +
+                "                </div>\n" +
+                "              </div>\n" +
+                "              <!-- Ends: .footer-widget -->\n" +
+                "            </div>\n" +
+                "            <!-- end /.col-md-4 -->\n" +
+                "\t\t\t\n" +
+                "\t\t\t  <div class=\"col-md-3 col-sm-4\">\n" +
+                "              <div class=\"footer-widget\">\n" +
+                "                <div class=\"footer-menu\">\n" +
+                "                  <a href=\"../index.html\"><h4 class=\"footer-widget-title\">Our Company</h4></a>\n" +
+                "                  <ul>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"../findyourlaptop.html\">Find Your Laptop</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"../index.html#services\">How It Works</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"../index.html#testimonials\">Testimonials</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t    <li>\n" +
+                "                      <a href=\"../index.html#team\">Team</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"../index.html#contact\">Contact Us</a>\n" +
+                "                    </li>\n" +
+                "                  </ul>\n" +
+                "                </div>\n" +
+                "                <!-- end /.footer-menu -->\n" +
+                "              </div>\n" +
+                "              <!-- Ends: .footer-widget -->\n" +
+                "            </div>\n" +
+                "            <!-- end /.col-lg-3 -->\n" +
+                "\t\t\t\n" +
+                "            <div class=\"col-md-3 col-sm-4\">\n" +
+                "              <div class=\"footer-widget\">\n" +
+                "                <div class=\"footer-menu footer-menu--1\">\n" +
+                "                  <a href=\"../companieslist.html\"><h4 class=\"footer-widget-title\">Laptop Companies</h4></a>\n" +
+                "                  <ul>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"../companies/acer.html\">Acer</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"../companies/lenovo.html\">Lenovo</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"../companies/dell.html\">Dell</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t  <li>\n" +
+                "                      <a href=\"../companies/lg.html\">LG</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t  <li>\n" +
+                "                      <a href=\"../companies/hp.html\">HP</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t  <li>\n" +
+                "                      <a href=\"../companies/razer.html\">Razer</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t  <li>\n" +
+                "                      <a href=\"../companies/msi.html\">MSI</a>\n" +
+                "                    </li>\n" +
+                "\t\t\t\t\t  <li>\n" +
+                "                      <a href=\"../companies/asus.html\">ASUS</a>\n" +
+                "                    </li>\n" +
+                "                  </ul>\n" +
+                "                </div>\n" +
+                "                <!-- end /.footer-menu -->\n" +
+                "              </div>\n" +
+                "              <!-- Ends: .footer-widget -->\n" +
+                "            </div>\n" +
+                "            <!-- end /.col-md-3 -->\n" +
+                "    \n" +
+                "         \n" +
                 "\n" +
-                "              \n" +
-                "                    </div>\n" +
-                "                    <!-- end /.row -->\n" +
-                "                  </div>\n" +
-                "                  <!-- end /.container -->\n" +
+                "\t\t\t        <div class=\"col-md-3 col-sm-4\">\n" +
+                "              <div class=\"footer-widget\">\n" +
+                "                <div class=\"footer-menu\">\n" +
+                "                  <a href=\"../systemreq.html\"><h4 class=\"footer-widget-title\">System Requirements</h4></a>\n" +
+                "                  <ul>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"../gameslist.html\">Games List</a>\n" +
+                "                    </li>\n" +
+                "                    <li>\n" +
+                "                      <a href=\"../softwareslist.html\">Softwares List</a>\n" +
+                "                    </li>\n" +
+                "                  </ul>\n" +
                 "                </div>\n" +
-                "                <!-- end /.footer-big -->\n" +
-                "              \n" +
-                "                <div class=\"mini-footer\">\n" +
-                "                  <div class=\"container\">\n" +
-                "                    <div class=\"row\">\n" +
-                "                      <div class=\"col-md-12\">\n" +
-                "                        <div class=\"copyright-text\">\n" +
-                "                          <p>© 2019\n" +
-                "                            All rights reserved. Created by\n" +
-                "                            <a href=\"#\">LaptoPlus</a>\n" +
-                "                          </p>\n" +
-                "                        </div>\n" +
-                "                      </div>\n" +
-                "                    </div>\n" +
-                "                  </div>\n" +
-                "                </div>\n" +
-                "              </footer>\n" +
+                "                <!-- end /.footer-menu -->\n" +
+                "              </div>\n" +
+                "              <!-- Ends: .footer-widget -->\n" +
+                "            </div>\n" +
+                "            <!-- end /.col-lg-3 -->\n" +
+                "    \n" +
+                "          </div>\n" +
+                "          <!-- end /.row -->\n" +
+                "        </div>\n" +
+                "        <!-- end /.container -->\n" +
+                "      </div>\n" +
+                "      <!-- end /.footer-big -->\n" +
+                "    \n" +
+                "      <div class=\"mini-footer\">\n" +
+                "        <div class=\"container\">\n" +
+                "          <div class=\"row\">\n" +
+                "            <div class=\"col-md-12\">\n" +
+                "              <div class=\"copyright-text\">\n" +
+                "                <p>© 2019\n" +
+                "                  All rights reserved. Created by\n" +
+                "                  <a href=\"../index.html\">LaptoPlus</a>\n" +
+                "                </p>\n" +
+                "              </div>\n" +
+                "            </div>\n" +
+                "          </div>\n" +
+                "        </div>\n" +
+                "      </div>\n" +
+                "    </footer>\n" +
                 "            <!-- modal -->\n" +
                 "            <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n" +
                 "                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n" +
@@ -866,10 +944,20 @@ public class CreateHtmlPages {
     {
         for (int i = 0; i < i_SoftwareGamesArray.size(); i++) {
             SoftwareGame softwareGame = i_SoftwareGamesArray.get(i);
+            String imgURL = softwareGame.getImgURL();
+
             String osDisplay = getOsDisplay(i_SoftwareGamesArray.get(i).getOperatingSystem());
             String typeProduct = "Software";
-            if(softwareGame.isGame() == true)
+            String linkListString="";
+
+            if(softwareGame.isGame() == true) {
                 typeProduct = "Game";
+                linkListString = "<li><a href=\"../gameslist.html\">Games list</a></li>\n\"";
+            }
+            else {
+                imgURL = "../" + imgURL;
+                linkListString = "<li><a href=\"../softwareslist.html\">Softwares list</a></li>\n\"";
+            }
 
             String html = "<!doctype html>\n" +
                     "<html class=\"no-js\" lang=\"zxx\">\n" +
@@ -880,14 +968,14 @@ public class CreateHtmlPages {
                     "        <meta name=\"description\" content=\""+softwareGame.getDescription()+"\">\n" +
                     "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
                     "        <!-- Favicon -->\n" +
-                    "        <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"../assets/img/favicon.png\">\n" +
+                    "<link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"../assets/img/favicon.png\">\n" +
                     "\t\t\n" +
                     "\t\t<!-- all css here -->\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/bootstrap.min.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/animate.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/owl.carousel.min.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/chosen.min.css\">\n" +
-                    "        <link rel=\"stylesheet\" href=\"../assets/css/easyzoom.css\">\n" +
+                    "        <link rel=\"stylesheet\" href=\"../assets/css/jquery-ui.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/meanmenu.min.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/themify-icons.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/icofont.css\">\n" +
@@ -895,14 +983,13 @@ public class CreateHtmlPages {
                     "        <link rel=\"stylesheet\" href=\"../assets/css/bundle.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/style.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/responsive.css\">\n" +
-                    "        <link rel=\"stylesheet\" href=\"../assets/product-details.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/footer.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/navbar.css\">\n" +
-                    "\n" +
                     "        <script src=\"../assets/js/vendor/modernizr-2.8.3.min.js\"></script>\n" +
                     "    </head>\n" +
                     "    <body>\n" +
                     "        <div class=\"wrapper\">\n" +
+                    "            <!-- header start -->\n" +
                     "            <header>\n" +
                     "                <div class=\"nav_container\">\n" +
                     "                    <nav>\n" +
@@ -913,24 +1000,27 @@ public class CreateHtmlPages {
                     "                            <i></i>\n" +
                     "                        </label>\n" +
                     "                        <span class=\"nav-logo\">\n" +
-                    "                            <a href=\"#\">LaptoPlus</a>\n" +
+                    "                            <a href=\"../index.html\">LaptoPlus</a>\n" +
                     "                        </span>\n" +
                     "                        <span class=\"nav-wrapper\">\n" +
                     "                            <ul>\n" +
-                    "                                <li><a href=\"#\">Home</a></li>\n" +
-                    "                                <li><a href=\"#\">OverView</a></li>\n" +
-                    "                                <li><a href=\"#\">Prices</a></li>\n" +
-                    "                                <li><a href=\"#\">Purchases</a></li>\n" +
+                    "                                <li><a href=\"../findyourlaptop.html\">Find Your Laptop</a></li>\n" +
+                    "                                <li><a href=\"../index.html#services\">How It Works</a></li>\n" +
+                    "                                <li><a href=\"../index.html#testimonials\">Reviews</a></li>\n" +
+                    "                                <li><a href=\"../index.html#team\">Team</a></li>\n" +
+                    "                                <li><a href=\"../index.html#contact\">Contact</a></li>\n" +
                     "                            </ul>\n" +
                     "                        </span>\n" +
                     "                    </nav>\n" +
                     "                </div>\n" +
                     "            </header>\n" +
-                    "            <div class=\"breadcrumb-area pt-255 pb-170\" style=\"background-image: url(../assets/img/banner/games.jpg)\">\n" +
+                    "            <div class=\"breadcrumb-area banner-img pt-255 pb-170\" style=\"background-image: url(../assets/img/banner/games.jpg)\">\n" +
                     "                <div class=\"container-fluid\">\n" +
                     "                    <div class=\"breadcrumb-content text-center\">\n" +
                     "                        <h2>" + typeProduct + " details </h2>\n" +
                     "                        <ul>\n" +
+                    "                            <li><a href=\"../systemreq.html\">System Requirements</a></li>\n" +
+                    "                            "+linkListString+"" +
                     "                            <li>" + softwareGame.getName() + "</li>\n" +
                     "                        </ul>\n" +
                     "                    </div>\n" +
@@ -945,8 +1035,8 @@ public class CreateHtmlPages {
                     "                                    <div class=\"product-details-large tab-content\">\n" +
                     "                                        <div class=\"tab-pane active\" id=\"pro-details1\">\n" +
                     "                                            <div class=\"easyzoom easyzoom--overlay\">\n" +
-                    "                                                <a href=\"" + softwareGame.getImgURL() + "\">\n" +
-                    "                                                    <img src=\"" + softwareGame.getImgURL() + "\" alt=\"\">\n" +
+                    "                                                <a href=\"" + imgURL + "\">\n" +
+                    "                                                    <img src=\"" + imgURL + "\" alt=\"\">\n" +
                     "                                                </a>\n" +
                     "                                            </div>\n" +
                     "                                        </div>\n" +
@@ -999,100 +1089,139 @@ public class CreateHtmlPages {
                     "                    </div>\n" +
                     "                </div>\n" +
                     "            </div>\n" +
-                    "            <footer class=\"footer-area footer--light\">\n" +
-                    "                <div class=\"footer-big\">\n" +
-                    "                  <!-- start .container -->\n" +
-                    "                  <div class=\"container\">\n" +
-                    "                    <div class=\"row\">\n" +
-                    "                      <div class=\"col-md-3 col-sm-12\">\n" +
-                    "                        <div class=\"footer-widget\">\n" +
-                    "                          <div class=\"widget-about\">\n" +
-                    "                            <img src=\"http://placehold.it/250x80\" alt=\"\" class=\"img-fluid\">\n" +
-                    "                            <ul class=\"contact-details\">\n" +
-                    "                              <li>\n" +
-                    "                                <span class=\"icon-earphones\"></span> Call Us:\n" +
-                    "                                <a href=\"tel:+972545988464\">+972-545988464</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <span class=\"icon-envelope-open\"></span>\n" +
-                    "                                <a href=\"mailto:support@LaptoPlus.com\">support@LaptoPlus.com</a>\n" +
-                    "                              </li>\n" +
-                    "                            </ul>\n" +
-                    "                          </div>\n" +
-                    "                        </div>\n" +
-                    "                        <!-- Ends: .footer-widget -->\n" +
-                    "                      </div>\n" +
-                    "                      <!-- end /.col-md-4 -->\n" +
-                    "                      <div class=\"col-md-3 col-sm-4\">\n" +
-                    "                        <div class=\"footer-widget\">\n" +
-                    "                          <div class=\"footer-menu footer-menu--1\">\n" +
-                    "                            <h4 class=\"footer-widget-title\">Popular Category</h4>\n" +
-                    "                            <ul>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">Find your Laptop</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">Laptop Companies</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">Softwares</a>\n" +
-                    "                              </li>\n" +
-                    "                            </ul>\n" +
-                    "                          </div>\n" +
-                    "                          <!-- end /.footer-menu -->\n" +
-                    "                        </div>\n" +
-                    "                        <!-- Ends: .footer-widget -->\n" +
-                    "                      </div>\n" +
-                    "                      <!-- end /.col-md-3 -->\n" +
-                    "              \n" +
-                    "                      <div class=\"col-md-3 col-sm-4\">\n" +
-                    "                        <div class=\"footer-widget\">\n" +
-                    "                          <div class=\"footer-menu\">\n" +
-                    "                            <h4 class=\"footer-widget-title\">Our Company</h4>\n" +
-                    "                            <ul>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">About Us</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">How It Works</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">Testimonials</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">Contact Us</a>\n" +
-                    "                              </li>\n" +
-                    "                            </ul>\n" +
-                    "                          </div>\n" +
-                    "                          <!-- end /.footer-menu -->\n" +
-                    "                        </div>\n" +
-                    "                        <!-- Ends: .footer-widget -->\n" +
-                    "                      </div>\n" +
-                    "                      <!-- end /.col-lg-3 -->\n" +
+                    "<footer class=\"footer-area footer--light\">\n" +
+                    "      <div class=\"footer-big\">\n" +
+                    "        <!-- start .container -->\n" +
+                    "        <div class=\"container\">\n" +
+                    "          <div class=\"row\">\n" +
+                    "            <div class=\"col-md-3 col-sm-12\">\n" +
+                    "              <div class=\"footer-widget\">\n" +
+                    "                <div class=\"widget-about\">\n" +
+                    "                  <img src=\"../assets/img/logos/logo.jpg\" alt=\"main logo\" class=\"img-fluid\">\n" +
+                    "                  <ul class=\"contact-details\">\n" +
+                    "                    <li>\n" +
+                    "                      <span class=\"icon-earphones\"></span> Call Us:\n" +
+                    "                      <a href=\"tel:+972545988464\">+972-545988464</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <span class=\"icon-envelope-open\"></span>\n" +
+                    "                      <a href=\"mailto:support@LaptoPlus.com\">support@laptoplus.com</a>\n" +
+                    "                    </li>\n" +
+                    "                  </ul>\n" +
+                    "                </div>\n" +
+                    "              </div>\n" +
+                    "              <!-- Ends: .footer-widget -->\n" +
+                    "            </div>\n" +
+                    "            <!-- end /.col-md-4 -->\n" +
+                    "\t\t\t\n" +
+                    "\t\t\t  <div class=\"col-md-3 col-sm-4\">\n" +
+                    "              <div class=\"footer-widget\">\n" +
+                    "                <div class=\"footer-menu\">\n" +
+                    "                  <a href=\"../index.html\"><h4 class=\"footer-widget-title\">Our Company</h4></a>\n" +
+                    "                  <ul>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../findyourlaptop.html\">Find Your Laptop</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../index.html#services\">How It Works</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../index.html#testimonials\">Testimonials</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t    <li>\n" +
+                    "                      <a href=\"../index.html#team\">Team</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../index.html#contact\">Contact Us</a>\n" +
+                    "                    </li>\n" +
+                    "                  </ul>\n" +
+                    "                </div>\n" +
+                    "                <!-- end /.footer-menu -->\n" +
+                    "              </div>\n" +
+                    "              <!-- Ends: .footer-widget -->\n" +
+                    "            </div>\n" +
+                    "            <!-- end /.col-lg-3 -->\n" +
+                    "\t\t\t\n" +
+                    "            <div class=\"col-md-3 col-sm-4\">\n" +
+                    "              <div class=\"footer-widget\">\n" +
+                    "                <div class=\"footer-menu footer-menu--1\">\n" +
+                    "                  <a href=\"../companieslist.html\"><h4 class=\"footer-widget-title\">Laptop Companies</h4></a>\n" +
+                    "                  <ul>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../companies/acer.html\">Acer</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../companies/lenovo.html\">Lenovo</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../companies/dell.html\">Dell</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t  <li>\n" +
+                    "                      <a href=\"../companies/lg.html\">LG</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t  <li>\n" +
+                    "                      <a href=\"../companies/hp.html\">HP</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t  <li>\n" +
+                    "                      <a href=\"../companies/razer.html\">Razer</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t  <li>\n" +
+                    "                      <a href=\"../companies/msi.html\">MSI</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t  <li>\n" +
+                    "                      <a href=\"../companies/asus.html\">ASUS</a>\n" +
+                    "                    </li>\n" +
+                    "                  </ul>\n" +
+                    "                </div>\n" +
+                    "                <!-- end /.footer-menu -->\n" +
+                    "              </div>\n" +
+                    "              <!-- Ends: .footer-widget -->\n" +
+                    "            </div>\n" +
+                    "            <!-- end /.col-md-3 -->\n" +
+                    "    \n" +
+                    "         \n" +
                     "\n" +
-                    "              \n" +
-                    "                    </div>\n" +
-                    "                    <!-- end /.row -->\n" +
-                    "                  </div>\n" +
-                    "                  <!-- end /.container -->\n" +
+                    "\t\t\t        <div class=\"col-md-3 col-sm-4\">\n" +
+                    "              <div class=\"footer-widget\">\n" +
+                    "                <div class=\"footer-menu\">\n" +
+                    "                  <a href=\"../systemreq.html\"><h4 class=\"footer-widget-title\">System Requirements</h4></a>\n" +
+                    "                  <ul>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../gameslist.html\">Games List</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../softwareslist.html\">Softwares List</a>\n" +
+                    "                    </li>\n" +
+                    "                  </ul>\n" +
                     "                </div>\n" +
-                    "                <!-- end /.footer-big -->\n" +
-                    "              \n" +
-                    "                <div class=\"mini-footer\">\n" +
-                    "                  <div class=\"container\">\n" +
-                    "                    <div class=\"row\">\n" +
-                    "                      <div class=\"col-md-12\">\n" +
-                    "                        <div class=\"copyright-text\">\n" +
-                    "                          <p>© 2019\n" +
-                    "                            All rights reserved. Created by\n" +
-                    "                            <a href=\"#\">LaptoPlus</a>\n" +
-                    "                          </p>\n" +
-                    "                        </div>\n" +
-                    "                      </div>\n" +
-                    "                    </div>\n" +
-                    "                  </div>\n" +
-                    "                </div>\n" +
-                    "              </footer>\n" +
+                    "                <!-- end /.footer-menu -->\n" +
+                    "              </div>\n" +
+                    "              <!-- Ends: .footer-widget -->\n" +
+                    "            </div>\n" +
+                    "            <!-- end /.col-lg-3 -->\n" +
+                    "    \n" +
+                    "          </div>\n" +
+                    "          <!-- end /.row -->\n" +
+                    "        </div>\n" +
+                    "        <!-- end /.container -->\n" +
+                    "      </div>\n" +
+                    "      <!-- end /.footer-big -->\n" +
+                    "    \n" +
+                    "      <div class=\"mini-footer\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "          <div class=\"row\">\n" +
+                    "            <div class=\"col-md-12\">\n" +
+                    "              <div class=\"copyright-text\">\n" +
+                    "                <p>© 2019\n" +
+                    "                  All rights reserved. Created by\n" +
+                    "                  <a href=\"../index.html\">LaptoPlus</a>\n" +
+                    "                </p>\n" +
+                    "              </div>\n" +
+                    "            </div>\n" +
+                    "          </div>\n" +
+                    "        </div>\n" +
+                    "      </div>\n" +
+                    "    </footer>\n" +
                     "        </div>\n" +
                     "\n" +
                     "\t\t<!-- all js here -->\n" +
@@ -1148,14 +1277,14 @@ public class CreateHtmlPages {
                     "        <meta name=\"description\" content=\""+laptop.getDescription()+"\">\n" +
                     "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
                     "        <!-- Favicon -->\n" +
-                    "        <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"../assets/img/favicon.png\">\n" +
+                    "<link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"../assets/img/favicon.png\">\n" +
                     "\t\t\n" +
                     "\t\t<!-- all css here -->\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/bootstrap.min.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/animate.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/owl.carousel.min.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/chosen.min.css\">\n" +
-                    "        <link rel=\"stylesheet\" href=\"../assets/css/easyzoom.css\">\n" +
+                    "        <link rel=\"stylesheet\" href=\"../assets/css/jquery-ui.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/meanmenu.min.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/themify-icons.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/icofont.css\">\n" +
@@ -1163,14 +1292,13 @@ public class CreateHtmlPages {
                     "        <link rel=\"stylesheet\" href=\"../assets/css/bundle.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/style.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/css/responsive.css\">\n" +
-                    "        <link rel=\"stylesheet\" href=\"../assets/product-details.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/footer.css\">\n" +
                     "        <link rel=\"stylesheet\" href=\"../assets/navbar.css\">\n" +
-                    "\n" +
                     "        <script src=\"../assets/js/vendor/modernizr-2.8.3.min.js\"></script>\n" +
                     "    </head>\n" +
                     "    <body>\n" +
                     "        <div class=\"wrapper\">\n" +
+                    "            <!-- header start -->\n" +
                     "            <header>\n" +
                     "                <div class=\"nav_container\">\n" +
                     "                    <nav>\n" +
@@ -1181,26 +1309,27 @@ public class CreateHtmlPages {
                     "                            <i></i>\n" +
                     "                        </label>\n" +
                     "                        <span class=\"nav-logo\">\n" +
-                    "                            <a href=\"#\">LaptoPlus</a>\n" +
+                    "                            <a href=\"../index.html\">LaptoPlus</a>\n" +
                     "                        </span>\n" +
                     "                        <span class=\"nav-wrapper\">\n" +
                     "                            <ul>\n" +
-                    "                                <li><a href=\"#\">Home</a></li>\n" +
-                    "                                <li><a href=\"#\">OverView</a></li>\n" +
-                    "                                <li><a href=\"#\">Prices</a></li>\n" +
-                    "                                <li><a href=\"#\">Purchases</a></li>\n" +
+                    "                                <li><a href=\"../findyourlaptop.html\">Find Your Laptop</a></li>\n" +
+                    "                                <li><a href=\"../index.html#services\">How It Works</a></li>\n" +
+                    "                                <li><a href=\"../index.html#testimonials\">Reviews</a></li>\n" +
+                    "                                <li><a href=\"../index.html#team\">Team</a></li>\n" +
+                    "                                <li><a href=\"../index.html#contact\">Contact</a></li>\n" +
                     "                            </ul>\n" +
                     "                        </span>\n" +
                     "                    </nav>\n" +
                     "                </div>\n" +
                     "            </header>\n" +
-                    "            <div class=\"breadcrumb-area pt-255 pb-170\" style=\"background-image: url(../assets/img/banner/"+laptop.getCompany_name()+".jpg)\">\n" +
+                    "            <div class=\"breadcrumb-area banner-img pt-255 pb-170\" style=\"background-image: url(../assets/img/banner/"+laptop.getCompany_name()+".jpg)\">\n" +
                     "                <div class=\"container-fluid\">\n" +
                     "                    <div class=\"breadcrumb-content text-center\">\n" +
                     "                        <h2>Laptop details </h2>\n" +
                     "                        <ul>\n" +
                     "                            <li>\n" +
-                    "                                <a href=\"#\">Companies</a>\n" +
+                    "                                <a href=\"../companieslist.html\">Companies</a>\n" +
                     "                            </li>\n" +
                     "                            <li>\n" +
                     "                                <a href=\"../companies/" + laptop.getCompany_name() + ".html" + "\">" + laptop.getCompany_name() + "</a>\n" +
@@ -1288,100 +1417,139 @@ public class CreateHtmlPages {
                     "                    </div>\n" +
                     "                </div>\n" +
                     "            </div>\n" +
-                    "            <footer class=\"footer-area footer--light\">\n" +
-                    "                <div class=\"footer-big\">\n" +
-                    "                  <!-- start .container -->\n" +
-                    "                  <div class=\"container\">\n" +
-                    "                    <div class=\"row\">\n" +
-                    "                      <div class=\"col-md-3 col-sm-12\">\n" +
-                    "                        <div class=\"footer-widget\">\n" +
-                    "                          <div class=\"widget-about\">\n" +
-                    "                            <img src=\"http://placehold.it/250x80\" alt=\"\" class=\"img-fluid\">\n" +
-                    "                            <ul class=\"contact-details\">\n" +
-                    "                              <li>\n" +
-                    "                                <span class=\"icon-earphones\"></span> Call Us:\n" +
-                    "                                <a href=\"tel:+972545988464\">+972-545988464</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <span class=\"icon-envelope-open\"></span>\n" +
-                    "                                <a href=\"mailto:support@LaptoPlus.com\">support@LaptoPlus.com</a>\n" +
-                    "                              </li>\n" +
-                    "                            </ul>\n" +
-                    "                          </div>\n" +
-                    "                        </div>\n" +
-                    "                        <!-- Ends: .footer-widget -->\n" +
-                    "                      </div>\n" +
-                    "                      <!-- end /.col-md-4 -->\n" +
-                    "                      <div class=\"col-md-3 col-sm-4\">\n" +
-                    "                        <div class=\"footer-widget\">\n" +
-                    "                          <div class=\"footer-menu footer-menu--1\">\n" +
-                    "                            <h4 class=\"footer-widget-title\">Popular Category</h4>\n" +
-                    "                            <ul>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">Find your Laptop</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">Laptop Companies</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">Softwares</a>\n" +
-                    "                              </li>\n" +
-                    "                            </ul>\n" +
-                    "                          </div>\n" +
-                    "                          <!-- end /.footer-menu -->\n" +
-                    "                        </div>\n" +
-                    "                        <!-- Ends: .footer-widget -->\n" +
-                    "                      </div>\n" +
-                    "                      <!-- end /.col-md-3 -->\n" +
-                    "              \n" +
-                    "                      <div class=\"col-md-3 col-sm-4\">\n" +
-                    "                        <div class=\"footer-widget\">\n" +
-                    "                          <div class=\"footer-menu\">\n" +
-                    "                            <h4 class=\"footer-widget-title\">Our Company</h4>\n" +
-                    "                            <ul>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">About Us</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">How It Works</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">Testimonials</a>\n" +
-                    "                              </li>\n" +
-                    "                              <li>\n" +
-                    "                                <a href=\"#\">Contact Us</a>\n" +
-                    "                              </li>\n" +
-                    "                            </ul>\n" +
-                    "                          </div>\n" +
-                    "                          <!-- end /.footer-menu -->\n" +
-                    "                        </div>\n" +
-                    "                        <!-- Ends: .footer-widget -->\n" +
-                    "                      </div>\n" +
-                    "                      <!-- end /.col-lg-3 -->\n" +
+                    "<footer class=\"footer-area footer--light\">\n" +
+                    "      <div class=\"footer-big\">\n" +
+                    "        <!-- start .container -->\n" +
+                    "        <div class=\"container\">\n" +
+                    "          <div class=\"row\">\n" +
+                    "            <div class=\"col-md-3 col-sm-12\">\n" +
+                    "              <div class=\"footer-widget\">\n" +
+                    "                <div class=\"widget-about\">\n" +
+                    "                  <img src=\"../assets/img/logos/logo.jpg\" alt=\"main logo\" class=\"img-fluid\">\n" +
+                    "                  <ul class=\"contact-details\">\n" +
+                    "                    <li>\n" +
+                    "                      <span class=\"icon-earphones\"></span> Call Us:\n" +
+                    "                      <a href=\"tel:+972545988464\">+972-545988464</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <span class=\"icon-envelope-open\"></span>\n" +
+                    "                      <a href=\"mailto:support@LaptoPlus.com\">support@laptoplus.com</a>\n" +
+                    "                    </li>\n" +
+                    "                  </ul>\n" +
+                    "                </div>\n" +
+                    "              </div>\n" +
+                    "              <!-- Ends: .footer-widget -->\n" +
+                    "            </div>\n" +
+                    "            <!-- end /.col-md-4 -->\n" +
+                    "\t\t\t\n" +
+                    "\t\t\t  <div class=\"col-md-3 col-sm-4\">\n" +
+                    "              <div class=\"footer-widget\">\n" +
+                    "                <div class=\"footer-menu\">\n" +
+                    "                  <a href=\"../index.html\"><h4 class=\"footer-widget-title\">Our Company</h4></a>\n" +
+                    "                  <ul>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../findyourlaptop.html\">Find Your Laptop</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../index.html#services\">How It Works</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../index.html#testimonials\">Testimonials</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t    <li>\n" +
+                    "                      <a href=\"../index.html#team\">Team</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../index.html#contact\">Contact Us</a>\n" +
+                    "                    </li>\n" +
+                    "                  </ul>\n" +
+                    "                </div>\n" +
+                    "                <!-- end /.footer-menu -->\n" +
+                    "              </div>\n" +
+                    "              <!-- Ends: .footer-widget -->\n" +
+                    "            </div>\n" +
+                    "            <!-- end /.col-lg-3 -->\n" +
+                    "\t\t\t\n" +
+                    "            <div class=\"col-md-3 col-sm-4\">\n" +
+                    "              <div class=\"footer-widget\">\n" +
+                    "                <div class=\"footer-menu footer-menu--1\">\n" +
+                    "                  <a href=\"../companieslist.html\"><h4 class=\"footer-widget-title\">Laptop Companies</h4></a>\n" +
+                    "                  <ul>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../companies/acer.html\">Acer</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../companies/lenovo.html\">Lenovo</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../companies/dell.html\">Dell</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t  <li>\n" +
+                    "                      <a href=\"../companies/lg.html\">LG</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t  <li>\n" +
+                    "                      <a href=\"../companies/hp.html\">HP</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t  <li>\n" +
+                    "                      <a href=\"../companies/razer.html\">Razer</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t  <li>\n" +
+                    "                      <a href=\"../companies/msi.html\">MSI</a>\n" +
+                    "                    </li>\n" +
+                    "\t\t\t\t\t  <li>\n" +
+                    "                      <a href=\"../companies/asus.html\">ASUS</a>\n" +
+                    "                    </li>\n" +
+                    "                  </ul>\n" +
+                    "                </div>\n" +
+                    "                <!-- end /.footer-menu -->\n" +
+                    "              </div>\n" +
+                    "              <!-- Ends: .footer-widget -->\n" +
+                    "            </div>\n" +
+                    "            <!-- end /.col-md-3 -->\n" +
+                    "    \n" +
+                    "         \n" +
                     "\n" +
-                    "              \n" +
-                    "                    </div>\n" +
-                    "                    <!-- end /.row -->\n" +
-                    "                  </div>\n" +
-                    "                  <!-- end /.container -->\n" +
+                    "\t\t\t        <div class=\"col-md-3 col-sm-4\">\n" +
+                    "              <div class=\"footer-widget\">\n" +
+                    "                <div class=\"footer-menu\">\n" +
+                    "                  <a href=\"../systemreq.html\"><h4 class=\"footer-widget-title\">System Requirements</h4></a>\n" +
+                    "                  <ul>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../gameslist.html\">Games List</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                      <a href=\"../softwareslist.html\">Softwares List</a>\n" +
+                    "                    </li>\n" +
+                    "                  </ul>\n" +
                     "                </div>\n" +
-                    "                <!-- end /.footer-big -->\n" +
-                    "              \n" +
-                    "                <div class=\"mini-footer\">\n" +
-                    "                  <div class=\"container\">\n" +
-                    "                    <div class=\"row\">\n" +
-                    "                      <div class=\"col-md-12\">\n" +
-                    "                        <div class=\"copyright-text\">\n" +
-                    "                          <p>© 2019\n" +
-                    "                            All rights reserved. Created by\n" +
-                    "                            <a href=\"#\">LaptoPlus</a>\n" +
-                    "                          </p>\n" +
-                    "                        </div>\n" +
-                    "                      </div>\n" +
-                    "                    </div>\n" +
-                    "                  </div>\n" +
-                    "                </div>\n" +
-                    "              </footer>\n" +
+                    "                <!-- end /.footer-menu -->\n" +
+                    "              </div>\n" +
+                    "              <!-- Ends: .footer-widget -->\n" +
+                    "            </div>\n" +
+                    "            <!-- end /.col-lg-3 -->\n" +
+                    "    \n" +
+                    "          </div>\n" +
+                    "          <!-- end /.row -->\n" +
+                    "        </div>\n" +
+                    "        <!-- end /.container -->\n" +
+                    "      </div>\n" +
+                    "      <!-- end /.footer-big -->\n" +
+                    "    \n" +
+                    "      <div class=\"mini-footer\">\n" +
+                    "        <div class=\"container\">\n" +
+                    "          <div class=\"row\">\n" +
+                    "            <div class=\"col-md-12\">\n" +
+                    "              <div class=\"copyright-text\">\n" +
+                    "                <p>© 2019\n" +
+                    "                  All rights reserved. Created by\n" +
+                    "                  <a href=\"../index.html\">LaptoPlus</a>\n" +
+                    "                </p>\n" +
+                    "              </div>\n" +
+                    "            </div>\n" +
+                    "          </div>\n" +
+                    "        </div>\n" +
+                    "      </div>\n" +
+                    "    </footer>\n" +
                     "        </div>\n" +
                     "\n" +
                     "\t\t<!-- all js here -->\n" +

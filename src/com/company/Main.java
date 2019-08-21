@@ -18,8 +18,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+       CreateHtmlPages.startCreateGamesSoftwaresPage(true);
         CreateHtmlPages.startCreateGamesSoftwaresPage(false);
-    /*CreateHtmlPages.startCreateLaptops();
+  /*  CreateHtmlPages.startCreateLaptops();
   CreateHtmlPages.startCreateCompanyPage("HP");
         CreateHtmlPages.startCreateCompanyPage("Lenovo");
         CreateHtmlPages.startCreateCompanyPage("Acer");
